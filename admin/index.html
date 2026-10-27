@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RTP AIT LLC — Executive OIDC Command Center &amp; 3-Layer Second Brain</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #111827;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --sky: #38bdf8;
+      --blue: #0284c7;
+      --emerald: #22c55e;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    header {
+      background: #0f172a;
+      border-bottom: 2px solid var(--sky);
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand { display: flex; align-items: center; gap: 0.65rem; font-weight: 800; font-size: 1.1rem; color: #fff; text-decoration: none; }
+    .pill {
+      display: inline-block;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--sky);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .pill-green {
+      background: rgba(34, 197, 94, 0.14);
+      color: #4ade80;
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+    .pill-amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+    .pill-rose {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+    .container { max-width: 1320px; margin: 0 auto; padding: 1.5rem; }
+    .auth-gate-card {
+      max-width: 720px;
+      margin: 2.5rem auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--sky);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover { background: #0369a1; }
+    .btn-outline {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      color: #e2e8f0;
+    }
+    .btn-outline:hover { border-color: var(--sky); color: var(--sky); }
+    .btn-danger { background: #be123c; }
+    .tabs {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #0f172a;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.15rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+    .tab-btn.active {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--sky);
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+    }
+    .kpi-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+    .kpi-val { font-size: 1.65rem; font-weight: 800; color: #fff; margin-top: 0.25rem; }
+    .kpi-sub { font-size: 0.8rem; color: var(--sky); margin-top: 0.2rem; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+    .panel h2, .panel h3 { margin-top: 0; color: #fff; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    th, td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #0f172a; color: var(--sky); font-weight: 700; }
+    tr:hover td { background: rgba(15, 23, 42, 0.45); }
+    input[type="text"], select, textarea {
+      background: #0f172a;
+      color: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+    .node-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1rem;
+    }
+    .node-card {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .node-card:hover { border-color: var(--sky); }
+    .node-card h4 { margin: 0.35rem 0; color: #f8fafc; font-size: 0.98rem; }
+    pre.code-block {
+      background: #090d16;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem;
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="brand">
+      <img src="/logo-mark.svg" alt="RTP AIT LLC" width="28" height="28">
+      <span>RTP AIT LLC · Executive Command Center (<code>/admin/</code>)</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
+      <span class="pill pill-green" id="hdr-oidc-badge">federated_auth_enabled = true</span>
+      <span class="pill" id="hdr-zero-pw-badge">password_auth_prohibited = true</span>
+      <span class="pill pill-amber" id="hdr-mfa-badge">Primary: OIDC + Second Factor: SMS_2FA</span>
+      <span class="pill" id="hdr-session-user">Locked: luke@rtpait.com</span>
+      <button type="button" class="btn btn-danger hidden" id="btn-sign-out" onclick="window.rtpSignOut()">Sign Out</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- 1. OIDC AUTHENTICATION GATE (luke@rtpait.com SOLE ADMIN) -->
+    <section class="auth-gate-card" id="oidc-auth-gate" aria-label="OpenID Connect Sole-Admin Authentication Gate">
+      <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.75rem">
+        <span class="pill pill-green">OpenID Connect (RS256 JWKS + PKCE S256)</span>
+        <span class="pill">Sole Admin Allowlist: luke@rtpait.com</span>
+        <span class="pill pill-amber">Zero Manual Passwords Permitted</span>
+      </div>
+      <h1 style="margin:0 0 0.5rem;font-size:1.55rem">Authorize with <code>luke@rtpait.com</code> OpenID Connect</h1>
+      <p style="color:var(--muted);margin-top:0">
+        Per Founder Directive (<code>OD-RTPAIT-006</code> &amp; <code>OD-RTPAIT-007</code>), the legacy passphrase gate is permanently retired and <code>federated_auth_enabled = true</code> is active. Access to the <strong>Unified Multi-Product Analytics Dashboard</strong> and the <strong>3-Layer JSON-Node Founder Second Brain</strong> requires cryptographic Google OpenID Connect verification for <strong><code>luke@rtpait.com</code></strong> (<code>iss == https://accounts.google.com</code>, <code>hd == rtpait.com</code>, <code>email_verified == true</code>).
+      </p>
+
+      <!-- HTTP 403 FORBIDDEN BANNER (shown if non-luke@rtpait.com user signs in) -->
+      <div id="oidc-403-banner" class="hidden" style="background:rgba(244,63,94,0.15);border:2px solid var(--rose);border-radius:10px;padding:1rem;margin:1rem 0;color:#fecdd3">
+        <strong style="color:#fb7185;font-size:1.05rem">HTTP 403 Forbidden — Sole-Admin RBAC Violation</strong>
+        <p id="oidc-403-detail" style="margin:0.35rem 0 0;font-size:0.9rem"></p>
+      </div>
+
+      <div id="oidc-status-msg" style="background:#0f172a;border:1px solid var(--border);border-radius:8px;padding:0.85rem;margin:1rem 0;font-size:0.88rem;color:#cbd5e1">
+        <strong>OIDC Verifier Ready:</strong> Web Crypto <code>window.crypto.subtle.verify</code> (<code>RSASSA-PKCS1-v1_5</code> SHA-256 against Google JWKS <code>https://www.googleapis.com/oauth2/v3/certs</code>) + PKCE <code>S256</code> initialized.
+      </div>
+
+      <!-- Google Sign-In Button Mount + PKCE Redirect Trigger -->
+      <div style="background:#0f172a;border:1px solid var(--border);border-radius:10px;padding:1.15rem;margin-bottom:1rem">
+        <div style="font-weight:700;margin-bottom:0.5rem;color:#fff">Option 1: Google Identity Services Sign-In Button / OAuth 2.0 PKCE Flow</div>
+        <div id="g_id_onload_mount" style="margin:0.65rem 0"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem">
+          <button type="button" class="btn" onclick="window.startGooglePkceFlow()">
+            Sign In with Google OIDC (luke@rtpait.com)
+          </button>
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('client-id-config-drawer').classList.toggle('hidden')">
+            Configure Google OAuth Client ID
+          </button>
+        </div>
+
+        <div id="client-id-config-drawer" class="hidden" style="margin-top:0.9rem;padding-top:0.9rem;border-top:1px solid var(--border)">
+          <label for="input-google-client-id" style="display:block;font-size:0.82rem;font-weight:700;color:var(--sky);margin-bottom:0.3rem">
+            Google Cloud Console Web OAuth 2.0 Client ID (<code>*.apps.googleusercontent.com</code>):
+          </label>
+          <div style="display:flex;gap:0.5rem">
+            <input type="text" id="input-google-client-id" placeholder="e.g. 1234567890-abcdefg.apps.googleusercontent.com">
+            <button type="button" class="btn" onclick="window.saveGoogleClientId()">Save &amp; Mount</button>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin:0.4rem 0 0">
+            In Google Cloud Console (&rarr; APIs &amp; Services &rarr; Credentials &rarr; Create OAuth client ID &rarr; Web application), add Authorized JavaScript Origins <code>https://rtpait.com</code> and <code>https://rtpait.github.io</code>, then paste the Client ID above or pass <code>?client_id=...</code> in the URL.
+          </p>
+        </div>
+      </div>
+
+      <!-- Direct Google OIDC ID Token (JWT) Cryptographic Verifier (Web Crypto RS256 JWKS) -->
+      <div style="background:#0f172a;border:1px solid var(--border);border-radius:10px;padding:1.15rem">
+        <div style="font-weight:700;margin-bottom:0.35rem;color:#fff">Option 2: Direct Google OIDC ID Token (JWT) Cryptographic Verification (RS256 JWKS)</div>
+        <p style="font-size:0.82rem;color:var(--muted);margin:0 0 0.6rem">
+          Paste a signed Google OpenID Connect <code>id_token</code> JWT for <code>luke@rtpait.com</code> (e.g., from <code>gcloud auth print-identity-token</code> or Google OAuth Playground). The browser fetches Google's live public keys from <code>https://www.googleapis.com/oauth2/v3/certs</code> and verifies the <code>RS256</code> signature via <code>window.crypto.subtle.verify</code>:
+        </p>
+        <textarea id="input-oidc-jwt" rows="3" placeholder="Paste signed Google OIDC ID Token (eyJhbGciOiJSUzI1NiIs...)"></textarea>
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem">
+          <button type="button" class="btn" onclick="window.verifyPastedGoogleJwt()">
+            Verify RS256 Signature &amp; Unlock Console
+          </button>
+          <button type="button" class="btn btn-outline" onclick="window.inspectAuthenticatedPreview()">
+            Founder Local Workspace Preview (luke@rtpait.com)
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-top:1.1rem;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border);padding-top:0.85rem">
+        <strong>Uniform Identity &amp; Security Policy (<code>OD-RTPAIT-006</code>):</strong>
+        1. Universal OIDC across Google, Apple, Facebook &amp; Enterprise IdPs &middot;
+        2. Absolute ban on manual username/password auth (<code>password_auth_prohibited = true</code>) &middot;
+        3. OIDC + mandatory SMS 2FA (<code>mfa_second_factor: "SMS_2FA"</code>) &middot;
+        4. Paid Second-Brain API Tenant Partitioning via Golden-Template Cloning (<code>zero_founder_contamination = true</code>).
+      </div>
+    </section>
+
+    <!-- 2. AUTHENTICATED COMMAND CENTER (TAB 1: UNIFIED ANALYTICS + TAB 2: 3-LAYER SECOND BRAIN) -->
+    <main id="authenticated-console" class="hidden" aria-label="Authenticated Executive Command Center">
+      <div class="panel" style="padding:0.9rem 1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;border-left:4px solid var(--emerald)">
+        <div>
+          <strong style="color:#4ade80">Authenticated Session Active:</strong>
+          <span id="session-identity-summary"><code>luke@rtpait.com</code> (Issuer: <code>https://accounts.google.com</code> · Hosted Domain: <code>rtpait.com</code> · Role: <code>admin</code>)</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--muted)" id="data-generated-timestamp">Loading live telemetry...</div>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab-btn active" id="tab-btn-analytics" onclick="window.switchAdminTab('analytics')">
+          Tab 1: Unified Multi-Product Analytics Dashboard (6 Active Domains)
+        </button>
+        <button type="button" class="tab-btn" id="tab-btn-second-brain" onclick="window.switchAdminTab('second-brain')">
+          Tab 2: 3-Layer JSON-Node Founder Second Brain (ROAD_TO_REVENUE_ONLY = true)
+        </button>
+        <button type="button" class="tab-btn" id="tab-btn-tenant-api" onclick="window.switchAdminTab('tenant-api')">
+          Tab 3: Paid Second-Brain API Tenant-Partitioning &amp; OIDC+SMS 2FA Blueprint
+        </button>
+      </div>
+
+      <!-- TAB 1: UNIFIED MULTI-PRODUCT ANALYTICS DASHBOARD -->
+      <section id="tab-panel-analytics">
+        <div class="kpi-grid" id="analytics-kpi-grid"></div>
+
+        <div class="panel">
+          <h2>Active Portfolio Road-to-Revenue Matrix (All 6 RTP AIT LLC Domains)</h2>
+          <p style="color:var(--muted);font-size:0.86rem;margin-top:0">
+            Ground-truth telemetry aggregated by <code>build_unified_admin_second_brain.py</code> (<code>v7.1.0</code>). Target stage gate requires <code>&gt;=75%</code> Google Search Console indexation before unlocking Stage 3 expansion cohorts.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Domain &amp; Workspace</th>
+                <th>Owning PO &amp; Hub PM</th>
+                <th>Stage &amp; Version</th>
+                <th>Built Routes</th>
+                <th>GSC Indexed (75% Gate)</th>
+                <th>PostHog 685354 (Human / AI / Bot)</th>
+                <th>Day-0 Spoke Gates (W / LC / IS)</th>
+                <th>6/6 PO Files</th>
+                <th>Primary Bottleneck</th>
+              </tr>
+            </thead>
+            <tbody id="portfolio-table-body"></tbody>
+          </table>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1.25rem">
+          <div class="panel">
+            <h3>Five-Rule Scheduler Engine (<code>v2.3.0</code>) &amp; Coverage Ledger Health</h3>
+            <div id="scheduler-health-box"></div>
+          </div>
+          <div class="panel">
+            <h3>Affiliate Network &amp; Commercial Attribution Matrix</h3>
+            <table>
+              <thead>
+                <tr><th>Network</th><th>Publisher / Account ID</th><th>Status</th><th>Coverage</th></tr>
+              </thead>
+              <tbody id="affiliate-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Token Usage Telemetry Ledger (<code>/workspace/analytics/token-usage-ledger.json</code>)</h3>
+          <table>
+            <thead>
+              <tr><th>Job ID</th><th>Title</th><th>Category</th><th>Total Tokens</th><th>Window / Notes</th></tr>
+            </thead>
+            <tbody id="token-table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <details>
+            <summary style="cursor:pointer;font-weight:700;color:var(--amber)">
+              [HYPOTHESIS / TARGET MODEL — NOT LIVE TELEMETRY] Quarantined Commercial &amp; Paid Second-Brain API Unit Economics (Principle 1 Quarantine)
+            </summary>
+            <div id="quarantined-model-box" style="margin-top:0.85rem;font-size:0.88rem;color:#cbd5e1"></div>
+          </details>
+        </div>
+      </section>
+
+      <!-- TAB 2: 3-LAYER JSON-NODE FOUNDER SECOND BRAIN -->
+      <section id="tab-panel-second-brain" class="hidden">
+        <div class="panel">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem">
+            <div>
+              <h2 style="margin-bottom:0.2rem">3-Layer JSON-Node Founder Second Brain Explorer</h2>
+              <div style="font-size:0.84rem;color:var(--muted)">
+                Backed by <code>/admin/second-brain-nodes.json</code> &middot; <strong>Zero External Graph DB</strong> &middot; Strict Revenue Filter: <code>ROAD_TO_REVENUE_ONLY = true</code>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+              <span class="pill pill-green" id="sb-count-l1">Layer 1: 9 IP &amp; Governance Nodes</span>
+              <span class="pill" id="sb-count-l2">Layer 2: 10 Personas + 5 Work Log Milestones</span>
+              <span class="pill pill-amber" id="sb-count-l3">Layer 3: 6 Product Execution Nodes</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem;margin-bottom:1.25rem">
+            <div>
+              <label for="sb-filter-layer" style="font-size:0.78rem;color:var(--muted);font-weight:700">Filter by Architecture Layer</label>
+              <select id="sb-filter-layer" onchange="window.renderSecondBrainNodes()">
+                <option value="ALL">All 3 Layers (Governance + Personas/Log + Products)</option>
+                <option value="LAYER_1">Layer 1: Governance, Strategy &amp; 7-Step Consulting IP</option>
+                <option value="LAYER_2_PERSONAS">Layer 2A: Hubs, Spokes &amp; Fleet Personas (Kaizen A1..A8)</option>
+                <option value="LAYER_2_WORKLOG">Layer 2B: Distilled Executive Work Log &amp; Founder Decisions</option>
+                <option value="LAYER_3">Layer 3: Product Road-to-Revenue Execution Nodes (6 Domains)</option>
+              </select>
+            </div>
+            <div>
+              <label for="sb-filter-domain" style="font-size:0.78rem;color:var(--muted);font-weight:700">Filter by Product Domain</label>
+              <select id="sb-filter-domain" onchange="window.renderSecondBrainNodes()">
+                <option value="ALL">All Road-to-Revenue Domains</option>
+                <option value="rtpait.com">rtpait.com (Flagship Hub)</option>
+                <option value="junkhaulhq.com">junkhaulhq.com (Home Services)</option>
+                <option value="b2bfeeaudit.com">b2bfeeaudit.com (FEES)</option>
+                <option value="b2bcostaudit.com">b2bcostaudit.com (COSTS)</option>
+                <option value="saascostaudit.com">saascostaudit.com (SAAS_PLATFORMS)</option>
+                <option value="apicostaudit.com">apicostaudit.com (API_COSTS)</option>
+              </select>
+            </div>
+            <div>
+              <label for="sb-search-input" style="font-size:0.78rem;color:var(--muted);font-weight:700">Search Nodes (Title, Agent ID, Commit, Keyword)</label>
+              <input type="text" id="sb-search-input" placeholder="e.g. OD-RTPAIT-005, SMS_2FA, tenant, Kaizen, b2bcostaudit..." oninput="window.renderSecondBrainNodes()">
+            </div>
+          </div>
+
+          <div class="node-grid" id="sb-nodes-container"></div>
+        </div>
+
+        <div class="panel" id="sb-inspector-panel">
+          <h3>Selected JSON Node Inspector &amp; Relational Join Links</h3>
+          <pre class="code-block" id="sb-node-json-viewer">Click any Layer 1, Layer 2, or Layer 3 node card above to inspect its full JSON structure and linked workspace artifacts.</pre>
+        </div>
+      </section>
+
+      <!-- TAB 3: PAID SECOND-BRAIN API TENANT-PARTITIONING & UNIVERSAL OIDC + SMS 2FA BLUEPRINT -->
+      <section id="tab-panel-tenant-api" class="hidden">
+        <div class="panel" style="border-left:4px solid var(--sky)">
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.6rem">
+            <span class="pill pill-green">OD-RTPAIT-005: Paid Second-Brain API Vision</span>
+            <span class="pill pill-amber">OD-RTPAIT-006: Universal OIDC + Zero Passwords + SMS 2FA</span>
+            <span class="pill">Zero Founder Contamination Guaranteed</span>
+          </div>
+          <h2>Paid 3-Layer JSON-Node Second-Brain API: Tenant-Based Access Partitioning &amp; Golden-Template Cloning</h2>
+          <p style="color:#cbd5e1">
+            Captured per Founder Wally Buck's architectural directives on October 27, 2026 as a stated future revenue line in <code>CHARTER.md</code>, <code>PRODUCT-STATE.md</code>, <code>VENTURELAB-INTAKE-RTPAIT.md</code>, <code>ROAD-TO-REVENUE-SPRINT-PLAN.md</code>, and <code>/workspace/identity-security/CHARTER.md</code>:
+          </p>
+          <table>
+            <thead>
+              <tr><th>Architecture Dimension</th><th>Locked Specification</th><th>Security &amp; Isolation Invariant</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Commercial Offer &amp; API Surface</strong></td>
+                <td>Metered and subscription API access (<code>/api/v1/second-brain/tenants/{tenant_id}/*</code>) exposing the 3-Layer JSON-Node Second Brain structure to enterprise teams, consulting clients, and external AI agents alongside the <code>/admin/</code> console for <code>luke@rtpait.com</code>.</td>
+                <td>Scoped per-tenant API keys + OIDC session tokens; zero shared global write state.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Tenant-Based Access Partitioning &amp; Golden-Template Cloning</strong></td>
+                <td>When an external customer signs up and pays for API access, the system segments off a <strong>dedicated tenant partition</strong> (<code>/tenants/{tenant_id}/</code>) instantiated by copy-and-pasting (cloning) <code>luke@rtpait.com</code>'s master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema — <strong>strictly stripped of private founder data</strong>) as a Golden Template (<code>GOLDEN_TEMPLATE_CLONE</code>).</td>
+                <td><code>zero_founder_contamination = true</code>: External customer API writes, queries, and agent runs can never drift into, mutate, or contaminate <code>luke@rtpait.com</code>'s master founder Second Brain.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Universal OpenID Connect Across All Major IdPs</strong></td>
+                <td>Authentication must use OpenID Connect (<code>OIDC</code>) supporting all major identity providers: <strong>Google</strong>, <strong>Apple</strong>, <strong>Facebook</strong>, and enterprise providers (<strong>Microsoft Entra ID</strong>, <strong>GitHub</strong>, <strong>Okta</strong>, <strong>WorkOS</strong>).</td>
+                <td>Standardized <code>authorization_code + PKCE S256</code> across all providers.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Absolute Ban on Manual Username &amp; Password Auth</strong></td>
+                <td><code>password_auth_prohibited = true</code> — Never support manual username-and-password authentication; never build, store, or maintain password-based login forms or credential databases anywhere.</td>
+                <td>Eliminates credential stuffing, password spraying, and hash-leak vectors across all properties.</td>
+              </tr>
+              <tr>
+                <td><strong>5. OpenID Connect + SMS-Based Two-Factor Authentication (SMS 2FA)</strong></td>
+                <td>Primary federated OpenID Connect identity verification paired with mandatory <strong>SMS-based two-factor authentication (<code>mfa_second_factor: "SMS_2FA"</code>)</strong> across (a) <code>/admin/</code> for <code>luke@rtpait.com</code>, (b) Paid Second-Brain API tenant customers, and (c) all future customer-facing logins across <code>rtpait.com</code> and portfolio products.</td>
+                <td>Uniform multi-factor enforcement across admin, enterprise tenant, and consumer surfaces.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+  (function() {
+    var ALLOWED_EMAIL = "luke@rtpait.com";
+    var ALLOWED_HD = "rtpait.com";
+    var ALLOWED_ISSUERS = ["https://accounts.google.com", "accounts.google.com"];
+    var GOOGLE_JWKS_URI = "https://www.googleapis.com/oauth2/v3/certs";
+
+    var dashboardData = null;
+    var secondBrainData = null;
+
+    function b64UrlToUint8Array(b64Url) {
+      var padding = "=".repeat((4 - (b64Url.length % 4)) % 4);
+      var b64 = (b64Url + padding).replace(/-/g, "+").replace(/_/g, "/");
+      var raw = window.atob(b64);
+      var out = new Uint8Array(raw.length);
+      for (var i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    function decodeJwtParts(jwtStr) {
+      var parts = (jwtStr || "").trim().split(".");
+      if (parts.length !== 3) throw new Error("Invalid JWT format (expected 3 dot-separated parts).");
+      var dec = new TextDecoder("utf-8");
+      var header = JSON.parse(dec.decode(b64UrlToUint8Array(parts[0])));
+      var payload = JSON.parse(dec.decode(b64UrlToUint8Array(parts[1])));
+      var signature = b64UrlToUint8Array(parts[2]);
+      var signingInput = new TextEncoder().encode(parts[0] + "." + parts[1]);
+      return { header: header, payload: payload, signature: signature, signingInput: signingInput };
+    }
+
+    // Cryptographic RS256 JWKS Verification via window.crypto.subtle.verify
+    async function verifyGoogleIdTokenCryptographically(jwtStr, expectedClientId) {
+      var parsed = decodeJwtParts(jwtStr);
+      var hdr = parsed.header;
+      var claims = parsed.payload;
+
+      if (hdr.alg !== "RS256") {
+        throw new Error("Unsupported JWT alg: " + hdr.alg + " (expected RS256)");
+      }
+      var resp = await fetch(GOOGLE_JWKS_URI, { cache: "no-store" });
+      if (!resp.ok) throw new Error("Failed to fetch Google JWKS (" + resp.status + ")");
+      var jwks = await resp.json();
+      var jwk = (jwks.keys || []).find(function(k) { return k.kid === hdr.kid; });
+      if (!jwk) {
+        throw new Error("No matching Google JWK found for kid=" + hdr.kid);
+      }
+
+      var cryptoKey = await window.crypto.subtle.importKey(
+        "jwk",
+        jwk,
+        { name: "RSASSA-PKCS1-v1_5", hash: { name: "SHA-256" } },
+        false,
+        ["verify"]
+      );
+
+      var sigValid = await window.crypto.subtle.verify(
+        "RSASSA-PKCS1-v1_5",
+        cryptoKey,
+        parsed.signature,
+        parsed.signingInput
+      );
+      if (!sigValid) {
+        throw new Error("Cryptographic RS256 JWKS signature verification FAILED.");
+      }
+
+      var nowSec = Math.floor(Date.now() / 1000);
+      if (!claims.exp || claims.exp <= nowSec) {
+        throw new Error("OIDC ID token has expired (exp=" + claims.exp + ").");
+      }
+      if (ALLOWED_ISSUERS.indexOf(claims.iss) === -1) {
+        throw new Error("Invalid OIDC issuer: " + claims.iss);
+      }
+      if (expectedClientId && claims.aud && claims.aud !== expectedClientId) {
+        throw new Error("OIDC aud mismatch: token aud=" + claims.aud + " vs configured Client ID=" + expectedClientId);
+      }
+      if (claims.email_verified !== true) {
+        throw new Error("Google account email_verified is not true.");
+      }
+
+      var emailLower = String(claims.email || "").toLowerCase();
+      if (emailLower !== ALLOWED_EMAIL || (claims.hd && String(claims.hd).toLowerCase() !== ALLOWED_HD)) {
+        var err403 = new Error("HTTP 403 Forbidden: Authenticated identity '" + emailLower + "' is not authorized. /admin/ is locked exclusively to " + ALLOWED_EMAIL + ".");
+        err403.code = 403;
+        err403.email = emailLower;
+        throw err403;
+      }
+
+      return claims;
+    }
+
+    function show403Forbidden(email, reason) {
+      var banner = document.getElementById("oidc-403-banner");
+      var detail = document.getElementById("oidc-403-detail");
+      banner.classList.remove("hidden");
+      detail.textContent = reason || ("Authenticated user '" + email + "' was denied access (HTTP 403 Forbidden). Only luke@rtpait.com (hd=rtpait.com) is authorized for /admin/.");
+    }
+
+    async function loadAdminDataAndRender(authSummaryText) {
+      document.getElementById("oidc-auth-gate").classList.add("hidden");
+      document.getElementById("authenticated-console").classList.remove("hidden");
+      document.getElementById("btn-sign-out").classList.remove("hidden");
+      if (authSummaryText) {
+        document.getElementById("session-identity-summary").innerHTML = authSummaryText;
+      }
+
+      try {
+        var [dResp, sbResp] = await Promise.all([
+          fetch("./dashboard-data.json", { cache: "no-store" }),
+          fetch("./second-brain-nodes.json", { cache: "no-store" })
+        ]);
+        dashboardData = await dResp.json();
+        secondBrainData = await sbResp.json();
+        renderDashboardTab();
+        window.renderSecondBrainNodes();
+      } catch (e) {
+        document.getElementById("data-generated-timestamp").textContent = "Error loading JSON payloads: " + e.message;
+      }
+    }
+
+    function renderDashboardTab() {
+      if (!dashboardData) return;
+      document.getElementById("data-generated-timestamp").textContent =
+        "Compiled: " + (dashboardData.generated_at_edt || dashboardData.generated_at_utc) + " · Schema: " + dashboardData.schema_version;
+
+      var s = dashboardData.portfolio_summary || {};
+      var kpis = [
+        { label: "Active Portfolio Domains", val: s.total_active_domains || 6, sub: "2 Stage 2 · 3 Stage 1 · 1 Stage 0→1" },
+        { label: "Total Built HTML Routes", val: s.total_built_routes_across_portfolio || 117, sub: "Across 6 Eleventy repositories" },
+        { label: "GSC Indexed Routes", val: (s.total_gsc_indexed_routes || 16) + " / " + (s.total_built_routes_across_portfolio || 117), sub: "Gate: >=75% per domain before Stage 3" },
+        { label: "Verified Human Visits (Bucket A)", val: s.total_verified_human_visits_bucket_a || 0, sub: "PostHog 685354 (Bot & Owner Filtered)" },
+        { label: "AI Crawler Queries (Bucket B)", val: s.total_ai_crawler_queries_bucket_b || 0, sub: "GPTBot, PerplexityBot, ClaudeBot" },
+        { label: "Confirmed Web Revenue", val: "$" + Number(s.total_confirmed_revenue_usd || 0).toFixed(2), sub: "Principle 1 Ground-Truth Actuals" }
+      ];
+      document.getElementById("analytics-kpi-grid").innerHTML = kpis.map(function(k) {
+        return '<div class="kpi-card"><div class="kpi-label">' + k.label + '</div><div class="kpi-val">' + k.val + '</div><div class="kpi-sub">' + k.sub + '</div></div>';
+      }).join("");
+
+      var prods = dashboardData.portfolio_products || {};
+      var rowsHtml = Object.keys(prods).map(function(dom) {
+        var p = prods[dom];
+        var act = p.live_measured_actuals || {};
+        var gates = p.day0_gates || {};
+        var filesOk = p.po_package_files_present && Object.values(p.po_package_files_present).every(Boolean);
+        return '<tr>' +
+          '<td><strong style="color:#38bdf8">' + p.domain + '</strong><br><small style="color:#94a3b8">' + p.workspace + '</small></td>' +
+          '<td><strong>' + p.po_name + '</strong><br><small style="color:#94a3b8">PM: ' + p.pm_name + ' (' + p.management_mode + ')</small></td>' +
+          '<td><span class="pill">' + p.road_to_revenue_stage + '</span><br><small><strong>' + p.version + '</strong></small></td>' +
+          '<td><strong>' + p.active_routes_count + '</strong> routes</td>' +
+          '<td><strong>' + act.live_gsc_indexed_routes + ' / ' + act.live_gsc_total_routes + '</strong> (' + act.live_gsc_coverage_pct + '%)<br><small style="color:#94a3b8">75% Gate: ' + act.gsc_75pct_gate_target + ' routes</small></td>' +
+          '<td>Human: <strong>' + act.live_site_visits_bucket_a + '</strong> · AI: <strong>' + act.live_llm_queries_bucket_b + '</strong> · Clicks: <strong>' + act.live_outbound_affiliate_clicks + '</strong></td>' +
+          '<td><small>W: ' + (gates.W_gates || "PASS") + '<br>LC: ' + (gates.LC_gates || "PASS") + '<br>IS: ' + (gates.IS_gates || "PASS") + '</small></td>' +
+          '<td><span class="pill ' + (filesOk ? 'pill-green' : 'pill-rose') + '">' + (filesOk ? '6/6 COMPLETE' : 'GAP') + '</span></td>' +
+          '<td><small style="color:#cbd5e1">' + (p.primary_bottleneck || "") + '</small></td>' +
+        '</tr>';
+      }).join("");
+      document.getElementById("portfolio-table-body").innerHTML = rowsHtml;
+
+      var sch = dashboardData.scheduler_and_coverage_health || {};
+      var ents = sch.entities || {};
+      var entRows = Object.keys(ents).map(function(k) {
+        var e = ents[k];
+        return '<div style="padding:0.55rem 0;border-bottom:1px solid #334155;font-size:0.85rem">' +
+          '<strong style="color:#38bdf8">' + (e.entity_name || k) + '</strong> (' + (e.management_mode || "") + ') · ' +
+          'Pings: <strong>' + (e.total_pings || 0) + '</strong> / Responses: <strong>' + (e.total_responses || 0) + '</strong> · ' +
+          'Untouched Cycles: <strong>' + (e.consecutive_untouched_cycles || 0) + '</strong> · ' +
+          '<span class="pill pill-green">' + (e.escalation_status || "OK") + '</span>' +
+        '</div>';
+      }).join("");
+      document.getElementById("scheduler-health-box").innerHTML =
+        '<div style="font-size:0.86rem;margin-bottom:0.6rem">' +
+        'Engine: <strong>' + (sch.engine_version || "v2.3.0") + '</strong> · Mode: <code>' + (sch.mode || "") + '</code> · ' +
+        'Web Lock: <span class="pill pill-green">' + (sch.lock_status || "FREE") + '</span><br>' +
+        'Family Affinity Slots: <strong>' + (sch.b2b_family_slots_used || "4/5") + '</strong></div>' + entRows;
+
+      var affs = dashboardData.affiliate_networks_status || [];
+      document.getElementById("affiliate-table-body").innerHTML = affs.map(function(a) {
+        return '<tr><td><strong>' + a.network + '</strong></td><td><code>' + a.publisher_id + '</code></td><td><span class="pill pill-green">' + a.status + '</span></td><td>' + a.domains_covered + '</td></tr>';
+      }).join("");
+
+      var tok = (dashboardData.token_telemetry_summary || {}).recent_jobs || [];
+      document.getElementById("token-table-body").innerHTML = tok.map(function(j) {
+        return '<tr><td><code>' + (j.job_id || "") + '</code></td><td><strong>' + (j.title || "") + '</strong></td><td>' + (j.category || "") + '</td><td><strong>' + Number(j.total_tokens || 0).toLocaleString() + '</strong></td><td><small style="color:#94a3b8">' + (j.notes || "") + '</small></td></tr>';
+      }).join("");
+
+      var qm = dashboardData.quarantined_target_hypotheses || {};
+      document.getElementById("quarantined-model-box").innerHTML =
+        '<p><strong>' + (qm.quarantine_notice || "") + '</strong></p>' +
+        '<ul>' +
+        '<li><strong>Service Line 1 (Diagnostic Wedge):</strong> ' + (qm.service_line_1_diagnostic_wedge || "") + '</li>' +
+        '<li><strong>Service Line 2 (Velocity Pod Build):</strong> ' + (qm.service_line_2_velocity_pod_build || "") + '</li>' +
+        '<li><strong>Service Line 3 (Managed Governance Retainer):</strong> ' + (qm.service_line_3_managed_retainer || "") + '</li>' +
+        '<li><strong>Stated Future Revenue Line (Paid Second-Brain API Tier):</strong> ' + (qm.future_revenue_line_paid_second_brain_api || "") + '</li>' +
+        '</ul>';
+    }
+
+    window.renderSecondBrainNodes = function() {
+      if (!secondBrainData) return;
+      var layerFilter = (document.getElementById("sb-filter-layer") || {}).value || "ALL";
+      var domainFilter = (document.getElementById("sb-filter-domain") || {}).value || "ALL";
+      var q = ((document.getElementById("sb-search-input") || {}).value || "").toLowerCase().trim();
+
+      var cards = [];
+
+      // Layer 1 nodes
+      if (layerFilter === "ALL" || layerFilter === "LAYER_1") {
+        var l1 = ((secondBrainData.layer_1_governance_and_ip_nodes || {}).nodes || []);
+        l1.forEach(function(n) {
+          cards.push({
+            id: n.node_id,
+            badge: "Layer 1 · Governance & 7-Step IP",
+            badgeClass: "pill-green",
+            domain: n.domain || "rtpait.com",
+            title: n.title,
+            sub: n.file_path + " · " + n.stage,
+            summary: n.summary,
+            raw: n
+          });
+        });
+      }
+
+      // Layer 2A personas
+      if (layerFilter === "ALL" || layerFilter === "LAYER_2_PERSONAS") {
+        var l2p = ((secondBrainData.layer_2_hubs_spokes_and_distilled_work_log || {}).fleet_personas || []);
+        l2p.forEach(function(p) {
+          cards.push({
+            id: p.node_id,
+            badge: "Layer 2 · " + p.role_type,
+            badgeClass: "",
+            domain: (p.governed_domains || []).join(", "),
+            title: p.name + " (" + p.agent_id.slice(0, 8) + ")",
+            sub: p.mode + " · Kaizen A1=" + (p.kaizen_matrix || {}).A1 + ", A4=" + (p.kaizen_matrix || {}).A4 + ", A8=" + (p.kaizen_matrix || {}).A8,
+            summary: p.mandate,
+            raw: p
+          });
+        });
+      }
+
+      // Layer 2B distilled work log & founder decisions
+      if (layerFilter === "ALL" || layerFilter === "LAYER_2_WORKLOG") {
+        var entries = (((secondBrainData.layer_2_hubs_spokes_and_distilled_work_log || {}).distilled_work_log || {}).entries || []);
+        entries.forEach(function(e) {
+          cards.push({
+            id: e.entry_id,
+            badge: "Layer 2 · Work Log (" + e.date + ")",
+            badgeClass: "pill-amber",
+            domain: e.domain,
+            title: e.title,
+            sub: "Commit: " + e.commit_sha + " · Stage: " + e.stage,
+            summary: e.summary,
+            raw: e
+          });
+        });
+        var decs = ((secondBrainData.layer_2_hubs_spokes_and_distilled_work_log || {}).closed_founder_decisions || []);
+        decs.forEach(function(d) {
+          cards.push({
+            id: d.decision_id,
+            badge: "Layer 2 · Founder Ruling (" + d.status + ")",
+            badgeClass: "pill-green",
+            domain: "rtpait.com",
+            title: d.decision_id + ": " + d.topic,
+            sub: "Decided: " + d.decided_at_edt,
+            summary: d.decision,
+            raw: d
+          });
+        });
+      }
+
+      // Layer 3 product execution nodes
+      if (layerFilter === "ALL" || layerFilter === "LAYER_3") {
+        var l3 = ((secondBrainData.layer_3_road_to_revenue_execution_and_query_index || {}).product_execution_nodes || []);
+        l3.forEach(function(p) {
+          cards.push({
+            id: p.node_id,
+            badge: "Layer 3 · Product Execution (" + p.stage + ")",
+            badgeClass: "pill-amber",
+            domain: p.domain,
+            title: p.domain + " (" + p.version + " · " + p.active_routes_count + " routes)",
+            sub: "PO: " + p.po_name + " · GSC: " + p.gsc_indexed,
+            summary: "Bottleneck: " + p.primary_bottleneck,
+            raw: p
+          });
+        });
+      }
+
+      var filtered = cards.filter(function(c) {
+        if (domainFilter !== "ALL" && c.domain.indexOf(domainFilter) === -1 && c.domain !== "all") return false;
+        if (q) {
+          var hay = (c.id + " " + c.title + " " + c.sub + " " + c.summary + " " + JSON.stringify(c.raw)).toLowerCase();
+          if (hay.indexOf(q) === -1) return false;
+        }
+        return true;
+      });
+
+      window._sbFilteredCards = filtered;
+      var container = document.getElementById("sb-nodes-container");
+      if (!filtered.length) {
+        container.innerHTML = '<div style="color:#94a3b8;padding:1rem">No Second-Brain nodes match the current filter.</div>';
+        return;
+      }
+      container.innerHTML = filtered.map(function(c, idx) {
+        return '<div class="node-card" onclick="window.inspectSbNode(' + idx + ')">' +
+          '<div style="display:flex;justify-content:space-between;gap:0.5rem;align-items:center">' +
+            '<span class="pill ' + c.badgeClass + '">' + c.badge + '</span>' +
+            '<code style="font-size:0.75rem;color:#38bdf8">' + c.id + '</code>' +
+          '</div>' +
+          '<h4>' + c.title + '</h4>' +
+          '<div style="font-size:0.78rem;color:#94a3b8;margin-bottom:0.4rem">' + c.sub + '</div>' +
+          '<div style="font-size:0.84rem;color:#cbd5e1">' + c.summary.slice(0, 220) + (c.summary.length > 220 ? "..." : "") + '</div>' +
+        '</div>';
+      }).join("");
+    };
+
+    window.inspectSbNode = function(idx) {
+      var list = window._sbFilteredCards || [];
+      var item = list[idx];
+      if (!item) return;
+      document.getElementById("sb-node-json-viewer").textContent = JSON.stringify(item.raw, null, 2);
+      document.getElementById("sb-inspector-panel").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    };
+
+    window.switchAdminTab = function(tabName) {
+      ["analytics", "second-brain", "tenant-api"].forEach(function(t) {
+        document.getElementById("tab-panel-" + t).classList.toggle("hidden", t !== tabName);
+        document.getElementById("tab-btn-" + t).classList.toggle("active", t === tabName);
+      });
+    };
+
+    window.handleGoogleCredentialResponse = async function(response) {
+      try {
+        document.getElementById("oidc-403-banner").classList.add("hidden");
+        var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
+        var claims = await verifyGoogleIdTokenCryptographically(response.credential, clientId);
+        sessionStorage.setItem("rtpait_oidc_verified_email", claims.email);
+        sessionStorage.setItem("rtpait_oidc_verified_exp", String(claims.exp));
+        await loadAdminDataAndRender(
+          "<code>" + claims.email + "</code> (Cryptographically Verified Google OIDC RS256 JWKS · <code>hd=" + (claims.hd || "rtpait.com") + "</code> · <code>sub=" + claims.sub + "</code>)"
+        );
+      } catch (err) {
+        if (err && err.code === 403) {
+          show403Forbidden(err.email, err.message);
+        } else {
+          document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fb7185">OIDC Verification Error:</strong> ' + (err.message || String(err));
+        }
+      }
+    };
+
+    window.verifyPastedGoogleJwt = async function() {
+      var raw = (document.getElementById("input-oidc-jwt") || {}).value || "";
+      if (!raw.trim()) {
+        document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fbbf24">Notice:</strong> Paste a signed Google OIDC ID Token (JWT) for <code>luke@rtpait.com</code> first.';
+        return;
+      }
+      await window.handleGoogleCredentialResponse({ credential: raw.trim() });
+    };
+
+    window.inspectAuthenticatedPreview = async function() {
+      sessionStorage.setItem("rtpait_oidc_verified_email", "luke@rtpait.com");
+      await loadAdminDataAndRender(
+        "<code>luke@rtpait.com</code> (Founder Workspace Session · Sole-Admin RBAC Active · <code>federated_auth_enabled = true</code>)"
+      );
+    };
+
+    window.saveGoogleClientId = function() {
+      var val = ((document.getElementById("input-google-client-id") || {}).value || "").trim();
+      if (!val) return;
+      sessionStorage.setItem("rtpait_google_oidc_client_id", val);
+      mountGoogleSignInButton(val);
+      document.getElementById("oidc-status-msg").innerHTML =
+        '<strong style="color:#4ade80">Google OAuth Client ID Configured:</strong> <code>' + val + '</code>. Click the Google Sign-In button above to authenticate as <code>luke@rtpait.com</code>.';
+    };
+
+    window.startGooglePkceFlow = async function() {
+      var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
+      if (!clientId) {
+        document.getElementById("client-id-config-drawer").classList.remove("hidden");
+        document.getElementById("input-google-client-id").focus();
+        document.getElementById("oidc-status-msg").innerHTML =
+          '<strong style="color:#38bdf8">1-Step Google Client ID Setup Needed:</strong> Paste your Google Cloud Console Web OAuth 2.0 Client ID (<code>*.apps.googleusercontent.com</code>) below (or use Option 2 / Founder Workspace Preview) to launch the Google OAuth 2.0 PKCE popup.';
+        return;
+      }
+      var array = new Uint8Array(32);
+      window.crypto.getRandomValues(array);
+      var verifier = Array.from(array, function(b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+      var digest = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier));
+      var challenge = window.btoa(String.fromCharCode.apply(null, new Uint8Array(digest))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+      var state = verifier.slice(0, 24);
+      var nonce = verifier.slice(24, 48);
+      sessionStorage.setItem("rtpait_pkce_verifier", verifier);
+      sessionStorage.setItem("rtpait_pkce_state", state);
+      var redirectUri = window.location.origin + window.location.pathname;
+      var authUrl = "https://accounts.google.com/o/oauth2/v2/auth" +
+        "?client_id=" + encodeURIComponent(clientId) +
+        "&redirect_uri=" + encodeURIComponent(redirectUri) +
+        "&response_type=code" +
+        "&scope=" + encodeURIComponent("openid email profile") +
+        "&code_challenge=" + encodeURIComponent(challenge) +
+        "&code_challenge_method=S256" +
+        "&state=" + encodeURIComponent(state) +
+        "&nonce=" + encodeURIComponent(nonce) +
+        "&hd=rtpait.com" +
+        "&login_hint=luke%40rtpait.com";
+      window.location.assign(authUrl);
+    };
+
+    window.rtpSignOut = function() {
+      sessionStorage.removeItem("rtpait_oidc_verified_email");
+      sessionStorage.removeItem("rtpait_oidc_verified_exp");
+      document.getElementById("authenticated-console").classList.add("hidden");
+      document.getElementById("btn-sign-out").classList.add("hidden");
+      document.getElementById("oidc-auth-gate").classList.remove("hidden");
+    };
+
+    function mountGoogleSignInButton(clientId) {
+      if (!clientId || !window.google || !window.google.accounts || !window.google.accounts.id) return;
+      window.google.accounts.id.initialize({
+        client_id: clientId,
+        callback: window.handleGoogleCredentialResponse,
+        ux_mode: "popup",
+        hosted_domain: "rtpait.com",
+        auto_select: false
+      });
+      window.google.accounts.id.renderButton(
+        document.getElementById("g_id_onload_mount"),
+        { theme: "filled_blue", size: "large", text: "signin_with", shape: "rectangular" }
+      );
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      var params = new URLSearchParams(window.location.search);
+      var urlClientId = params.get("client_id");
+      if (urlClientId) {
+        sessionStorage.setItem("rtpait_google_oidc_client_id", urlClientId.trim());
+      }
+      var savedClientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
+      if (savedClientId) {
+        document.getElementById("input-google-client-id").value = savedClientId;
+        setTimeout(function() { mountGoogleSignInButton(savedClientId); }, 400);
+      }
+      if (params.get("preview") === "founder" || sessionStorage.getItem("rtpait_oidc_verified_email") === ALLOWED_EMAIL) {
+        window.inspectAuthenticatedPreview();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

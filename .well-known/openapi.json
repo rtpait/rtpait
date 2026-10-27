@@ -1,0 +1,30 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "RTP AIT LLC \u2014 7-Step Agentic Org Diagnostic & IP Portfolio API",
+    "version": "1.5.0",
+    "description": "Deterministic B2B AI Readiness Diagnostic, Forward-Deployed Harness Benchmarks, and Future Tenant-Partitioned 3-Layer Second-Brain API specification.",
+    "contact": {
+      "name": "Research Triangle Park AI Transformation LLC",
+      "email": "luke@rtpait.com",
+      "url": "https://rtpait.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://rtpait.com"
+    }
+  ],
+  "paths": {
+    "/datasets/b2b-ai-readiness-benchmarks-2026.json": {
+      "get": {
+        "summary": "Retrieve 2026 7-Step Agentic Org Maturity & PE Production Benchmarks (CC-BY-4.0)",
+        "responses": {
+          "200": {
+            "description": "JSON Dataset"
+          }
+        }
+      }
+    }
+  }
+}

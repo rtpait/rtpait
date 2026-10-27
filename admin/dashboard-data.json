@@ -1,0 +1,662 @@
+{
+  "schema_version": "7.1.0-rtpait-unified-dashboard",
+  "generated_at_utc": "2026-10-27T13:52:55Z",
+  "generated_at_edt": "2026-10-27T09:52:55-0400",
+  "canonical_admin_surface": "https://rtpait.com/admin/",
+  "security_and_auth_posture": {
+    "target_auth_architecture": "Universal OpenID Connect (Google, Apple, Facebook, Enterprise IdPs) + PKCE S256 + Web Crypto RS256 JWKS Verification + SMS 2FA",
+    "legacy_passphrase_gate_status": "DEPRECATED_AND_RETIRED",
+    "password_auth_prohibited": true,
+    "mfa_second_factor": "SMS_2FA",
+    "sole_admin_email": "luke@rtpait.com",
+    "sole_admin_issuer": "https://accounts.google.com",
+    "allowed_hosted_domain": "rtpait.com",
+    "federated_auth_enabled": true,
+    "founder_authorization_status": "FOUNDER_EXPLICIT_AUTHORIZATION_GRANTED (OD-RTPAIT-007, 2026-10-27)",
+    "paid_second_brain_api_isolation": "TENANT_PARTITIONED_GOLDEN_TEMPLATE_CLONE (zero_founder_contamination=true, OD-RTPAIT-005)"
+  },
+  "portfolio_summary": {
+    "total_active_domains": 6,
+    "stage_2_domains": [
+      "junkhaulhq.com",
+      "b2bfeeaudit.com"
+    ],
+    "stage_1_domains": [
+      "rtpait.com",
+      "b2bcostaudit.com",
+      "saascostaudit.com"
+    ],
+    "stage_0_to_1_domains": [
+      "apicostaudit.com"
+    ],
+    "total_built_routes_across_portfolio": 117,
+    "total_gsc_indexed_routes": 16,
+    "total_verified_human_visits_bucket_a": 2,
+    "total_ai_crawler_queries_bucket_b": 0,
+    "total_confirmed_revenue_usd": 0.0
+  },
+  "affiliate_networks_status": [
+    {
+      "network": "CJ Affiliate",
+      "publisher_id": "8108003",
+      "status": "ACTIVE",
+      "domains_covered": "All 6 properties"
+    },
+    {
+      "network": "AWIN",
+      "publisher_id": "3133124 (Bark US MID 58887)",
+      "status": "ACTIVE_TRACKED_LINK_LIVE",
+      "domains_covered": "junkhaulhq.com & B2B family"
+    },
+    {
+      "network": "Rakuten Advertising",
+      "publisher_id": "4767884",
+      "status": "ACTIVE",
+      "domains_covered": "All 6 properties"
+    },
+    {
+      "network": "Impact.com",
+      "publisher_id": "8038782",
+      "status": "ACTIVE",
+      "domains_covered": "rtpait.com, b2bfeeaudit.com, saascostaudit.com, apicostaudit.com"
+    },
+    {
+      "network": "Marketcall",
+      "publisher_id": "RTPAIT LLC",
+      "status": "ACTIVE_PAY_PER_CALL",
+      "domains_covered": "junkhaulhq.com"
+    },
+    {
+      "network": "PartnerStack",
+      "publisher_id": "luke@rtpait.com",
+      "status": "STAGE_1_UTM_ACTIVE_STAGE_2_QUEUED",
+      "domains_covered": "rtpait.com, b2bfeeaudit.com, saascostaudit.com, apicostaudit.com"
+    }
+  ],
+  "scheduler_and_coverage_health": {
+    "engine_version": "v2.3.0",
+    "mode": "CONTINUOUS_NEVER_RESTING_ROUND_ROBIN",
+    "cycle_number": 2,
+    "lock_status": "FREE",
+    "b2b_family_slots_used": "4 / 5 active slots (b2bfeeaudit.com, b2bcostaudit.com, saascostaudit.com, apicostaudit.com; Slot 5 candidate: llmcostaudit.com)",
+    "entities": {
+      "junk-hall-po": {
+        "entity_id": "junk-hall-po",
+        "agent_id": "b1459d35-268c-4838-a68f-ecdd5954d2cf",
+        "entity_name": "Junk Hall PO",
+        "management_mode": "SINGLE_PRODUCT_PO",
+        "sister_family_group": "home-services-family",
+        "governed_products": [
+          "junkhaulhq.com"
+        ],
+        "downstream_spoke_pms": [
+          {
+            "spoke": "web-development",
+            "pm_name": "Project Manager",
+            "pm_agent_id": "167b2bea-99c8-4e89-99e3-182227974962"
+          },
+          {
+            "spoke": "legal-compliance",
+            "pm_name": "Legal & Compliance PM",
+            "pm_agent_id": "b5853ae2-8ff6-47df-a19a-f3621b64a484"
+          },
+          {
+            "spoke": "identity-security",
+            "pm_name": "Identity & Security PM",
+            "pm_agent_id": "ef20b463-034b-4ac8-93b8-5b6d6a3141bb"
+          }
+        ],
+        "last_ping_at_edt": "2026-10-27T08:24:37-04:00",
+        "last_response_at_edt": "2026-10-27T08:24:37-04:00",
+        "total_pings": 2,
+        "total_responses": 2,
+        "last_cycle_touched": 1,
+        "consecutive_untouched_cycles": 0,
+        "escalation_status": "OK",
+        "founder_escalation_flag": false
+      },
+      "rtp-ait-po": {
+        "entity_id": "rtp-ait-po",
+        "agent_id": "dcb1b787-dece-43ac-a64f-bfa2bca81429",
+        "entity_name": "RTP AIT PO",
+        "management_mode": "SINGLE_PRODUCT_PO",
+        "sister_family_group": "flagship-consulting-hub",
+        "governed_products": [
+          "rtpait.com"
+        ],
+        "downstream_spoke_pms": [
+          {
+            "spoke": "web-development",
+            "pm_name": "Project Manager",
+            "pm_agent_id": "167b2bea-99c8-4e89-99e3-182227974962"
+          },
+          {
+            "spoke": "legal-compliance",
+            "pm_name": "Legal & Compliance PM",
+            "pm_agent_id": "b5853ae2-8ff6-47df-a19a-f3621b64a484"
+          },
+          {
+            "spoke": "identity-security",
+            "pm_name": "Identity & Security PM",
+            "pm_agent_id": "ef20b463-034b-4ac8-93b8-5b6d6a3141bb"
+          }
+        ],
+        "last_ping_at_edt": "2026-10-27T08:24:37-04:00",
+        "last_response_at_edt": "2026-10-27T08:24:37-04:00",
+        "total_pings": 2,
+        "total_responses": 2,
+        "last_cycle_touched": 1,
+        "consecutive_untouched_cycles": 0,
+        "escalation_status": "OK",
+        "founder_escalation_flag": false
+      },
+      "b2b-audit-family-pm": {
+        "entity_id": "b2b-audit-family-pm",
+        "agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
+        "entity_name": "B2B Audit Family PM",
+        "management_mode": "MULTI_PO_HUB_PM",
+        "sister_family_group": "b2b-audit-family",
+        "governed_products": [
+          "b2bfeeaudit.com",
+          "b2bcostaudit.com",
+          "saascostaudit.com",
+          "apicostaudit.com"
+        ],
+        "associated_family_pos": [
+          {
+            "entity_id": "b2b-fee-audit-po",
+            "po_name": "B2B Fee Audit PO",
+            "po_agent_id": "76f092a4-d874-4a66-ad28-c0146be1800a",
+            "domains": [
+              "b2bfeeaudit.com"
+            ],
+            "last_ping_at_edt": "2026-10-27T08:24:37-04:00",
+            "last_response_at_edt": "2026-10-27T08:24:37-04:00",
+            "consecutive_untouched_cycles": 0
+          },
+          {
+            "entity_id": "b2b-cost-audit-po",
+            "po_name": "B2B Cost Audit PO",
+            "po_agent_id": "2d4a6a26-94d7-4bed-9dd9-f96988b41fc5",
+            "domains": [
+              "b2bcostaudit.com"
+            ],
+            "last_ping_at_edt": "2026-10-27T08:24:37-04:00",
+            "last_response_at_edt": "2026-10-27T08:24:37-04:00",
+            "consecutive_untouched_cycles": 0
+          },
+          {
+            "entity_id": "saas-cost-audit-po",
+            "po_name": "SaaS Cost Audit PO",
+            "po_agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
+            "domains": [
+              "saascostaudit.com",
+              "apicostaudit.com"
+            ],
+            "last_ping_at_edt": "2026-10-27T08:24:37-04:00",
+            "last_response_at_edt": "2026-10-27T08:24:37-04:00",
+            "consecutive_untouched_cycles": 0
+          }
+        ],
+        "downstream_spoke_pms": [
+          {
+            "spoke": "web-development",
+            "pm_name": "Project Manager",
+            "pm_agent_id": "167b2bea-99c8-4e89-99e3-182227974962"
+          },
+          {
+            "spoke": "legal-compliance",
+            "pm_name": "Legal & Compliance PM",
+            "pm_agent_id": "b5853ae2-8ff6-47df-a19a-f3621b64a484"
+          },
+          {
+            "spoke": "identity-security",
+            "pm_name": "Identity & Security PM",
+            "pm_agent_id": "ef20b463-034b-4ac8-93b8-5b6d6a3141bb"
+          }
+        ],
+        "last_ping_at_edt": "2026-10-27T08:24:37-04:00",
+        "last_response_at_edt": "2026-10-27T08:24:37-04:00",
+        "total_pings": 2,
+        "total_responses": 2,
+        "last_cycle_touched": 1,
+        "consecutive_untouched_cycles": 0,
+        "escalation_status": "OK",
+        "founder_escalation_flag": false
+      }
+    }
+  },
+  "token_telemetry_summary": {
+    "weekly_summary": {
+      "total_jobs_tracked": 18,
+      "total_tokens_used": 23737336
+    },
+    "recent_jobs": [
+      {
+        "job_id": "job-24-token-usage-tracker",
+        "title": "Token Usage Telemetry Engine & CLI Tool Build",
+        "category": "Infrastructure & Telemetry",
+        "start_time": "2026-10-26 01:16:11 EDT",
+        "end_time": "2026-10-26 01:16:17 EDT",
+        "turn_count": 1,
+        "message_count": 2,
+        "subagent_runs": 0,
+        "prompt_context_tokens": 14921,
+        "tool_and_subagent_tokens": 97766,
+        "output_tokens": 35066,
+        "total_tokens": 147753,
+        "pct_of_weekly_used": 0.62,
+        "pct_of_weekly_limit": 0.124,
+        "keywords": "token, usage, tracker, budget, limit, telemetry, cli, token-usage",
+        "notes": "Persistent SQLite + JSON token ledger, tiktoken o200k_base tokenizer, job clustering, and CLI query interface.",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-23-trading-framework-5symbol-backtest",
+        "title": "5-Symbol Parallel Trading Framework Backtest (SPY, QQQ, BTC-USD, GME, TSLA)",
+        "category": "Markets & Quantitative Backtesting",
+        "start_time": "2026-10-26 01:12:50 EDT",
+        "end_time": "2026-10-26 01:15:06 EDT",
+        "turn_count": 1,
+        "message_count": 4,
+        "subagent_runs": 1,
+        "prompt_context_tokens": 15110,
+        "tool_and_subagent_tokens": 54965,
+        "output_tokens": 13140,
+        "total_tokens": 83215,
+        "pct_of_weekly_used": 0.35,
+        "pct_of_weekly_limit": 0.07,
+        "keywords": "backtest, trading, spy, qqq, btc, bitcoin, gme, gamestop, tsla, tesla, ohlcv, sma, expectancy, 5-symbol",
+        "notes": "10-year daily OHLCV yfinance backtest across SPY, QQQ, BTC-USD, GME, TSLA ($100k capital, 50d/20d SMA continuation longs, 200d SMA reversal shorts).",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-22-payroll-vs-eo-demand-and-posthog-comparison",
+        "title": "Payroll vs. E&O Search Volume Research & PostHog 685354 Traffic Comparison",
+        "category": "Research & Analytics",
+        "start_time": "2026-10-26 00:48:31 EDT",
+        "end_time": "2026-10-26 00:51:20 EDT",
+        "turn_count": 2,
+        "message_count": 8,
+        "subagent_runs": 0,
+        "prompt_context_tokens": 29820,
+        "tool_and_subagent_tokens": 3700,
+        "output_tokens": 3314,
+        "total_tokens": 36834,
+        "pct_of_weekly_used": 0.16,
+        "pct_of_weekly_limit": 0.031,
+        "keywords": "payroll, search volume, search demand, compliance, posthog comparison, traffic comparison, cpc, keywords",
+        "notes": "PostHog 685354 live comparison (Compliance vs. Payroll routes tied at 0 human visits) + US search demand comparison (16k-21k/mo payroll vs. 5.5k-7.5k/mo E&O cluster).",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-21-b2bfeeaudit-eo-cyber-insurance-subdivision",
+        "title": "B2BFeeAudit.com /eo-insurance/ & Cyber Insurance Subdivision Build, Demand Research & Deploy",
+        "category": "Site & Subdivision Builds",
+        "start_time": "2026-10-26 00:39:51 EDT",
+        "end_time": "2026-10-26 01:02:49 EDT",
+        "turn_count": 5,
+        "message_count": 20,
+        "subagent_runs": 3,
+        "prompt_context_tokens": 74911,
+        "tool_and_subagent_tokens": 354376,
+        "output_tokens": 103491,
+        "total_tokens": 532778,
+        "pct_of_weekly_used": 2.24,
+        "pct_of_weekly_limit": 0.449,
+        "keywords": "eo-insurance, e&o, errors and omissions, cyber insurance, subdivision, coi, certificate of insurance, premium estimator, state minimum, embroker, vouch, hiscox",
+        "notes": "Built /eo-insurance/ hub + 4 demand-calibrated subpages, paused/resumed around E&O search demand study (t521), updated llms.txt + webmcp.json + /admin/ (21 routes, commit d4d3a6b).",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-20-continuous-micro-research-and-launch-checklist",
+        "title": "Website Launch Operating Checklist, Continuous Micro-Research CSV Loop & Stage 2 402 Disarm",
+        "category": "Research Loops & Governance",
+        "start_time": "2026-10-26 00:17:52 EDT",
+        "end_time": "2026-10-26 00:30:20 EDT",
+        "turn_count": 4,
+        "message_count": 13,
+        "subagent_runs": 1,
+        "prompt_context_tokens": 59686,
+        "tool_and_subagent_tokens": 90498,
+        "output_tokens": 19520,
+        "total_tokens": 169704,
+        "pct_of_weekly_used": 0.71,
+        "pct_of_weekly_limit": 0.143,
+        "keywords": "micro-research, micro research, csv, checklist, website launch, stage 2, 402, disarm, api key gating, ideation",
+        "notes": "Created WEBSITE-LAUNCH-OPERATING-CHECKLIST.md, MICRO-RESEARCH-PRODUCT-IDEAS.csv + weekday 3x/day routine, and disarmed Stage 2 HTTP 402 gate (commit b5baf9b).",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-19-posthog-bot-audit-and-platform-optimization-4-recs",
+        "title": "PostHog 5-Signal Bot/Datacenter Classifier, PM Consultation & 4 Platform Optimization Upgrades",
+        "category": "Analytics & Platform Optimization",
+        "start_time": "2026-10-25 23:34:47 EDT",
+        "end_time": "2026-10-26 00:24:08 EDT",
+        "turn_count": 19,
+        "message_count": 62,
+        "subagent_runs": 3,
+        "prompt_context_tokens": 307587,
+        "tool_and_subagent_tokens": 258381,
+        "output_tokens": 67798,
+        "total_tokens": 633766,
+        "pct_of_weekly_used": 2.67,
+        "pct_of_weekly_limit": 0.534,
+        "keywords": "bot traffic, datacenter, posthog, platform optimization, 3-bucket, bucket a, classifier, mandiant, scaleway, internal traffic, owner devices",
+        "notes": "Audited 46 external PostHog events (95.7% automated), built 2-stage owner + 5-signal bot filter, consulted Project Manager, and deployed all 4 Platform Optimization recommendations (commit 5f4b8dd).",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-18-unified-admin-dashboard-build-and-redesign",
+        "title": "Unified Multi-Product /admin Analytics Dashboard (JunkHaulHQ + B2BFeeAudit) Build & Redesign",
+        "category": "Dashboard Builds",
+        "start_time": "2026-10-25 19:35:00 EDT",
+        "end_time": "2026-10-25 23:35:11 EDT",
+        "turn_count": 15,
+        "message_count": 38,
+        "subagent_runs": 4,
+        "prompt_context_tokens": 234232,
+        "tool_and_subagent_tokens": 687913,
+        "output_tokens": 215009,
+        "total_tokens": 1137154,
+        "pct_of_weekly_used": 4.79,
+        "pct_of_weekly_limit": 0.958,
+        "keywords": "dashboard, admin, unified dashboard, telemetry, admin_dashboard.html, posthog api key, redesign, product switcher",
+        "notes": "Created PostHog Personal API Key, built live HogQL puller for b2bfeeaudit.com, deployed unified multi-product /admin dashboard, and redesigned into uniform side-by-side product cards.",
+        "source": "auto"
+      },
+      {
+        "job_id": "job-17-b2b-consulting-coach-and-twice-weekly-ideation",
+        "title": "B2B Consulting Coach Agent Spin-Up (v2.0 IP Playbook) & Twice-Weekly Clean-Room Ideation Upgrade",
+        "category": "Bot Fleet & Consulting IP",
+        "start_time": "2026-10-25 15:15:26 EDT",
+        "end_time": "2026-10-25 16:24:46 EDT",
+        "turn_count": 6,
+        "message_count": 14,
+        "subagent_runs": 2,
+        "prompt_context_tokens": 100071,
+        "tool_and_subagent_tokens": 192858,
+        "output_tokens": 48795,
+        "total_tokens": 341724,
+        "pct_of_weekly_used": 1.44,
+        "pct_of_weekly_limit": 0.288,
+        "keywords": "b2b consulting, consulting coach, 7-step, agentic org, clean-room, tuesday friday, ideation upgrade, playbook",
+        "notes": "Spun up B2B Consulting Coach (121 KB v2.0 IP suite) and upgraded Plane A Lock-Free Research Ideation to Tuesday/Friday clean-room rotation.",
+        "source": "auto"
+      }
+    ]
+  },
+  "portfolio_products": {
+    "rtpait.com": {
+      "domain": "rtpait.com",
+      "product_id": "rtpait.com",
+      "po_name": "RTP AIT PO",
+      "po_agent_id": "dcb1b787-dece-43ac-a64f-bfa2bca81429",
+      "pm_name": "Project Manager",
+      "pm_agent_id": "167b2bea-99c8-4e89-99e3-182227974962",
+      "management_mode": "SINGLE_PRODUCT_PO",
+      "family_group": "flagship-consulting-hub",
+      "workspace": "/workspace/rtpait",
+      "road_to_revenue_stage": "STAGE_1",
+      "version": "v1.5.0",
+      "active_routes_count": 15,
+      "day0_gates": {
+        "W_gates": "5/5 PASS (local/GitHub Pages)",
+        "LC_gates": "6/6 PASS",
+        "IS_gates": "5/5 PASS (federated_auth_enabled=true)"
+      },
+      "primary_bottleneck": "Repoint apex DNS A record at Northwest Registered Agent (66.223.49.89) to GitHub Pages (185.199.108.153..111.153) & paste Google OIDC Client ID",
+      "live_measured_actuals": {
+        "live_site_visits_bucket_a": 0,
+        "live_unique_visitors": 0,
+        "live_llm_queries_bucket_b": 0,
+        "live_automated_bots_bucket_c": 0,
+        "live_outbound_affiliate_clicks": 0,
+        "live_price_table_row_clicks": 0,
+        "live_gsc_indexed_routes": 1,
+        "live_gsc_total_routes": 15,
+        "live_gsc_coverage_pct": 6.7,
+        "gsc_75pct_gate_target": 12,
+        "live_gsc_search_ctr_pct": 0.0,
+        "live_confirmed_revenue_usd": 0.0,
+        "live_rpv_usd": 0.0,
+        "drip_gate_passed": false
+      },
+      "po_package_files_present": {
+        "CHARTER.md": true,
+        "PRODUCT-STATE.md": true,
+        "ROAD-TO-REVENUE-SPRINT-PLAN.md": true,
+        "PO-SPOKE-DAY0-CHECKLIST.md": true,
+        "ROUTE-SPEC-64.md": true,
+        "VERSION-LOG.md": true
+      }
+    },
+    "junkhaulhq.com": {
+      "domain": "junkhaulhq.com",
+      "product_id": "junkhaulhq.com",
+      "po_name": "Junk Hall PO",
+      "po_agent_id": "b1459d35-268c-4838-a68f-ecdd5954d2cf",
+      "pm_name": "Project Manager",
+      "pm_agent_id": "167b2bea-99c8-4e89-99e3-182227974962",
+      "management_mode": "SINGLE_PRODUCT_PO",
+      "family_group": "home-services-family",
+      "workspace": "/workspace/junk-site",
+      "road_to_revenue_stage": "STAGE_2",
+      "version": "v1.3.1",
+      "active_routes_count": 64,
+      "day0_gates": {
+        "W_gates": "5/5 PASS",
+        "LC_gates": "6/6 PASS",
+        "IS_gates": "5/5 PASS"
+      },
+      "primary_bottleneck": "GSC indexation progression from 14/64 (21.9%) toward >=48/64 (75.0%) Stage 3 gate + Porkbun static bundle upload for /.well-known/webmcp.json",
+      "live_measured_actuals": {
+        "live_site_visits_bucket_a": 2,
+        "live_unique_visitors": 2,
+        "live_llm_queries_bucket_b": 0,
+        "live_automated_bots_bucket_c": 0,
+        "live_outbound_affiliate_clicks": 0,
+        "live_price_table_row_clicks": 0,
+        "live_gsc_indexed_routes": 14,
+        "live_gsc_total_routes": 64,
+        "live_gsc_coverage_pct": 21.9,
+        "gsc_75pct_gate_target": 48,
+        "live_gsc_search_ctr_pct": 0.0,
+        "live_confirmed_revenue_usd": 0.0,
+        "live_rpv_usd": 0.0,
+        "drip_gate_passed": false
+      },
+      "po_package_files_present": {
+        "CHARTER.md": true,
+        "PRODUCT-STATE.md": true,
+        "ROAD-TO-REVENUE-SPRINT-PLAN.md": true,
+        "PO-SPOKE-DAY0-CHECKLIST.md": true,
+        "ROUTE-SPEC-64.md": true,
+        "VERSION-LOG.md": true
+      }
+    },
+    "b2bfeeaudit.com": {
+      "domain": "b2bfeeaudit.com",
+      "product_id": "b2bfeeaudit.com",
+      "po_name": "B2B Fee Audit PO",
+      "po_agent_id": "76f092a4-d874-4a66-ad28-c0146be1800a",
+      "pm_name": "B2B Audit Family PM",
+      "pm_agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
+      "management_mode": "MULTI_PO_HUB_PM",
+      "family_group": "b2b-audit-family",
+      "workspace": "/workspace/b2bfeeaudit",
+      "road_to_revenue_stage": "STAGE_2",
+      "version": "v1.5.0",
+      "active_routes_count": 16,
+      "day0_gates": {
+        "W_gates": "5/5 PASS",
+        "LC_gates": "6/6 PASS",
+        "IS_gates": "5/5 PASS"
+      },
+      "primary_bottleneck": "GSC indexation of 16 canonical payment/payroll fee routes (post-301 migration of /eo-insurance/* and /ucaas/*) toward >=75% gate",
+      "live_measured_actuals": {
+        "live_site_visits_bucket_a": 0,
+        "live_unique_visitors": 0,
+        "live_llm_queries_bucket_b": 0,
+        "live_automated_bots_bucket_c": 0,
+        "live_outbound_affiliate_clicks": 0,
+        "live_price_table_row_clicks": 0,
+        "live_gsc_indexed_routes": 1,
+        "live_gsc_total_routes": 16,
+        "live_gsc_coverage_pct": 6.2,
+        "gsc_75pct_gate_target": 12,
+        "live_gsc_search_ctr_pct": 0.0,
+        "live_confirmed_revenue_usd": 0.0,
+        "live_rpv_usd": 0.0,
+        "drip_gate_passed": false
+      },
+      "po_package_files_present": {
+        "CHARTER.md": true,
+        "PRODUCT-STATE.md": true,
+        "ROAD-TO-REVENUE-SPRINT-PLAN.md": true,
+        "PO-SPOKE-DAY0-CHECKLIST.md": true,
+        "ROUTE-SPEC-64.md": true,
+        "VERSION-LOG.md": true
+      }
+    },
+    "b2bcostaudit.com": {
+      "domain": "b2bcostaudit.com",
+      "product_id": "b2bcostaudit.com",
+      "po_name": "B2B Cost Audit PO",
+      "po_agent_id": "2d4a6a26-94d7-4bed-9dd9-f96988b41fc5",
+      "pm_name": "B2B Audit Family PM",
+      "pm_agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
+      "management_mode": "MULTI_PO_HUB_PM",
+      "family_group": "b2b-audit-family",
+      "workspace": "/workspace/b2bcostaudit",
+      "road_to_revenue_stage": "STAGE_1",
+      "version": "v1.1.0",
+      "active_routes_count": 11,
+      "day0_gates": {
+        "W_gates": "5/5 PASS",
+        "LC_gates": "6/6 PASS",
+        "IS_gates": "5/5 PASS"
+      },
+      "primary_bottleneck": "Porkbun DNS A record cutover to GitHub Pages (185.199.108.153..111.153) & GSC sitemap indexation of 11 E&O/Cyber & Labor Burden routes",
+      "live_measured_actuals": {
+        "live_site_visits_bucket_a": 0,
+        "live_unique_visitors": 0,
+        "live_llm_queries_bucket_b": 0,
+        "live_automated_bots_bucket_c": 0,
+        "live_outbound_affiliate_clicks": 0,
+        "live_price_table_row_clicks": 0,
+        "live_gsc_indexed_routes": 0,
+        "live_gsc_total_routes": 11,
+        "live_gsc_coverage_pct": 0.0,
+        "gsc_75pct_gate_target": 9,
+        "live_gsc_search_ctr_pct": 0.0,
+        "live_confirmed_revenue_usd": 0.0,
+        "live_rpv_usd": 0.0,
+        "drip_gate_passed": false
+      },
+      "po_package_files_present": {
+        "CHARTER.md": true,
+        "PRODUCT-STATE.md": true,
+        "ROAD-TO-REVENUE-SPRINT-PLAN.md": true,
+        "PO-SPOKE-DAY0-CHECKLIST.md": true,
+        "ROUTE-SPEC-64.md": true,
+        "VERSION-LOG.md": true
+      }
+    },
+    "saascostaudit.com": {
+      "domain": "saascostaudit.com",
+      "product_id": "saascostaudit.com",
+      "po_name": "SaaS Cost Audit PO",
+      "po_agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
+      "pm_name": "B2B Audit Family PM",
+      "pm_agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
+      "management_mode": "MULTI_PO_HUB_PM",
+      "family_group": "b2b-audit-family",
+      "workspace": "/workspace/saascostaudit",
+      "road_to_revenue_stage": "STAGE_1",
+      "version": "v1.1.0",
+      "active_routes_count": 11,
+      "day0_gates": {
+        "W_gates": "5/5 PASS",
+        "LC_gates": "6/6 PASS",
+        "IS_gates": "5/5 PASS"
+      },
+      "primary_bottleneck": "Porkbun DNS A record cutover to GitHub Pages (185.199.108.153..111.153) & GSC sitemap indexation of 11 UCaaS & HRIS PEPM routes",
+      "live_measured_actuals": {
+        "live_site_visits_bucket_a": 0,
+        "live_unique_visitors": 0,
+        "live_llm_queries_bucket_b": 0,
+        "live_automated_bots_bucket_c": 0,
+        "live_outbound_affiliate_clicks": 0,
+        "live_price_table_row_clicks": 0,
+        "live_gsc_indexed_routes": 0,
+        "live_gsc_total_routes": 11,
+        "live_gsc_coverage_pct": 0.0,
+        "gsc_75pct_gate_target": 9,
+        "live_gsc_search_ctr_pct": 0.0,
+        "live_confirmed_revenue_usd": 0.0,
+        "live_rpv_usd": 0.0,
+        "drip_gate_passed": false
+      },
+      "po_package_files_present": {
+        "CHARTER.md": true,
+        "PRODUCT-STATE.md": true,
+        "ROAD-TO-REVENUE-SPRINT-PLAN.md": true,
+        "PO-SPOKE-DAY0-CHECKLIST.md": true,
+        "ROUTE-SPEC-64.md": true,
+        "VERSION-LOG.md": true
+      }
+    },
+    "apicostaudit.com": {
+      "domain": "apicostaudit.com",
+      "product_id": "apicostaudit.com",
+      "po_name": "SaaS Cost Audit PO (API_COSTS)",
+      "po_agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
+      "pm_name": "B2B Audit Family PM",
+      "pm_agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
+      "management_mode": "MULTI_PO_HUB_PM",
+      "family_group": "b2b-audit-family",
+      "workspace": "/workspace/apicostaudit",
+      "road_to_revenue_stage": "STAGE_0_TO_1",
+      "version": "v1.0.0",
+      "active_routes_count": 0,
+      "day0_gates": {
+        "W_gates": "STAGE_0_SCAFFOLDED",
+        "LC_gates": "6/6 PASS (Day-0 Spec)",
+        "IS_gates": "5/5 PASS (Day-0 Spec)"
+      },
+      "primary_bottleneck": "Add sc-domain:apicostaudit.com Google Search Console DNS TXT record in Porkbun DNS & build 16-route LLM/Voice/GPU API TCO Slice 1",
+      "live_measured_actuals": {
+        "live_site_visits_bucket_a": 0,
+        "live_unique_visitors": 0,
+        "live_llm_queries_bucket_b": 0,
+        "live_automated_bots_bucket_c": 0,
+        "live_outbound_affiliate_clicks": 0,
+        "live_price_table_row_clicks": 0,
+        "live_gsc_indexed_routes": 0,
+        "live_gsc_total_routes": 16,
+        "live_gsc_coverage_pct": 0.0,
+        "gsc_75pct_gate_target": 12,
+        "live_gsc_search_ctr_pct": 0.0,
+        "live_confirmed_revenue_usd": 0.0,
+        "live_rpv_usd": 0.0,
+        "drip_gate_passed": false
+      },
+      "po_package_files_present": {
+        "CHARTER.md": true,
+        "PRODUCT-STATE.md": true,
+        "ROAD-TO-REVENUE-SPRINT-PLAN.md": true,
+        "PO-SPOKE-DAY0-CHECKLIST.md": true,
+        "ROUTE-SPEC-64.md": true,
+        "VERSION-LOG.md": true
+      }
+    }
+  },
+  "quarantined_target_hypotheses": {
+    "quarantine_notice": "PRINCIPLE 1 ENFORCED: All figures in this object are pre-launch planning models, NOT live telemetry. Live revenue is $0.00.",
+    "service_line_1_diagnostic_wedge": "$15,000 - $25,000 fixed-fee 2-Week 7-Step Readiness Diagnostic",
+    "service_line_2_velocity_pod_build": "$45,000 - $120,000 6-8 Week Forward-Deployed Harness & Headless Execution Build",
+    "service_line_3_managed_retainer": "$10,000 - $25,000/mo Managed Governance, Eval Ratchet & Kaizen Retainer",
+    "future_revenue_line_paid_second_brain_api": "$199 - $2,500+/mo Paid 3-Layer JSON-Node Second-Brain API Tier (Tenant-Partitioned Golden-Template Clones with zero_founder_contamination=true)"
+  }
+}

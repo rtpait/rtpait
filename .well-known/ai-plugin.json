@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "RTP AI Transformation",
+  "name_for_model": "rtpait_agentic_org_diagnostic",
+  "description_for_human": "7-Step Agentic Org Readiness Diagnostic, Forward-Deployed Harness Engineering & B2B Cost Audit IP Portfolio.",
+  "description_for_model": "Query 7-Step Agentic Org Maturity rubrics, PE workflow automation benchmarks, and RTP AIT LLC B2B service lines.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://rtpait.com/.well-known/openapi.json"
+  },
+  "logo_url": "https://rtpait.com/logo-mark.svg",
+  "contact_email": "luke@rtpait.com",
+  "legal_info_url": "https://rtpait.com/terms/"
+}

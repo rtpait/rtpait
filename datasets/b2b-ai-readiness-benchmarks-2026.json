@@ -1,0 +1,88 @@
+{
+  "schema_version": "2026.10.27",
+  "publisher": "Research Triangle Park AI Transformation LLC (https://rtpait.com)",
+  "license": "CC-BY-4.0",
+  "seven_step_maturity_ladder": [
+    {
+      "step": 1,
+      "name": "Tool Adoption (Human-Run Silos)",
+      "median_org_score": 18,
+      "target_production_score": 15,
+      "key_gate": "Laptop-Lid Audit & 5-Question Copilot/Token Sweep"
+    },
+    {
+      "step": 2,
+      "name": "Domain-Separated Context Layer",
+      "median_org_score": 6,
+      "target_production_score": 15,
+      "key_gate": "Scoped MCP Context Gateways & 34-48 Variable Pre-Model Enrichment"
+    },
+    {
+      "step": 3,
+      "name": "Harness Engineering (Core Capex & IP)",
+      "median_org_score": 4,
+      "target_production_score": 20,
+      "key_gate": "50-500 Case Golden Dataset JSONL + 3-Tier Quality Gate + Multi-Provider Model Swap (>=95%)"
+    },
+    {
+      "step": 4,
+      "name": "Go Headless (The Discipline Bottleneck)",
+      "median_org_score": 5,
+      "target_production_score": 15,
+      "key_gate": "Unattended Server Daemons, flock Mutexes, Idempotency Keys & DLQs"
+    },
+    {
+      "step": 5,
+      "name": "Lifecycle & Access Governance (90-Day TTL)",
+      "median_org_score": 3,
+      "target_production_score": 12,
+      "key_gate": "Per-Tool Service Account RBAC, 90-Day Agent/Key TTL & Eval Circuit Breakers"
+    },
+    {
+      "step": 6,
+      "name": "Quality-Gated Agent-to-Agent Handoffs",
+      "median_org_score": 2,
+      "target_production_score": 12,
+      "key_gate": "Contract-First JSON Schema Envelopes + Independent Judge Subagent Verification"
+    },
+    {
+      "step": 7,
+      "name": "Step Functions (Exception-Only Human Queues)",
+      "median_org_score": 2,
+      "target_production_score": 11,
+      "key_gate": "80-95% Autonomous Volume Handling + 5-20% Structured Human Exception Queue"
+    }
+  ],
+  "verified_pe_b2b_benchmarks": [
+    {
+      "workflow": "Healthcare RCM Denial Appeals (20 Hospitals)",
+      "baseline": "40 min median packet prep; 47% overturn rate",
+      "post_harness": "11 min prep (-72.5%); 56% overturn rate; 22% edit rate",
+      "primary_source": "https://www.cms.gov/"
+    },
+    {
+      "workflow": "Mid-Market Commercial Loan Underwriting",
+      "baseline": "6 business days per file",
+      "post_harness": "<20 minutes to human decision; 491/500 (98.2%) senior underwriter agreement",
+      "primary_source": "https://www.sba.gov/"
+    },
+    {
+      "workflow": "Healthcare Claims SQL Analytics & Reconciliation",
+      "baseline": "Manual SQL across 300+ denial codes",
+      "post_harness": "59/60 (98.3%) Golden Dataset accuracy; $250/mo infra",
+      "primary_source": "https://www.hhs.gov/hipaa/index.html"
+    },
+    {
+      "workflow": "Multi-Entity PE Roll-Up Month-End Close (70 Clinics)",
+      "baseline": "16 business days to close",
+      "post_harness": "10 business days to close; QoE-ready audit trail",
+      "primary_source": "https://www.sec.gov/"
+    },
+    {
+      "workflow": "Logistics Freight Audit & Pay Core Rebuild",
+      "baseline": "7-8 months traditional dev estimate",
+      "post_harness": "122 merged PRs in 90 days; ~$10 AI spend per merged PR",
+      "primary_source": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Security, Universal OIDC + SMS 2FA &amp; Isolation | RTP AIT</title>
+  <meta name="description" content="Security posture for rtpait.com: Universal OpenID Connect (Google, Apple, Facebook), absolute ban on password auth, SMS 2FA, and tenant partition isolation.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Research Triangle Park AI Transformation LLC">
+  <link rel="canonical" href="https://rtpait.com/security/">
+  <link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+  <link rel="manifest" href="/.well-known/webmcp.json">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Research Triangle Park AI Transformation LLC">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Security, Universal OIDC + SMS 2FA &amp; Isolation | RTP AIT">
+  <meta property="og:description" content="Security posture for rtpait.com: Universal OpenID Connect (Google, Apple, Facebook), absolute ban on password auth, SMS 2FA, and tenant partition isolation.">
+  <meta property="og:url" content="https://rtpait.com/security/">
+  <meta property="og:image" content="https://rtpait.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Security, Universal OIDC + SMS 2FA &amp; Isolation | RTP AIT">
+  <meta name="twitter:description" content="Security posture for rtpait.com: Universal OpenID Connect (Google, Apple, Facebook), absolute ban on password auth, SMS 2FA, and tenant partition isolation.">
+  <meta name="twitter:image" content="https://rtpait.com/og-image.svg">
+  <link rel="stylesheet" href="/style.css?v=20261027">
+  <link rel="stylesheet" href="/rtpait/style.css?v=20261027">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://rtpait.com/#organization","name":"Research Triangle Park AI Transformation LLC","alternateName":["RTP AIT LLC","RTP AI Transformation","rtpait.com"],"url":"https://rtpait.com","logo":"https://rtpait.com/logo-mark.svg","image":"https://rtpait.com/og-image.svg","email":"luke@rtpait.com","address":{"@type":"PostalAddress","streetAddress":"4030 Wake Forest Road, Suite 349","addressLocality":"Raleigh","addressRegion":"NC","postalCode":"27609","addressCountry":"US"},"areaServed":[{"@type":"Country","name":"United States"},{"@type":"Place","name":"Worldwide"}],"slogan":"National and Global B2B AI Transformation Powered by Research Triangle Park (RTP) Talent","knowsAbout":["7-Step Agentic Org Maturity Ladder","Forward-Deployed Harness Engineering","Domain-Separated MCP Context Gateways","Headless Multi-Agent Workflow Execution","90-Day Agent RBAC & Secret TTL Governance","3-Layer JSON-Node Enterprise Knowledge Architecture"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://rtpait.com/#website","name":"RTP AI Transformation","url":"https://rtpait.com","publisher":{"@id":"https://rtpait.com/#organization"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Security, Universal OIDC + SMS 2FA & Isolation | RTP AIT","applicationCategory":"BusinessApplication","operatingSystem":"Web, WebMCP, OpenAPI 3.1","url":"https://rtpait.com/security/","offers":{"@type":"Offer","price":"0.00","priceCurrency":"USD","description":"Interactive 7-Step Agentic Org Readiness Diagnostic and B2B Harness Engineering ROI Calculator"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Security, Universal OIDC + SMS 2FA & Isolation | RTP AIT","provider":{"@id":"https://rtpait.com/#organization"},"url":"https://rtpait.com/security/","offers":{"@type":"AggregateOffer","lowPrice":"15000","highPrice":"120000","priceCurrency":"USD","offerCount":"3"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"RTP AI Transformation","item":"https://rtpait.com/"},{"@type":"ListItem","position":2,"name":"Security, Universal OIDC + SMS 2FA & Isolation | RTP AIT","item":"https://rtpait.com/security/"}]}</script>
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does RTP AI Transformation serve clients outside North Carolina and globally?","acceptedAnswer":{"@type":"Answer","text":"Yes. RTP AI Transformation connects organizations anywhere in the United States and globally with senior AI engineers, systems architects, and research talent residing in North Carolina's Research Triangle Park via remote-first and hybrid Forward-Deployed Velocity Pods."}},{"@type":"Question","name":"What is the 7-Step Agentic Org Maturity Ladder?","acceptedAnswer":{"@type":"Answer","text":"It is RTP AIT LLC's quantitative engineering framework progressing from Step 1 (human-run AI tool silos) and Step 2 (scoped MCP context layers) through Step 3 (Golden Dataset harnesses), Step 4 (unattended headless daemons), Step 5 (90-day agent/secret TTL governance), Step 6 (quality-gated handoffs), and Step 7 (exception-only human queues)."}},{"@type":"Question","name":"How are RTP AIT LLC's B2B consulting service lines priced?","acceptedAnswer":{"@type":"Answer","text":"Service Line 1 is a fixed-fee 2-Week AI Readiness & 7-Step Maturity Diagnostic ($15,000-$25,000). Service Line 2 is a 6-8 Week Forward-Deployed Harness & Headless Execution Build ($45,000-$120,000). Service Line 3 is a Managed Governance, Eval Ratchet & Kaizen Retainer ($10,000-$25,000/mo)."}},{"@type":"Question","name":"How does Paid API Access to the 3-Layer JSON-Node Second Brain isolate customer data?","acceptedAnswer":{"@type":"Answer","text":"When an external customer subscribes to the Paid Second-Brain API Tier, the platform provisions a dedicated tenant partition (/tenants/{tenant_id}/) by cloning RTP AIT's master 3-Layer JSON-Node Second Brain structure (stripped of private founder data) as a Golden Template, enforcing zero context drift and zero founder contamination."}},{"@type":"Question","name":"What authentication standard governs rtpait.com and the /admin/ backend?","acceptedAnswer":{"@type":"Answer","text":"All surfaces enforce Universal OpenID Connect (Google, Apple, Facebook, and enterprise IdPs) paired with SMS-based two-factor authentication (SMS 2FA) and an absolute ban on manual username-and-password authentication (password_auth_prohibited = true). Access to /admin/ is cryptographically restricted to luke@rtpait.com."}}]}</script>
+  
+  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init("phc_v89RLR6JhvrN3Hy7mmWPBSQqVGwFAr7dPLpLan9Pjky8",{api_host:"https://us.i.posthog.com",defaults:"2025-05-24",person_profiles:"identified_only"});try{posthog.register({is_headless_or_webdriver:Boolean(navigator.webdriver||(window.screen&&window.screen.width===800&&window.screen.height===600)),analytics_filter_policy:"3_bucket_analytics_only_no_edge_block"});}catch(e){}(function(){try{var r=(document.referrer||"").toLowerCase(),u=(navigator.userAgent||"").toLowerCase(),q=new URLSearchParams(window.location.search),s=((q.get("utm_source")||"")+" "+(q.get("utm_medium")||"")).toLowerCase(),b=r+" "+u+" "+s,m=null;if(b.indexOf("gptbot")!==-1||b.indexOf("oai-searchbot")!==-1||b.indexOf("chatgpt")!==-1||b.indexOf("openai")!==-1)m="ChatGPT / OpenAI";else if(b.indexOf("perplexitybot")!==-1||b.indexOf("perplexity")!==-1)m="Perplexity AI";else if(b.indexOf("claudebot")!==-1||b.indexOf("claude")!==-1||b.indexOf("anthropic")!==-1)m="Claude / Anthropic";else if(b.indexOf("gemini")!==-1||b.indexOf("google-extended")!==-1)m="Google Gemini";else if(b.indexOf("copilot")!==-1)m="Microsoft Copilot";if(m&&window.posthog&&typeof window.posthog.capture==="function"){window.posthog.capture("llm_query",{ai_source:m,topic:document.title,route_slug:window.location.pathname,query_url:window.location.href,referrer:document.referrer||"$direct"});}}catch(e){}})();</script>
+</head>
+<body>
+  <header>
+    <a href="/" style="font-size:1.15rem;display:flex;align-items:center;gap:0.5rem">
+      <img src="/logo-mark.svg" alt="RTP AI Transformation LLC logo" width="28" height="28" decoding="async">
+      <strong>RTP AI Transformation</strong><span style="font-size:0.75rem;color:#38bdf8;border:1px solid #0284c7;padding:0.12rem 0.45rem;border-radius:999px;margin-left:0.35rem">RTP Talent · National &amp; Global Reach</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/#about">Why RTP Talent</a>
+      <a href="/diagnostic/">7-Step Diagnostic</a>
+      <a href="/strategy-readiness/">Strategy &amp; Readiness</a>
+      <a href="/workflow-automation/">Workflow &amp; Harness Build</a>
+      <a href="/ip-products/">IP Portfolio &amp; Second-Brain API</a>
+      <a href="/services/">Services &amp; Pricing</a>
+      <a href="/case-studies/">Case Studies</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/security/">Security &amp; OIDC</a>
+      <a href="/admin/" class="nav-admin">Executive Admin (OIDC)</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="ftc-banner" role="note" aria-label="Commercial and Non-YMYL Disclosure">
+      <strong>Commercial &amp; Safe-Harbor Disclosure (FTC 16 CFR Part 255):</strong> Research Triangle Park AI Transformation LLC (<code>NC SOS #3335186</code> · <code>EIN 42-3641177</code>) provides B2B AI engineering consulting and deterministic diagnostic tools. Partner software links may earn a referral commission via PartnerStack, Impact (<code>8038782</code>), CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to your organization. Informational engineering benchmarks only — not legal, CPA, or investment advice.
+    </div>
+    
+<section class="hero">
+  <div class="badge-row">
+    <span class="verified-gov-badge">Research Triangle Park AI Transformation LLC · NC SOS #3335186</span>
+    <span class="verified-gov-badge">National &amp; Global B2B Reach · Powered by Research Triangle Park (RTP) Talent</span>
+  </div>
+  <h1>Security Architecture: Universal OIDC + SMS 2FA, Zero Passwords & Tenant Isolation</h1>
+  <p class="lead">How Research Triangle Park AI Transformation LLC secures its executive backend (/admin/), Paid 3-Layer Second-Brain API partitions, and enterprise client engagements.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.1rem">
+    <a class="cta" data-partner="RTP AIT Hero CTA" data-cta-slot="verdict_card" data-route-slug="/security/" data-clickref="rtpait_hero_security" href="/diagnostic/?utm_source=rtpait&amp;clickref=rtpait_hero_security" rel="sponsored nofollow noopener">Launch 7-Step Readiness Diagnostic →</a>
+    <a class="cta-secondary" data-partner="RTP AIT Services" data-cta-slot="verdict_card" data-route-slug="/security/" data-clickref="rtpait_hero_srv_security" href="/services/?utm_source=rtpait&amp;clickref=rtpait_hero_srv_security" rel="sponsored nofollow noopener">Compare Service Lines ($15k–$120k)</a>
+  </div>
+</section>
+
+<section class="card">
+  <span class="verified-gov-badge">NIST SP 800-63B Digital Identity &amp; OIDC RS256 JWKS Verified (.gov)</span>
+  <h2>Four Non-Negotiable Identity &amp; Security Rules Across All Surfaces</h2>
+  <p>Aligned with <a href="https://pages.nist.gov/800-63-3/sp800-63b.html" target="_blank" rel="noopener">NIST SP 800-63B Digital Identity Guidelines (.gov)</a>, our Identity, Auth &amp; Security architecture enforces four uniform rules across <code>/admin/</code>, Paid Second-Brain API tenant customers, and all customer-facing logins:</p>
+  <table>
+    <thead>
+      <tr><th>Security Rule</th><th>Technical Enforcement</th><th>Covered Surfaces</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>1. Universal OpenID Connect (OIDC)</strong></td><td>OAuth 2.0 <code>authorization_code + PKCE S256</code> &amp; Web Crypto <code>RS256</code> JWKS verification across <strong>Google</strong>, <strong>Apple</strong>, <strong>Facebook</strong>, and Enterprise IdPs (<strong>Microsoft Entra</strong>, <strong>GitHub</strong>, <strong>Okta</strong>)</td><td><code>/admin/</code>, Paid Second-Brain API Tenants &amp; Public Profiles</td><td><code>ENFORCED</code></td></tr>
+      <tr><td><strong>2. Absolute Ban on Manual Passwords</strong></td><td><code>password_auth_prohibited = true</code> — Zero manual username/password forms or password credential databases anywhere</td><td>All RTP AIT LLC Properties</td><td><code>ENFORCED</code></td></tr>
+      <tr><td><strong>3. OIDC + Mandatory SMS 2FA</strong></td><td>Primary federated OIDC identity factor paired with <strong>SMS-based two-factor authentication (<code>SMS_2FA</code>)</strong> as required second factor</td><td><code>/admin/</code>, API Tenant Provisioning &amp; Client Portals</td><td><code>ENFORCED</code></td></tr>
+      <tr><td><strong>4. Tenant-Based Access Partitioning</strong></td><td>Paid Second-Brain API customers receive an isolated <code>/tenants/{tenant_id}/</code> partition cloned from our sanitized Golden Template (<code>zero_founder_contamination = true</code>)</td><td>Paid 3-Layer Second-Brain API</td><td><a class="cta" data-partner="Open Admin Console" data-cta-slot="price_table_row" data-route-slug="/security/" data-clickref="rtpait_sec_admin" href="/admin/" rel="sponsored nofollow noopener">Open OIDC /admin/</a></td></tr>
+    </tbody>
+  </table>
+  <p><a class="cta" data-partner="Security Audit" data-cta-slot="verdict_card" data-route-slug="/security/" data-clickref="rtpait_sec_verdict" href="mailto:luke@rtpait.com?subject=Security%20and%20OIDC%20Architecture%20Inquiry">Contact Identity &amp; Security Team (luke@rtpait.com) →</a></p>
+</section>
+
+<section class="card" style="margin-top:1.5rem">
+  <h2>Frequently Asked Questions</h2>
+  
+  <details style="margin-bottom:0.75rem;border-bottom:1px solid #e2e8f0;padding-bottom:0.65rem">
+    <summary style="font-weight:700;cursor:pointer;color:#0f172a">Does RTP AI Transformation serve clients outside North Carolina and globally?</summary>
+    <p style="margin:0.5rem 0 0;color:#334155">Yes. RTP AI Transformation connects organizations anywhere in the United States and globally with senior AI engineers, systems architects, and research talent residing in North Carolina&#39;s Research Triangle Park via remote-first and hybrid Forward-Deployed Velocity Pods.</p>
+  </details>
+  
+  <details style="margin-bottom:0.75rem;border-bottom:1px solid #e2e8f0;padding-bottom:0.65rem">
+    <summary style="font-weight:700;cursor:pointer;color:#0f172a">What is the 7-Step Agentic Org Maturity Ladder?</summary>
+    <p style="margin:0.5rem 0 0;color:#334155">It is RTP AIT LLC&#39;s quantitative engineering framework progressing from Step 1 (human-run AI tool silos) and Step 2 (scoped MCP context layers) through Step 3 (Golden Dataset harnesses), Step 4 (unattended headless daemons), Step 5 (90-day agent/secret TTL governance), Step 6 (quality-gated handoffs), and Step 7 (exception-only human queues).</p>
+  </details>
+  
+  <details style="margin-bottom:0.75rem;border-bottom:1px solid #e2e8f0;padding-bottom:0.65rem">
+    <summary style="font-weight:700;cursor:pointer;color:#0f172a">How are RTP AIT LLC&#39;s B2B consulting service lines priced?</summary>
+    <p style="margin:0.5rem 0 0;color:#334155">Service Line 1 is a fixed-fee 2-Week AI Readiness &amp; 7-Step Maturity Diagnostic ($15,000-$25,000). Service Line 2 is a 6-8 Week Forward-Deployed Harness &amp; Headless Execution Build ($45,000-$120,000). Service Line 3 is a Managed Governance, Eval Ratchet &amp; Kaizen Retainer ($10,000-$25,000/mo).</p>
+  </details>
+  
+  <details style="margin-bottom:0.75rem;border-bottom:1px solid #e2e8f0;padding-bottom:0.65rem">
+    <summary style="font-weight:700;cursor:pointer;color:#0f172a">How does Paid API Access to the 3-Layer JSON-Node Second Brain isolate customer data?</summary>
+    <p style="margin:0.5rem 0 0;color:#334155">When an external customer subscribes to the Paid Second-Brain API Tier, the platform provisions a dedicated tenant partition (/tenants/{tenant_id}/) by cloning RTP AIT&#39;s master 3-Layer JSON-Node Second Brain structure (stripped of private founder data) as a Golden Template, enforcing zero context drift and zero founder contamination.</p>
+  </details>
+  
+  <details style="margin-bottom:0.75rem;border-bottom:1px solid #e2e8f0;padding-bottom:0.65rem">
+    <summary style="font-weight:700;cursor:pointer;color:#0f172a">What authentication standard governs rtpait.com and the /admin/ backend?</summary>
+    <p style="margin:0.5rem 0 0;color:#334155">All surfaces enforce Universal OpenID Connect (Google, Apple, Facebook, and enterprise IdPs) paired with SMS-based two-factor authentication (SMS 2FA) and an absolute ban on manual username-and-password authentication (password_auth_prohibited = true). Access to /admin/ is cryptographically restricted to luke@rtpait.com.</p>
+  </details>
+  
+</section>
+
+  </main>
+
+  <footer>
+    <hr>
+    <p>
+      <strong>Research Triangle Park AI Transformation LLC</strong> (<code>NC SOS Filing #3335186</code> · <code>EIN 42-3641177</code>) · Headquartered in Research Triangle Park (4030 Wake Forest Road, Suite 349, Raleigh, NC 27609) · Deploying RTP Engineering &amp; Research Talent Nationwide &amp; Globally · <a href="mailto:luke@rtpait.com">luke@rtpait.com</a>
+    </p>
+    <p>
+      <a href="/">Home</a> ·
+      <a href="/diagnostic/">7-Step Readiness Diagnostic</a> ·
+      <a href="/strategy-readiness/">AI Strategy ($15k–$25k)</a> ·
+      <a href="/workflow-automation/">Forward-Deployed Build ($45k–$120k)</a> ·
+      <a href="/services/managed-agentic-governance/">Managed Governance ($10k–$25k/mo)</a> ·
+      <a href="/ip-products/">IP Products &amp; Paid Second-Brain API</a> ·
+      <a href="/case-studies/">Case Studies</a> ·
+      <a href="/methodology/">5 Anti-FDE-Washing Commitments</a> ·
+      <a href="/privacy/">Privacy &amp; OIDC Policy</a> ·
+      <a href="/terms/">Terms &amp; Safe Harbor</a> ·
+      <a href="/security/">Security &amp; Zero-Password OIDC+SMS 2FA</a> ·
+      <a href="/llms.txt">llms.txt</a> ·
+      <a href="/.well-known/webmcp.json">WebMCP</a> ·
+      <a href="/datasets/b2b-ai-readiness-benchmarks-2026.json">Open Dataset (CC-BY-4.0)</a>
+    </p>
+    <p>
+      <strong>RTP AIT LLC Live Web Portfolio:</strong>
+      <a href="https://junkhaulhq.com/" rel="noopener">JunkHaulHQ.com</a> ·
+      <a href="https://b2bfeeaudit.com/" rel="noopener">B2BFeeAudit.com</a> ·
+      <a href="https://b2bcostaudit.com/" rel="noopener">B2BCostAudit.com</a> ·
+      <a href="https://saascostaudit.com/" rel="noopener">SaaSCostAudit.com</a> ·
+      <a href="https://apicostaudit.com/" rel="noopener">APICostAudit.com</a>
+    </p>
+  </footer>
+
+  <aside class="mobile-comparison-bar" id="mobile-comparison-bar" aria-label="Service Line Quick Actions">
+    <div class="mcb-tiers">
+      <div class="mcb-tier">
+        <span class="mcb-label">Phase 1 Diagnostic</span>
+        <strong class="mcb-val">$15k–$25k (2 Wks)</strong>
+      </div>
+      <div class="mcb-tier">
+        <span class="mcb-label">Phase 2 Velocity Pod</span>
+        <strong class="mcb-val">$45k–$120k (6–8 Wks)</strong>
+      </div>
+      <div class="mcb-tier">
+        <span class="mcb-label">Managed Governance</span>
+        <strong class="mcb-val">$10k–$25k/mo</strong>
+      </div>
+    </div>
+    <div class="mcb-actions">
+      <a class="cta mcb-btn" data-partner="RTP AIT Diagnostic" data-cta-slot="sticky_mobile_bar" data-route-slug="/security/" data-clickref="rtpait_sticky_diagnostic" href="/diagnostic/?utm_source=rtpait&amp;utm_medium=sticky_bar&amp;clickref=rtpait_sticky_diagnostic" rel="sponsored nofollow noopener">Run 7-Step Diagnostic</a>
+      <a class="cta-secondary mcb-btn" data-partner="RTP AIT Consultation" data-cta-slot="sticky_mobile_bar" data-route-slug="/security/" data-clickref="rtpait_sticky_sow" href="mailto:luke@rtpait.com?subject=RTP%20AIT%202-Week%20Diagnostic%20Inquiry" rel="sponsored nofollow noopener">Book Executive Readout</a>
+    </div>
+  </aside>
+
+  <script>
+  (function(){
+    if (window.location.hostname === "rtpait.github.io" && window.location.pathname.indexOf("/rtpait") === 0) {
+      document.querySelectorAll('a[href^="/"], img[src^="/"]').forEach(function(el) {
+        var attr = el.hasAttribute("href") ? "href" : "src";
+        var v = el.getAttribute(attr);
+        if (v && v.charAt(0) === "/" && v.indexOf("/rtpait/") !== 0 && v.indexOf("//") !== 0) {
+          el.setAttribute(attr, "/rtpait" + v);
+        }
+      });
+    }
+    document.addEventListener("click", function(ev) {
+      if (!window.posthog || typeof window.posthog.capture !== "function") return;
+      var link = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+      if (!link || !link.href) return;
+      if (link.matches("[data-cta-slot]")) {
+        var payload = {
+          partner: link.getAttribute("data-partner") || "RTP AIT",
+          cta_slot: link.getAttribute("data-cta-slot") || "inline_cta",
+          route_slug: link.getAttribute("data-route-slug") || window.location.pathname,
+          clickref: link.getAttribute("data-clickref") || "default",
+          page_path: window.location.pathname,
+          href: link.href
+        };
+        window.posthog.capture("cta_click", payload);
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.1.0",
+  "domain": "rtpait.com",
+  "organization": "Research Triangle Park AI Transformation LLC (NC SOS #3335186, EIN 42-3641177)",
+  "canonical_url": "https://rtpait.com",
+  "STAGE_2_AUTO_TRIGGER_ENABLED": false,
+  "tools": [
+    {
+      "name": "score_7step_agentic_maturity",
+      "description": "Computes a deterministic 100-point 7-Step Agentic Org Maturity score, identifies the primary Bottleneck Step (Steps 1-7), and recommends the appropriate B2B diagnostic or forward-deployed harness engagement.",
+      "route": "https://rtpait.com/diagnostic/",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "step1_tool_adoption": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "step2_domain_context": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "step3_harness_engineering": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "step4_headless_execution": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "step5_ttl_governance": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "step6_quality_gated_handoffs": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "step7_exception_queues": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 11
+          }
+        }
+      }
+    },
+    {
+      "name": "calculate_fde_workflow_roi",
+      "description": "Estimates annual engineering and operational EBITDA savings from migrating a human-run Step 1 workflow to a Step 4-7 headless harness.",
+      "route": "https://rtpait.com/strategy-readiness/",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "monthly_task_volume": {
+            "type": "integer"
+          },
+          "minutes_per_task_baseline": {
+            "type": "number"
+          },
+          "fully_loaded_hourly_rate_usd": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_rtpait_service_lines",
+      "description": "Returns the 3 B2B AI consulting and forward-deployed engineering service lines ($15k-$25k Diagnostic, $45k-$120k Headless Build, $10k-$25k/mo Governance Retainer) and the 5 Anti-FDE-Washing commitments.",
+      "route": "https://rtpait.com/services/",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_rtpait_ip_portfolio_and_second_brain_api",
+      "description": "Lists RTP AIT LLC's live web properties (junkhaulhq.com, b2bfeeaudit.com, b2bcostaudit.com, saascostaudit.com, apicostaudit.com) and the future Paid 3-Layer JSON-Node Second-Brain API Tier with Tenant-Based Access Partitioning.",
+      "route": "https://rtpait.com/ip-products/",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}
