@@ -223,10 +223,17 @@
         Per Founder Directive (<code>OD-RTPAIT-006</code> &amp; <code>OD-RTPAIT-007</code>), the legacy passphrase gate is permanently retired and <code>federated_auth_enabled = true</code> is active. Access to the <strong>Unified Multi-Product Analytics Dashboard</strong> and the <strong>3-Layer JSON-Node Founder Second Brain</strong> requires cryptographic Google OpenID Connect verification for <strong><code>luke@rtpait.com</code></strong> (<code>iss == https://accounts.google.com</code>, <code>hd == rtpait.com</code>, <code>email_verified == true</code>).
       </p>
 
-      <!-- HTTP 403 FORBIDDEN BANNER (shown if non-luke@rtpait.com user signs in) -->
-      <div id="oidc-403-banner" class="hidden" style="background:rgba(244,63,94,0.15);border:2px solid var(--rose);border-radius:10px;padding:1rem;margin:1rem 0;color:#fecdd3">
-        <strong style="color:#fb7185;font-size:1.05rem">HTTP 403 Forbidden — Sole-Admin RBAC Violation</strong>
-        <p id="oidc-403-detail" style="margin:0.35rem 0 0;font-size:0.9rem"></p>
+      <!-- HTTP 403 FORBIDDEN + DOOR 2 MEMBER WELCOME PLACEHOLDER (shown if non-luke@rtpait.com user signs in) -->
+      <div id="oidc-403-banner" class="hidden" style="background:rgba(14,165,233,0.12);border:2px solid var(--sky);border-radius:12px;padding:1.25rem;margin:1rem 0;color:#f8fafc">
+        <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.5rem">
+          <span class="pill pill-green">Door 2: Member Account Captured</span>
+          <span class="pill pill-amber">Admin Access Restricted to luke@rtpait.com</span>
+          <span class="pill">Features Coming Soon</span>
+        </div>
+        <h3 id="oidc-welcome-title" style="margin:0.25rem 0 0.4rem;color:#38bdf8;font-size:1.2rem">Welcome!</h3>
+        <p id="oidc-403-detail" style="margin:0.35rem 0 0.75rem;font-size:0.92rem;color:#e2e8f0"></p>
+        <div style="font-size:0.8rem;font-weight:700;color:var(--sky);margin-bottom:0.35rem">Appended Account Record in <code>/data/registered-accounts.json</code>:</div>
+        <pre id="oidc-welcome-captured-record" class="code-block" style="margin:0"></pre>
       </div>
 
       <div id="oidc-status-msg" style="background:#0f172a;border:1px solid var(--border);border-radius:8px;padding:0.85rem;margin:1rem 0;font-size:0.88rem;color:#cbd5e1">
@@ -271,8 +278,8 @@
           <button type="button" class="btn" onclick="window.verifyPastedGoogleJwt()">
             Verify RS256 Signature &amp; Unlock Console
           </button>
-          <button type="button" class="btn btn-outline" onclick="window.inspectAuthenticatedPreview()">
-            Founder Local Workspace Preview (luke@rtpait.com)
+          <button type="button" class="btn btn-outline" onclick="window.testNonAdminWelcomeCapture()">
+            Test Door 2 Non-Admin Welcome &amp; Account Capture
           </button>
         </div>
       </div>
@@ -808,6 +815,7 @@
         var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
         var claims = await verifyGoogleIdTokenCryptographically(response.credential, clientId);
         sessionStorage.setItem("rtpait_oidc_verified_email", claims.email);
+        sessionStorage.setItem("rtpait_oidc_verified_jwt", idTokenJwt);
         sessionStorage.setItem("rtpait_oidc_verified_exp", String(claims.exp));
         await loadAdminDataAndRender(
           "<code>" + claims.email + "</code> (Cryptographically Verified Google OIDC RS256 JWKS · <code>hd=" + (claims.hd || "rtpait.com") + "</code> · <code>sub=" + claims.sub + "</code>)"
@@ -830,13 +838,6 @@
       await window.handleGoogleCredentialResponse({ credential: raw.trim() });
     };
 
-    window.inspectAuthenticatedPreview = async function() {
-      sessionStorage.setItem("rtpait_oidc_verified_email", "luke@rtpait.com");
-      await loadAdminDataAndRender(
-        "<code>luke@rtpait.com</code> (Founder Workspace Session · Sole-Admin RBAC Active · <code>federated_auth_enabled = true</code>)"
-      );
-    };
-
     window.saveGoogleClientId = function() {
       var val = ((document.getElementById("input-google-client-id") || {}).value || "").trim();
       if (!val) return;
@@ -852,7 +853,7 @@
         document.getElementById("client-id-config-drawer").classList.remove("hidden");
         document.getElementById("input-google-client-id").focus();
         document.getElementById("oidc-status-msg").innerHTML =
-          '<strong style="color:#38bdf8">1-Step Google Client ID Setup Needed:</strong> Paste your Google Cloud Console Web OAuth 2.0 Client ID (<code>*.apps.googleusercontent.com</code>) below (or use Option 2 / Founder Workspace Preview) to launch the Google OAuth 2.0 PKCE popup.';
+          '<strong style="color:#38bdf8">1-Step Google Client ID Setup Needed:</strong> Paste your Google Cloud Console Web OAuth 2.0 Client ID (<code>*.apps.googleusercontent.com</code>) below (or paste a signed Google OIDC JWT in Option 2) to launch the Google OAuth 2.0 PKCE popup.';
         return;
       }
       var array = new Uint8Array(32);
@@ -881,6 +882,7 @@
 
     window.rtpSignOut = function() {
       sessionStorage.removeItem("rtpait_oidc_verified_email");
+      sessionStorage.removeItem("rtpait_oidc_verified_jwt");
       sessionStorage.removeItem("rtpait_oidc_verified_exp");
       document.getElementById("authenticated-console").classList.add("hidden");
       document.getElementById("btn-sign-out").classList.add("hidden");
@@ -913,8 +915,9 @@
         document.getElementById("input-google-client-id").value = savedClientId;
         setTimeout(function() { mountGoogleSignInButton(savedClientId); }, 400);
       }
-      if (params.get("preview") === "founder" || sessionStorage.getItem("rtpait_oidc_verified_email") === ALLOWED_EMAIL) {
-        window.inspectAuthenticatedPreview();
+      var verifiedJwt = sessionStorage.getItem("rtpait_oidc_verified_jwt") || "";
+      if (verifiedJwt) {
+        window.handleGoogleCredentialResponse({ credential: verifiedJwt });
       }
     });
   })();

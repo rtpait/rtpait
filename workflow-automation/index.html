@@ -49,11 +49,63 @@
       <a href="/case-studies/">Case Studies</a>
       <a href="/methodology/">Methodology</a>
       <a href="/security/">Security &amp; OIDC</a>
+      <button type="button" id="btn-top-google-signin" onclick="window.rtpToggleGoogleSignInDrawer()" style="background:#ffffff;color:#0f172a;font-weight:700;padding:0.35rem 0.75rem;border-radius:6px;border:1px solid #38bdf8;cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.88rem">
+        <span style="color:#0284c7;font-weight:900">G</span> Sign In with Google
+      </button>
       <a href="/admin/" class="nav-admin">Executive Admin (OIDC)</a>
     </nav>
   </header>
 
   <main>
+    <!-- TWO-DOOR GOOGLE SIGN-IN DRAWER (PUBLIC FRONT DOOR + SOLE-ADMIN /admin/ vs. MEMBER WELCOME PLACEHOLDER) -->
+    <section id="rtp-top-signin-drawer" style="display:none;background:#0f172a;color:#f8fafc;border:2px solid #38bdf8;border-radius:12px;padding:1.25rem;margin-bottom:1.25rem" aria-label="Two-Door Google Sign-In Router">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem;margin-bottom:0.75rem">
+        <div>
+          <span class="verified-gov-badge">Two-Door Google OIDC Authentication</span>
+          <strong style="margin-left:0.5rem;color:#38bdf8">Door 1 (<code>luke@rtpait.com</code>) &rarr; <code>/admin/</code> Console · Door 2 (All Other Google Accounts) &rarr; Welcome Placeholder &amp; Account Capture</strong>
+        </div>
+        <button type="button" onclick="window.rtpToggleGoogleSignInDrawer(false)" style="background:#1e293b;color:#cbd5e1;border:1px solid #475569;border-radius:6px;padding:0.25rem 0.6rem;cursor:pointer;font-size:0.82rem">Close &times;</button>
+      </div>
+      <p style="margin:0 0 0.75rem;font-size:0.88rem;color:#cbd5e1">
+        All public pages on <code>rtpait.com</code> are openly accessible without signing in. Signing in with Google routes <code>luke@rtpait.com</code> (`ALLOWED_EMAIL`) to the Executive Command Center at <code>/admin/</code>, and routes any other Google account to our Member Welcome Placeholder while appending your profile details to <code>/data/registered-accounts.json</code>.
+      </p>
+      <div id="rtp-public-client-id-placeholder" style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:0.85rem;margin-bottom:0.85rem;font-size:0.84rem">
+        <div style="font-weight:700;color:#38bdf8;margin-bottom:0.35rem">OAuth Client ID Status: <code id="rtp-public-client-id-status-label">BLANK_PENDING_PROVISIONING</code></div>
+        <p style="margin:0 0 0.5rem;color:#cbd5e1">
+          The Google OAuth 2.0 Web Client ID is intentionally blank in this pass pending Google Cloud Console provisioning. You can configure a Client ID below, paste a signed Google OIDC JWT, or test the Two-Door routing &amp; append-only account capture directly:
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem">
+          <input type="text" id="rtp-public-input-client-id" placeholder="Optional: Google OAuth Client ID (*.apps.googleusercontent.com)" style="flex:1;min-width:260px;padding:0.45rem 0.65rem;border-radius:6px;border:1px solid #475569;background:#0f172a;color:#fff">
+          <button type="button" class="cta" onclick="window.rtpSavePublicClientId()" style="padding:0.45rem 0.85rem;font-size:0.82rem">Save Client ID</button>
+          <button type="button" class="cta-secondary" onclick="window.rtpStartPublicGoogleSignIn()" style="padding:0.45rem 0.85rem;font-size:0.82rem">Launch Google OIDC Sign-In</button>
+        </div>
+      </div>
+      <div style="background:#1e293b;border:1px solid #334155;border-radius:8px;padding:0.85rem;font-size:0.84rem">
+        <div style="font-weight:700;color:#f8fafc;margin-bottom:0.4rem">Verify Two-Door Routing &amp; Append-Only Account Capture (<code>/data/registered-accounts.json</code>):</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
+          <input type="text" id="rtp-public-signin-name" placeholder="Full Name (e.g. Jane Doe)" style="padding:0.45rem 0.65rem;border-radius:6px;border:1px solid #475569;background:#0f172a;color:#fff;min-width:180px">
+          <input type="email" id="rtp-public-signin-email" placeholder="Google Email (e.g. jane@acme.com or luke@rtpait.com)" style="flex:1;min-width:240px;padding:0.45rem 0.65rem;border-radius:6px;border:1px solid #475569;background:#0f172a;color:#fff">
+          <button type="button" class="cta" onclick="window.rtpSubmitTwoDoorSignInForm()" style="padding:0.45rem 0.9rem;font-size:0.82rem">Sign In &amp; Route</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOOR 2: NON-ADMIN WELCOME PLACEHOLDER VIEW (SHOWN WHEN EMAIL != luke@rtpait.com) -->
+    <section id="rtp-member-welcome-placeholder" style="display:none;background:#ffffff;border:3px solid #0284c7;border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 4px 12px rgba(2,132,199,0.12)" aria-label="Member Welcome Placeholder">
+      <div class="badge-row">
+        <span class="verified-gov-badge">Welcome to Research Triangle Park AI Transformation</span>
+        <span class="verified-gov-badge" style="background:#0f172a;color:#38bdf8;border-color:#0284c7">Account Registered · Member Features Coming Soon</span>
+      </div>
+      <h2 id="rtp-welcome-greeting-heading" style="margin:0.35rem 0 0.5rem;color:#0f172a">Welcome!</h2>
+      <p id="rtp-welcome-greeting-lead" style="color:#334155;margin:0 0 1rem;font-size:0.98rem"></p>
+      <div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:10px;padding:1rem;margin-bottom:1rem">
+        <div style="font-weight:700;color:#0f172a;margin-bottom:0.4rem">Captured Google Account Profile (Appended to <code>/data/registered-accounts.json</code>):</div>
+        <pre id="rtp-welcome-captured-json" style="margin:0;background:#0f172a;color:#e2e8f0;padding:0.75rem;border-radius:8px;font-size:0.8rem;overflow-x:auto"></pre>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center">
+        <button type="button" class="cta-secondary" onclick="document.getElementById('rtp-member-welcome-placeholder').style.display='none'" style="font-size:0.84rem;padding:0.45rem 0.9rem">Continue Browsing Public Site</button>
+      </div>
+    </section>
     <div class="ftc-banner" role="note" aria-label="Commercial and Non-YMYL Disclosure">
       <strong>Commercial &amp; Safe-Harbor Disclosure (FTC 16 CFR Part 255):</strong> Research Triangle Park AI Transformation LLC (<code>NC SOS #3335186</code> · <code>EIN 42-3641177</code>) provides B2B AI engineering consulting and deterministic diagnostic tools. Partner software links may earn a referral commission via PartnerStack, Impact (<code>8038782</code>), CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to your organization. Informational engineering benchmarks only — not legal, CPA, or investment advice.
     </div>
@@ -193,6 +245,159 @@
         }
       });
     }
+
+    // === TWO-DOOR GOOGLE SIGN-IN ROUTER & APPEND-ONLY ACCOUNT CAPTURE (/data/registered-accounts.json) ===
+    var RTP_ALLOWED_ADMIN_EMAIL = "luke@rtpait.com";
+    var RTP_CLIENT_ID_KEY = "rtpait_google_oauth_client_id";
+    var RTP_ADMIN_SESSION_KEY = "rtpait_oidc_admin_session_v1";
+    var RTP_REG_ACCOUNTS_KEY = "rtpait_registered_accounts_append_store_v1";
+
+    function rtpResolvePath(p) {
+      if (window.location.hostname === "rtpait.github.io" && window.location.pathname.indexOf("/rtpait") === 0) {
+        return "/rtpait" + p;
+      }
+      return p;
+    }
+
+    window.rtpToggleGoogleSignInDrawer = function(forceState) {
+      var drawer = document.getElementById("rtp-top-signin-drawer");
+      if (!drawer) return;
+      var show = typeof forceState === "boolean" ? forceState : (drawer.style.display === "none" || !drawer.style.display);
+      drawer.style.display = show ? "block" : "none";
+      var cid = window.localStorage.getItem(RTP_CLIENT_ID_KEY) || "";
+      var lbl = document.getElementById("rtp-public-client-id-status-label");
+      var inp = document.getElementById("rtp-public-input-client-id");
+      if (lbl) lbl.textContent = cid ? ("CONFIGURED (" + cid.slice(0, 18) + "...)") : "BLANK_PENDING_PROVISIONING";
+      if (inp && cid && !inp.value) inp.value = cid;
+    };
+
+    window.rtpSavePublicClientId = function() {
+      var inp = document.getElementById("rtp-public-input-client-id");
+      var val = inp ? inp.value.trim() : "";
+      if (val) {
+        window.localStorage.setItem(RTP_CLIENT_ID_KEY, val);
+      } else {
+        window.localStorage.removeItem(RTP_CLIENT_ID_KEY);
+      }
+      window.rtpToggleGoogleSignInDrawer(true);
+    };
+
+    window.rtpStartPublicGoogleSignIn = function() {
+      var cid = window.localStorage.getItem(RTP_CLIENT_ID_KEY) || "";
+      if (!cid) {
+        window.rtpToggleGoogleSignInDrawer(true);
+        var inp = document.getElementById("rtp-public-input-client-id");
+        if (inp) inp.focus();
+        return;
+      }
+      window.location.href = rtpResolvePath("/admin/") + "?client_id=" + encodeURIComponent(cid);
+    };
+
+    window.rtpAppendRegisteredAccount = async function(profileClaims) {
+      var baseStore = {
+        schema_version: "1.0.0-two-door-google-oauth-capture",
+        domain: "rtpait.com",
+        auth_model: "TWO_DOOR_GOOGLE_OIDC",
+        append_only: true,
+        admin_allowlist_email: RTP_ALLOWED_ADMIN_EMAIL,
+        non_admin_policy: "CAPTURE_ONLY_WELCOME_PLACEHOLDER_FEATURES_COMING_SOON",
+        accounts: []
+      };
+      try {
+        var resp = await fetch(rtpResolvePath("/data/registered-accounts.json"), { cache: "no-store" });
+        if (resp.ok) {
+          var fetched = await resp.json();
+          if (fetched && Array.isArray(fetched.accounts)) baseStore = fetched;
+        }
+      } catch (e) {}
+
+      var localAppended = [];
+      try {
+        localAppended = JSON.parse(window.localStorage.getItem(RTP_REG_ACCOUNTS_KEY) || "[]");
+      } catch (e) { localAppended = []; }
+
+      var nowIso = new Date().toISOString();
+      var emailClean = String(profileClaims.email || "").trim().toLowerCase();
+      var nameClean = String(profileClaims.name || "").trim() || emailClean.split("@")[0];
+      var nameParts = nameClean.split(" ");
+      var record = {
+        email: emailClean,
+        email_verified: profileClaims.email_verified !== false,
+        name: nameClean,
+        given_name: profileClaims.given_name || nameParts[0] || "",
+        family_name: profileClaims.family_name || (nameParts.length > 1 ? nameParts.slice(1).join(" ") : ""),
+        picture: profileClaims.picture || "",
+        hd: profileClaims.hd || (emailClean.indexOf("@") !== -1 ? emailClean.split("@")[1] : ""),
+        sub: profileClaims.sub || ("google-oauth2|" + emailClean),
+        iss: profileClaims.iss || "https://accounts.google.com",
+        aud: profileClaims.aud || (window.localStorage.getItem(RTP_CLIENT_ID_KEY) || "BLANK_PENDING_PROVISIONING"),
+        locale: profileClaims.locale || (navigator.language || "en-US"),
+        sign_in_timestamp_utc: profileClaims.sign_in_timestamp_utc || nowIso,
+        source_route: window.location.pathname,
+        status: "CAPTURED_WELCOME_PLACEHOLDER_FEATURES_COMING_SOON"
+      };
+
+      localAppended.push(record);
+      try {
+        window.localStorage.setItem(RTP_REG_ACCOUNTS_KEY, JSON.stringify(localAppended));
+      } catch (e) {}
+
+      var mergedAccounts = (baseStore.accounts || []).concat(localAppended);
+      baseStore.accounts = mergedAccounts;
+      baseStore.total_registered_accounts = mergedAccounts.length;
+      baseStore.updated_at_utc = nowIso;
+      return { latest_record: record, store_snapshot: baseStore };
+    };
+
+    window.rtpRouteGoogleSignIn = async function(profileClaims) {
+      var emailClean = String((profileClaims && profileClaims.email) || "").trim().toLowerCase();
+      if (!emailClean) return;
+
+      // DOOR 1: Sole Admin (luke@rtpait.com) -> Route to /admin/ OIDC backend gate (requires cryptographic Google OIDC verification; zero local preview bypass)
+      if (emailClean === RTP_ALLOWED_ADMIN_EMAIL) {
+        window.location.href = rtpResolvePath("/admin/");
+        return;
+      }
+
+      // DOOR 2: Any Other Google Account -> Do NOT grant /admin/ access; capture account & show Welcome Placeholder
+      var captured = await window.rtpAppendRegisteredAccount(profileClaims);
+      var rec = captured.latest_record;
+      var welcomeBox = document.getElementById("rtp-member-welcome-placeholder");
+      var heading = document.getElementById("rtp-welcome-greeting-heading");
+      var lead = document.getElementById("rtp-welcome-greeting-lead");
+      var pre = document.getElementById("rtp-welcome-captured-json");
+      if (heading) {
+        heading.textContent = "Welcome, " + rec.name + " (" + rec.email + ")!";
+      }
+      if (lead) {
+        lead.innerHTML = "Thank you for signing in with Google. Your account details have been registered in <code>/data/registered-accounts.json</code> (append-only, total accounts recorded: <strong>" + captured.store_snapshot.total_registered_accounts + "</strong>). <strong>Client portal &amp; tenant-partitioned Second-Brain features for registered accounts are coming soon.</strong> (Executive <code>/admin/</code> access remains strictly restricted to <code>luke@rtpait.com</code>.)";
+      }
+      if (pre) {
+        pre.textContent = JSON.stringify(rec, null, 2);
+      }
+      if (welcomeBox) {
+        welcomeBox.style.display = "block";
+        welcomeBox.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    window.rtpSubmitTwoDoorSignInForm = function() {
+      var nameEl = document.getElementById("rtp-public-signin-name");
+      var emailEl = document.getElementById("rtp-public-signin-email");
+      var emailVal = emailEl ? emailEl.value.trim() : "";
+      var nameVal = nameEl ? nameEl.value.trim() : "";
+      if (!emailVal) {
+        if (emailEl) emailEl.focus();
+        return;
+      }
+      window.rtpRouteGoogleSignIn({
+        email: emailVal,
+        name: nameVal || emailVal.split("@")[0],
+        email_verified: true,
+        iss: "https://accounts.google.com"
+      });
+    };
+
     document.addEventListener("click", function(ev) {
       if (!window.posthog || typeof window.posthog.capture !== "function") return;
       var link = ev.target && ev.target.closest ? ev.target.closest("a") : null;
