@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "domain": "rtpait.com",
-  "organization": "Research Triangle Park AI Transformation LLC (NC SOS #3335186, EIN 42-3641177)",
+  "organization": "Research Triangle Park AI Transformation LLC",
   "canonical_url": "https://rtpait.com",
   "STAGE_2_AUTO_TRIGGER_ENABLED": false,
   "tools": [

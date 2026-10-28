@@ -910,7 +910,7 @@
       if (urlClientId) {
         sessionStorage.setItem("rtpait_google_oidc_client_id", urlClientId.trim());
       }
-      var savedClientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
+      var savedClientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || localStorage.getItem("rtpait_google_oauth_client_id") || "";
       if (savedClientId) {
         document.getElementById("input-google-client-id").value = savedClientId;
         setTimeout(function() { mountGoogleSignInButton(savedClientId); }, 400);

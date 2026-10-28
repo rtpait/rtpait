@@ -107,12 +107,12 @@
       </div>
     </section>
     <div class="ftc-banner" role="note" aria-label="Commercial and Non-YMYL Disclosure">
-      <strong>Commercial &amp; Safe-Harbor Disclosure (FTC 16 CFR Part 255):</strong> Research Triangle Park AI Transformation LLC (<code>NC SOS #3335186</code> · <code>EIN 42-3641177</code>) provides B2B AI engineering consulting and deterministic diagnostic tools. Partner software links may earn a referral commission via PartnerStack, Impact (<code>8038782</code>), CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to your organization. Informational engineering benchmarks only — not legal, CPA, or investment advice.
+      <strong>Commercial &amp; Safe-Harbor Disclosure (FTC 16 CFR Part 255):</strong> Research Triangle Park AI Transformation LLC provides B2B AI engineering consulting and deterministic diagnostic tools. Partner software links may earn a referral commission via PartnerStack, Impact (<code>8038782</code>), CJ (<code>8108003</code>), AWIN (<code>3133124</code>), or Rakuten (<code>4767884</code>) at zero extra cost to your organization. Informational engineering benchmarks only — not legal, CPA, or investment advice.
     </div>
     
 <section class="hero">
   <div class="badge-row">
-    <span class="verified-gov-badge">Research Triangle Park AI Transformation LLC · NC SOS #3335186</span>
+    <span class="verified-gov-badge">Research Triangle Park AI Transformation LLC</span>
     <span class="verified-gov-badge">National &amp; Global B2B Reach · Powered by Research Triangle Park (RTP) Talent</span>
   </div>
   <h1>Service Line 1: AI Strategy & 2-Week 7-Step Readiness Diagnostic ($15k–$25k)</h1>
@@ -307,7 +307,7 @@ window.copyExecutiveBrief = function() {
   <footer>
     <hr>
     <p>
-      <strong>Research Triangle Park AI Transformation LLC</strong> (<code>NC SOS Filing #3335186</code> · <code>EIN 42-3641177</code>) · Headquartered in Research Triangle Park (4030 Wake Forest Road, Suite 349, Raleigh, NC 27609) · Deploying RTP Engineering &amp; Research Talent Nationwide &amp; Globally · <a href="mailto:luke@rtpait.com">luke@rtpait.com</a>
+      <strong>Research Triangle Park AI Transformation LLC</strong> · Headquartered in Research Triangle Park (4030 Wake Forest Road, Suite 349, Raleigh, NC 27609) · Deploying RTP Engineering &amp; Research Talent Nationwide &amp; Globally · <a href="mailto:luke@rtpait.com">luke@rtpait.com</a>
     </p>
     <p>
       <a href="/">Home</a> ·
@@ -371,6 +371,10 @@ window.copyExecutiveBrief = function() {
     // === TWO-DOOR GOOGLE SIGN-IN ROUTER & APPEND-ONLY ACCOUNT CAPTURE (/data/registered-accounts.json) ===
     var RTP_ALLOWED_ADMIN_EMAIL = "luke@rtpait.com";
     var RTP_CLIENT_ID_KEY = "rtpait_google_oauth_client_id";
+    var RTP_DEFAULT_SITE_CLIENT_ID = "";
+    if (RTP_DEFAULT_SITE_CLIENT_ID && !window.localStorage.getItem(RTP_CLIENT_ID_KEY)) {
+      window.localStorage.setItem(RTP_CLIENT_ID_KEY, RTP_DEFAULT_SITE_CLIENT_ID);
+    }
     var RTP_ADMIN_SESSION_KEY = "rtpait_oidc_admin_session_v1";
     var RTP_REG_ACCOUNTS_KEY = "rtpait_registered_accounts_append_store_v1";
 

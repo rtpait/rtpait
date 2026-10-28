@@ -1,6 +1,6 @@
 # Research Triangle Park AI Transformation LLC (https://rtpait.com)
 
-> Executive B2B AI Transformation, Forward-Deployed Harness Engineering, 7-Step Agentic Org Maturity Diagnostics, and Proprietary Multi-Agent IP Portfolio based in Raleigh & Research Triangle Park, NC (NC SOS Filing #3335186, EIN 42-3641177).
+> Executive B2B AI Transformation, Forward-Deployed Harness Engineering, 7-Step Agentic Org Maturity Diagnostics, and Proprietary Multi-Agent IP Portfolio based in Raleigh & Research Triangle Park, NC.
 
 - **Canonical Domain:** https://rtpait.com
 - **Agentic Discovery Manifest (WebMCP):** https://rtpait.com/.well-known/webmcp.json
