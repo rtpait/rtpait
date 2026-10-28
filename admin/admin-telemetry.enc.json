@@ -1,13 +1,13 @@
 {
-  "schema_version": "2.0.0-oidc-encrypted-envelope",
+  "schema_version": "2.1.0-oidc-encrypted-envelope",
   "domain": "rtpait.com",
-  "generated_at_utc": "2026-10-27T13:52:55Z",
-  "auth_gate": "OpenID Connect (luke@rtpait.com sole admin RBAC, federated_auth_enabled=true, password_auth_prohibited=true, mfa_second_factor=SMS_2FA)",
+  "generated_at_utc": "2026-10-28T12:57:41Z",
+  "auth_gate": "OpenID Connect (Sole-Admin OIDC Allowlist SHA-256 RBAC, federated_auth_enabled=true, password_auth_prohibited=true, mfa_second_factor=SMS_2FA)",
   "kdf": "PBKDF2-HMAC-SHA256",
   "iterations": 250000,
   "cipher": "AES-256-GCM",
-  "salt_b64": "5vXYp+/y1TaggogRQRG0IQ==",
-  "iv_b64": "6U9wIp2UPChYOEh+",
-  "tag_b64": "UuxfITBKmX5ZWl7OT8NzTg==",
-  "ciphertext": "zxwJ13Vuzy4atWQUJ3OyaikigDLldyt5lcCO6zmImRVpqfERpd/QdtZxJfatiQjFWXvsVD/vGqCkq5EqlZwauX76RfLDiPAsdafL7cvpAsG1KDgB"
+  "salt_b64": "G6Ov0Sp0ka/a+tdyPfy5jA==",
+  "iv_b64": "V1+fkYHlHhK5aMfB",
+  "tag_b64": "MfrAsuC8oAUTabuSJLNjag==",
+  "ciphertext": "WyIWZMFs9g58cFGTLHjI8c+V5iI4Pbrxx/24/z5PviRoXZgkdC5DZJBFu+215PK8vT0rc7pim+51qiyXqBv1L8gGfo9768IVskjZMQ1VLB4bFotj"
 }

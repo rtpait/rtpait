@@ -1,10 +1,9 @@
 {
   "schema_version": "1.0.0-two-door-google-oauth-capture",
   "domain": "rtpait.com",
-  "updated_at_utc": "2026-10-27T21:05:00Z",
+  "updated_at_utc": "2026-10-28T12:40:00Z",
   "auth_model": "TWO_DOOR_GOOGLE_OIDC",
   "append_only": true,
-  "admin_allowlist_email": "luke@rtpait.com",
   "admin_route": "/admin/",
   "non_admin_policy": "CAPTURE_ONLY_WELCOME_PLACEHOLDER_FEATURES_COMING_SOON",
   "oauth_client_id_status": "BLANK_PENDING_PROVISIONING",
@@ -27,5 +26,6 @@
     "status"
   ],
   "total_registered_accounts": 0,
-  "accounts": []
+  "accounts": [],
+  "admin_allowlist_sha256": "d8939462c508d5ccacd924b8c961112c23441cbbbd81f6d353b8288f0160d5e7"
 }

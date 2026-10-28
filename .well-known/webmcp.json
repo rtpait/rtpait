@@ -80,7 +80,7 @@
     },
     {
       "name": "list_rtpait_ip_portfolio_and_second_brain_api",
-      "description": "Lists RTP AIT LLC's live web properties (junkhaulhq.com, b2bfeeaudit.com, b2bcostaudit.com, saascostaudit.com, apicostaudit.com) and the future Paid 3-Layer JSON-Node Second-Brain API Tier with Tenant-Based Access Partitioning.",
+      "description": "Lists RTP AIT LLC's anonymized live web properties (Venture #01 through Venture #05) and the future Paid 3-Layer JSON-Node Second-Brain API Tier with Tenant-Based Access Partitioning.",
       "route": "https://rtpait.com/ip-products/",
       "input_schema": {
         "type": "object",

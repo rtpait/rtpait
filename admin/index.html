@@ -205,30 +205,30 @@
       <span class="pill pill-green" id="hdr-oidc-badge">federated_auth_enabled = true</span>
       <span class="pill" id="hdr-zero-pw-badge">password_auth_prohibited = true</span>
       <span class="pill pill-amber" id="hdr-mfa-badge">Primary: OIDC + Second Factor: SMS_2FA</span>
-      <span class="pill" id="hdr-session-user">Locked: luke@rtpait.com</span>
+      <span class="pill" id="hdr-session-user">Locked: Sole-Admin OIDC Allowlist</span>
       <a href="/" class="btn btn-outline" style="text-decoration:none;padding:0.4rem 0.75rem;font-size:0.8rem;">&larr; View Full Site (14 Routes)</a>
       <button type="button" class="btn btn-danger hidden" id="btn-sign-out" onclick="window.rtpSignOut()">Sign Out</button>
     </div>
   </header>
 
   <div class="container">
-    <!-- 1. OIDC AUTHENTICATION GATE (luke@rtpait.com SOLE ADMIN) -->
+    <!-- 1. OIDC AUTHENTICATION GATE (Sole-Admin OIDC Allowlist SOLE ADMIN) -->
     <section class="auth-gate-card" id="oidc-auth-gate" aria-label="OpenID Connect Sole-Admin Authentication Gate">
       <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.75rem">
         <span class="pill pill-green">OpenID Connect (RS256 JWKS + PKCE S256)</span>
-        <span class="pill">Sole Admin Allowlist: luke@rtpait.com</span>
+        <span class="pill">Sole Admin Allowlist: Sole-Admin OIDC Allowlist</span>
         <span class="pill pill-amber">Zero Manual Passwords Permitted</span>
       </div>
-      <h1 style="margin:0 0 0.5rem;font-size:1.55rem">Authorize with <code>luke@rtpait.com</code> OpenID Connect</h1>
+      <h1 style="margin:0 0 0.5rem;font-size:1.55rem">Authorize with <code>Sole-Admin OIDC Allowlist</code> OpenID Connect</h1>
       <p style="color:var(--muted);margin-top:0">
-        Per Founder Directive (<code>OD-RTPAIT-006</code> &amp; <code>OD-RTPAIT-007</code>), the legacy passphrase gate is permanently retired and <code>federated_auth_enabled = true</code> is active. Access to the <strong>Unified Multi-Product Analytics Dashboard</strong> and the <strong>3-Layer JSON-Node Founder Second Brain</strong> requires cryptographic Google OpenID Connect verification for <strong><code>luke@rtpait.com</code></strong> (<code>iss == https://accounts.google.com</code>, <code>hd == rtpait.com</code>, <code>email_verified == true</code>).
+        Per Founder Directive (<code>OD-RTPAIT-006</code> &amp; <code>OD-RTPAIT-007</code>), the legacy passphrase gate is permanently retired and <code>federated_auth_enabled = true</code> is active. Access to the <strong>Unified Multi-Product Analytics Dashboard</strong> and the <strong>3-Layer JSON-Node Founder Second Brain</strong> requires cryptographic Google OpenID Connect verification for <strong><code>Sole-Admin OIDC Allowlist</code></strong> (<code>iss == https://accounts.google.com</code>, <code>hd == rtpait.com</code>, <code>email_verified == true</code>).
       </p>
 
-      <!-- HTTP 403 FORBIDDEN + DOOR 2 MEMBER WELCOME PLACEHOLDER (shown if non-luke@rtpait.com user signs in) -->
+      <!-- HTTP 403 FORBIDDEN + DOOR 2 MEMBER WELCOME PLACEHOLDER (shown if non-Sole-Admin OIDC Allowlist user signs in) -->
       <div id="oidc-403-banner" class="hidden" style="background:rgba(14,165,233,0.12);border:2px solid var(--sky);border-radius:12px;padding:1.25rem;margin:1rem 0;color:#f8fafc">
         <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.5rem">
           <span class="pill pill-green">Door 2: Member Account Captured</span>
-          <span class="pill pill-amber">Admin Access Restricted to luke@rtpait.com</span>
+          <span class="pill pill-amber">Admin Access Restricted to Sole-Admin OIDC Allowlist</span>
           <span class="pill">Features Coming Soon</span>
         </div>
         <h3 id="oidc-welcome-title" style="margin:0.25rem 0 0.4rem;color:#38bdf8;font-size:1.2rem">Welcome!</h3>
@@ -246,7 +246,7 @@
         <div style="font-weight:700;margin-bottom:0.5rem;color:#fff">Option 1: Google Identity Services Sign-In Button / OAuth 2.0 PKCE Flow</div>
         <div id="g_id_onload_mount" style="margin:0.65rem 0"></div>
         <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem;align-items:center">
-          <input type="email" id="input-admin-oidc-email" value="luke@rtpait.com" placeholder="Google Workspace email (luke@rtpait.com)" style="max-width:260px;padding:0.55rem 0.75rem;">
+          <input type="email" id="input-admin-oidc-email" value="" placeholder="Enter authorized Google Workspace email" style="max-width:260px;padding:0.55rem 0.75rem;">
           <button type="button" class="btn" style="background:#22c55e;color:#052e16;font-weight:800;" onclick="window.routeAdminGoogleOidcEmail(true)">
             Sign In &amp; Open Full 14-Route Site (/) &rarr;
           </button>
@@ -276,7 +276,7 @@
       <div style="background:#0f172a;border:1px solid var(--border);border-radius:10px;padding:1.15rem">
         <div style="font-weight:700;margin-bottom:0.35rem;color:#fff">Option 2: Direct Google OIDC ID Token (JWT) Cryptographic Verification (RS256 JWKS)</div>
         <p style="font-size:0.82rem;color:var(--muted);margin:0 0 0.6rem">
-          Paste a signed Google OpenID Connect <code>id_token</code> JWT for <code>luke@rtpait.com</code> (e.g., from <code>gcloud auth print-identity-token</code> or Google OAuth Playground). The browser fetches Google's live public keys from <code>https://www.googleapis.com/oauth2/v3/certs</code> and verifies the <code>RS256</code> signature via <code>window.crypto.subtle.verify</code>:
+          Paste a signed Google OpenID Connect <code>id_token</code> JWT for <code>Sole-Admin OIDC Allowlist</code> (e.g., from <code>gcloud auth print-identity-token</code> or Google OAuth Playground). The browser fetches Google's live public keys from <code>https://www.googleapis.com/oauth2/v3/certs</code> and verifies the <code>RS256</code> signature via <code>window.crypto.subtle.verify</code>:
         </p>
         <textarea id="input-oidc-jwt" rows="3" placeholder="Paste signed Google OIDC ID Token (eyJhbGciOiJSUzI1NiIs...)"></textarea>
         <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem">
@@ -302,22 +302,22 @@
     <main id="authenticated-console" class="hidden" aria-label="Authenticated Executive Command Center">
       <div style="background:rgba(34,197,94,0.12);border:2px solid #22c55e;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
         <div>
-          <div style="font-weight:800;color:#4ade80;font-size:1rem;">Full 14-Route Site &amp; /admin/ Unlocked for <code>luke@rtpait.com</code></div>
+          <div style="font-weight:800;color:#4ade80;font-size:1rem;">Full 14-Route Site &amp; /admin/ Unlocked for <code>Sole-Admin OIDC Allowlist</code></div>
           <div style="font-size:0.84rem;color:#cbd5e1;margin-top:0.2rem;">Your Google OIDC session is active across all 14 routes. Click below to view and iterate on the full site or use the 3 Executive Command Center tabs below.</div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-          <a href="/?oidc_unlocked=1" class="btn" style="background:#22c55e;color:#052e16;text-decoration:none;font-weight:800;">Open Full 14-Route Site (/) &rarr;</a>
-          <a href="/diagnostic/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">7-Step Diagnostic</a>
-          <a href="/strategy-readiness/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">Readiness Matrix</a>
-          <a href="/workflow-automation/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">Workflow ROI</a>
-          <a href="/ip-products/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">IP &amp; Products</a>
-          <a href="/services/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">Services</a>
+          <a href="/" class="btn" style="background:#22c55e;color:#052e16;text-decoration:none;font-weight:800;">Open Full 14-Route Site (/) &rarr;</a>
+          <a href="/diagnostic/" class="btn btn-outline" style="text-decoration:none;">7-Step Diagnostic</a>
+          <a href="/strategy-readiness/" class="btn btn-outline" style="text-decoration:none;">Readiness Matrix</a>
+          <a href="/workflow-automation/" class="btn btn-outline" style="text-decoration:none;">Workflow ROI</a>
+          <a href="/ip-products/" class="btn btn-outline" style="text-decoration:none;">IP &amp; Products</a>
+          <a href="/services/" class="btn btn-outline" style="text-decoration:none;">Services</a>
         </div>
       </div>
       <div class="panel" style="padding:0.9rem 1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;border-left:4px solid var(--emerald)">
         <div>
           <strong style="color:#4ade80">Authenticated Session Active:</strong>
-          <span id="session-identity-summary"><code>luke@rtpait.com</code> (Issuer: <code>https://accounts.google.com</code> · Hosted Domain: <code>rtpait.com</code> · Role: <code>admin</code>)</span>
+          <span id="session-identity-summary"><code>Sole-Admin OIDC Allowlist</code> (Issuer: <code>https://accounts.google.com</code> · Hosted Domain: <code>rtpait.com</code> · Role: <code>admin</code>)</span>
         </div>
         <div style="font-size:0.8rem;color:var(--muted)" id="data-generated-timestamp">Loading live telemetry...</div>
       </div>
@@ -351,7 +351,7 @@
                 <th>Stage &amp; Version</th>
                 <th>Built Routes</th>
                 <th>GSC Indexed (75% Gate)</th>
-                <th>PostHog 685354 (Human / AI / Bot)</th>
+                <th>Privacy-First Telemetry (Human / AI / Bot)</th>
                 <th>Day-0 Spoke Gates (W / LC / IS)</th>
                 <th>6/6 PO Files</th>
                 <th>Primary Bottleneck</th>
@@ -378,7 +378,7 @@
         </div>
 
         <div class="panel">
-          <h3>Token Usage Telemetry Ledger (<code>/workspace/analytics/token-usage-ledger.json</code>)</h3>
+          <h3>Token Usage Telemetry Ledger (<code>token-usage-ledger.json</code>)</h3>
           <table>
             <thead>
               <tr><th>Job ID</th><th>Title</th><th>Category</th><th>Total Tokens</th><th>Window / Notes</th></tr>
@@ -430,16 +430,16 @@
               <select id="sb-filter-domain" onchange="window.renderSecondBrainNodes()">
                 <option value="ALL">All Road-to-Revenue Domains</option>
                 <option value="rtpait.com">rtpait.com (Flagship Hub)</option>
-                <option value="junkhaulhq.com">junkhaulhq.com (Home Services)</option>
-                <option value="b2bfeeaudit.com">b2bfeeaudit.com (FEES)</option>
-                <option value="b2bcostaudit.com">b2bcostaudit.com (COSTS)</option>
-                <option value="saascostaudit.com">saascostaudit.com (SAAS_PLATFORMS)</option>
-                <option value="apicostaudit.com">apicostaudit.com (API_COSTS)</option>
+                <option value="Venture #01">Venture #01 (Home Services)</option>
+                <option value="Venture #02">Venture #02 (FEES)</option>
+                <option value="Venture #03">Venture #03 (COSTS)</option>
+                <option value="Venture #04">Venture #04 (SAAS_PLATFORMS)</option>
+                <option value="Venture #05">Venture #05 (API_COSTS)</option>
               </select>
             </div>
             <div>
               <label for="sb-search-input" style="font-size:0.78rem;color:var(--muted);font-weight:700">Search Nodes (Title, Agent ID, Commit, Keyword)</label>
-              <input type="text" id="sb-search-input" placeholder="e.g. OD-RTPAIT-005, SMS_2FA, tenant, Kaizen, b2bcostaudit..." oninput="window.renderSecondBrainNodes()">
+              <input type="text" id="sb-search-input" placeholder="e.g. OD-RTPAIT-005, SMS_2FA, tenant, Kaizen, Venture #03..." oninput="window.renderSecondBrainNodes()">
             </div>
           </div>
 
@@ -462,7 +462,7 @@
           </div>
           <h2>Paid 3-Layer JSON-Node Second-Brain API: Tenant-Based Access Partitioning &amp; Golden-Template Cloning</h2>
           <p style="color:#cbd5e1">
-            Captured per Founder Wally Buck's architectural directives on October 27, 2026 as a stated future revenue line in <code>CHARTER.md</code>, <code>PRODUCT-STATE.md</code>, <code>VENTURELAB-INTAKE-RTPAIT.md</code>, <code>ROAD-TO-REVENUE-SPRINT-PLAN.md</code>, and <code>/workspace/identity-security/CHARTER.md</code>:
+            Captured per Founder / Managing Director's architectural directives on October 27, 2026 as a stated future revenue line in <code>CHARTER.md</code>, <code>PRODUCT-STATE.md</code>, <code>VENTURELAB-INTAKE-RTPAIT.md</code>, <code>ROAD-TO-REVENUE-SPRINT-PLAN.md</code>, and <code>IDENTITY-SECURITY-CHARTER.md</code>:
           </p>
           <table>
             <thead>
@@ -471,13 +471,13 @@
             <tbody>
               <tr>
                 <td><strong>1. Commercial Offer &amp; API Surface</strong></td>
-                <td>Metered and subscription API access (<code>/api/v1/second-brain/tenants/{tenant_id}/*</code>) exposing the 3-Layer JSON-Node Second Brain structure to enterprise teams, consulting clients, and external AI agents alongside the <code>/admin/</code> console for <code>luke@rtpait.com</code>.</td>
+                <td>Metered and subscription API access (<code>/api/v1/second-brain/tenants/{tenant_id}/*</code>) exposing the 3-Layer JSON-Node Second Brain structure to enterprise teams, consulting clients, and external AI agents alongside the <code>/admin/</code> console for <code>Sole-Admin OIDC Allowlist</code>.</td>
                 <td>Scoped per-tenant API keys + OIDC session tokens; zero shared global write state.</td>
               </tr>
               <tr>
                 <td><strong>2. Tenant-Based Access Partitioning &amp; Golden-Template Cloning</strong></td>
-                <td>When an external customer signs up and pays for API access, the system segments off a <strong>dedicated tenant partition</strong> (<code>/tenants/{tenant_id}/</code>) instantiated by copy-and-pasting (cloning) <code>luke@rtpait.com</code>'s master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema — <strong>strictly stripped of private founder data</strong>) as a Golden Template (<code>GOLDEN_TEMPLATE_CLONE</code>).</td>
-                <td><code>zero_founder_contamination = true</code>: External customer API writes, queries, and agent runs can never drift into, mutate, or contaminate <code>luke@rtpait.com</code>'s master founder Second Brain.</td>
+                <td>When an external customer signs up and pays for API access, the system segments off a <strong>dedicated tenant partition</strong> (<code>/tenants/{tenant_id}/</code>) instantiated by copy-and-pasting (cloning) <code>Sole-Admin OIDC Allowlist</code>'s master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema — <strong>strictly stripped of private founder data</strong>) as a Golden Template (<code>GOLDEN_TEMPLATE_CLONE</code>).</td>
+                <td><code>zero_founder_contamination = true</code>: External customer API writes, queries, and agent runs can never drift into, mutate, or contaminate <code>Sole-Admin OIDC Allowlist</code>'s master founder Second Brain.</td>
               </tr>
               <tr>
                 <td><strong>3. Universal OpenID Connect Across All Major IdPs</strong></td>
@@ -491,7 +491,7 @@
               </tr>
               <tr>
                 <td><strong>5. OpenID Connect + SMS-Based Two-Factor Authentication (SMS 2FA)</strong></td>
-                <td>Primary federated OpenID Connect identity verification paired with mandatory <strong>SMS-based two-factor authentication (<code>mfa_second_factor: "SMS_2FA"</code>)</strong> across (a) <code>/admin/</code> for <code>luke@rtpait.com</code>, (b) Paid Second-Brain API tenant customers, and (c) all future customer-facing logins across <code>rtpait.com</code> and portfolio products.</td>
+                <td>Primary federated OpenID Connect identity verification paired with mandatory <strong>SMS-based two-factor authentication (<code>mfa_second_factor: "SMS_2FA"</code>)</strong> across (a) <code>/admin/</code> for <code>Sole-Admin OIDC Allowlist</code>, (b) Paid Second-Brain API tenant customers, and (c) all future customer-facing logins across <code>rtpait.com</code> and portfolio products.</td>
                 <td>Uniform multi-factor enforcement across admin, enterprise tenant, and consumer surfaces.</td>
               </tr>
             </tbody>
@@ -503,8 +503,8 @@
 
   <script>
   (function() {
-    var ALLOWED_EMAIL = "luke@rtpait.com";
-    var SOLE_ADMIN_EMAIL = "luke@rtpait.com";
+    var SOLE_ADMIN_SHA256 = "d8939462c508d5ccacd924b8c961112c23441cbbbd81f6d353b8288f0160d5e7";
+    var SOLE_ADMIN_LABEL = "Sole-Admin OIDC Session";
     var ALLOWED_HD = "rtpait.com";
     var ALLOWED_ISSUERS = ["https://accounts.google.com", "accounts.google.com"];
     var GOOGLE_JWKS_URI = "https://www.googleapis.com/oauth2/v3/certs";
@@ -581,9 +581,11 @@
         throw new Error("Google account email_verified is not true.");
       }
 
-      var emailLower = String(claims.email || "").toLowerCase();
-      if (emailLower !== ALLOWED_EMAIL || (claims.hd && String(claims.hd).toLowerCase() !== ALLOWED_HD)) {
-        var err403 = new Error("HTTP 403 Forbidden: Authenticated identity '" + emailLower + "' is not authorized. /admin/ is locked exclusively to " + ALLOWED_EMAIL + ".");
+      var emailLower = String(claims.email || "").toLowerCase().trim();
+      var digestBuf = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(emailLower));
+      var emailSha256 = Array.from(new Uint8Array(digestBuf), function(b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+      if (emailSha256 !== SOLE_ADMIN_SHA256 || (claims.hd && String(claims.hd).toLowerCase() !== ALLOWED_HD)) {
+        var err403 = new Error("HTTP 403 Forbidden: Authenticated identity is not authorized for /admin/ (Sole-Admin OIDC Allowlist mismatch).");
         err403.code = 403;
         err403.email = emailLower;
         throw err403;
@@ -596,7 +598,7 @@
       var banner = document.getElementById("oidc-403-banner");
       var detail = document.getElementById("oidc-403-detail");
       banner.classList.remove("hidden");
-      detail.textContent = reason || ("Authenticated user '" + email + "' was denied access (HTTP 403 Forbidden). Only luke@rtpait.com (hd=rtpait.com) is authorized for /admin/.");
+      detail.textContent = reason || ("Authenticated user '" + email + "' was denied access (HTTP 403 Forbidden). Only Sole-Admin OIDC Allowlist (hd=rtpait.com) is authorized for /admin/.");
     }
 
     async function loadAdminDataAndRender(authSummaryText) {
@@ -631,7 +633,7 @@
         { label: "Active Portfolio Domains", val: s.total_active_domains || 6, sub: "2 Stage 2 · 3 Stage 1 · 1 Stage 0→1" },
         { label: "Total Built HTML Routes", val: s.total_built_routes_across_portfolio || 117, sub: "Across 6 Eleventy repositories" },
         { label: "GSC Indexed Routes", val: (s.total_gsc_indexed_routes || 16) + " / " + (s.total_built_routes_across_portfolio || 117), sub: "Gate: >=75% per domain before Stage 3" },
-        { label: "Verified Human Visits (Bucket A)", val: s.total_verified_human_visits_bucket_a || 0, sub: "PostHog 685354 (Bot & Owner Filtered)" },
+        { label: "Verified Human Visits (Bucket A)", val: s.total_verified_human_visits_bucket_a || 0, sub: "Privacy-First Telemetry (Bot & Owner Filtered)" },
         { label: "AI Crawler Queries (Bucket B)", val: s.total_ai_crawler_queries_bucket_b || 0, sub: "GPTBot, PerplexityBot, ClaudeBot" },
         { label: "Confirmed Web Revenue", val: "$" + Number(s.total_confirmed_revenue_usd || 0).toFixed(2), sub: "Principle 1 Ground-Truth Actuals" }
       ];
@@ -855,7 +857,7 @@
     window.verifyPastedGoogleJwt = async function() {
       var raw = (document.getElementById("input-oidc-jwt") || {}).value || "";
       if (!raw.trim()) {
-        document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fbbf24">Notice:</strong> Paste a signed Google OIDC ID Token (JWT) for <code>luke@rtpait.com</code> first.';
+        document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fbbf24">Notice:</strong> Paste a signed Google OIDC ID Token (JWT) for <code>Sole-Admin OIDC Allowlist</code> first.';
         return;
       }
       await window.handleGoogleCredentialResponse({ credential: raw.trim() });
@@ -867,7 +869,7 @@
       sessionStorage.setItem("rtpait_google_oidc_client_id", val);
       mountGoogleSignInButton(val);
       document.getElementById("oidc-status-msg").innerHTML =
-        '<strong style="color:#4ade80">Google OAuth Client ID Configured:</strong> <code>' + val + '</code>. Click the Google Sign-In button above to authenticate as <code>luke@rtpait.com</code>.';
+        '<strong style="color:#4ade80">Google OAuth Client ID Configured:</strong> <code>' + val + '</code>. Click the Google Sign-In button above to authenticate as <code>Sole-Admin OIDC Allowlist</code>.';
     };
 
     window.startGooglePkceFlow = async function() {
@@ -896,30 +898,32 @@
         "&state=" + encodeURIComponent(state) +
         "&nonce=" + encodeURIComponent(nonce) +
         "&hd=rtpait.com" +
-        "&login_hint=luke%40rtpait.com";
+        "";
       window.location.assign(authUrl);
     };
 
     window.routeAdminGoogleOidcEmail = async function(redirectToFullSite) {
       document.getElementById("oidc-403-banner").classList.add("hidden");
       var emailEl = document.getElementById("input-admin-oidc-email");
-      var emailVal = ((emailEl && emailEl.value) || SOLE_ADMIN_EMAIL).trim().toLowerCase();
+      var emailVal = ((emailEl && emailEl.value) || "").trim().toLowerCase();
       if (!emailVal || emailVal.indexOf("@") === -1) {
-        document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fb7185">Notice:</strong> Enter a valid Google Workspace email address.';
+        document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fb7185">Notice:</strong> Enter an authorized Google Workspace email address.';
         return;
       }
-      if (emailVal === SOLE_ADMIN_EMAIL) {
+      var digestBuf = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(emailVal));
+      var emailSha256 = Array.from(new Uint8Array(digestBuf), function(b) { return ("0" + b.toString(16)).slice(-2); }).join("");
+      if (emailSha256 === SOLE_ADMIN_SHA256) {
         var expVal = String(Math.floor(Date.now() / 1000) + 86400);
-        sessionStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
+        sessionStorage.setItem("rtpait_oidc_verified_sha256", SOLE_ADMIN_SHA256);
         sessionStorage.setItem("rtpait_oidc_verified_exp", expVal);
-        localStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
+        localStorage.setItem("rtpait_oidc_verified_sha256", SOLE_ADMIN_SHA256);
         localStorage.setItem("rtpait_oidc_verified_exp", expVal);
         if (redirectToFullSite) {
-          window.location.assign("/?oidc_unlocked=1");
+          window.location.assign("/");
           return;
         }
         await loadAdminDataAndRender(
-          "<code>" + SOLE_ADMIN_EMAIL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked — <a href='/?oidc_unlocked=1' style='color:#38bdf8;font-weight:700;text-decoration:underline;'>Open Full 14-Route Site &rarr;</a>)"
+          "<code>" + SOLE_ADMIN_LABEL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked — <a href='/' style='color:#38bdf8;font-weight:700;text-decoration:underline;'>Open Full 14-Route Site &rarr;</a>)"
         );
       } else {
         show403Forbidden(emailVal, "Door 2 Non-Admin Google Sign-In routed to Member Welcome Placeholder");
@@ -927,7 +931,7 @@
     };
 
     window.rtpSignOut = function() {
-      ["rtpait_oidc_verified_email", "rtpait_oidc_verified_jwt", "rtpait_oidc_verified_exp"].forEach(function(k) {
+      ["rtpait_oidc_verified_sha256", "rtpait_oidc_verified_email", "rtpait_oidc_verified_jwt", "rtpait_oidc_verified_exp"].forEach(function(k) {
         sessionStorage.removeItem(k);
         localStorage.removeItem(k);
       });
@@ -963,11 +967,11 @@
         setTimeout(function() { mountGoogleSignInButton(savedClientId); }, 400);
       }
       var verifiedJwt = sessionStorage.getItem("rtpait_oidc_verified_jwt") || localStorage.getItem("rtpait_oidc_verified_jwt") || "";
-      var verifiedEmail = (sessionStorage.getItem("rtpait_oidc_verified_email") || localStorage.getItem("rtpait_oidc_verified_email") || "").toLowerCase().trim();
+      var verifiedHash = (sessionStorage.getItem("rtpait_oidc_verified_sha256") || localStorage.getItem("rtpait_oidc_verified_sha256") || "").toLowerCase().trim();
       if (verifiedJwt) {
         window.handleGoogleCredentialResponse({ credential: verifiedJwt });
-      } else if (verifiedEmail === SOLE_ADMIN_EMAIL) {
-        loadAdminDataAndRender("<code>" + SOLE_ADMIN_EMAIL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked)");
+      } else if (verifiedHash === SOLE_ADMIN_SHA256) {
+        loadAdminDataAndRender("<code>" + SOLE_ADMIN_LABEL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked)");
       }
     });
   })();

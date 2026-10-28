@@ -1,12 +1,12 @@
 # Research Triangle Park AI Transformation LLC (https://rtpait.com)
 
-> Executive B2B AI Transformation, Forward-Deployed Harness Engineering, 7-Step Agentic Org Maturity Diagnostics, and Proprietary Multi-Agent IP Portfolio based in Raleigh & Research Triangle Park, NC.
+> Executive B2B AI Transformation, Forward-Deployed Harness Engineering, 7-Step Agentic Org Maturity Diagnostics, and Proprietary Multi-Agent IP Portfolio based in Research Triangle Park, NC.
 
 - **Canonical Domain:** https://rtpait.com
 - **Agentic Discovery Manifest (WebMCP):** https://rtpait.com/.well-known/webmcp.json
 - **OpenAPI 3.1 Specification:** https://rtpait.com/.well-known/openapi.json
 - **Open Benchmark Dataset (CC-BY-4.0):** https://rtpait.com/datasets/b2b-ai-readiness-benchmarks-2026.json
-- **Publisher & Commercial Inquiries:** Research Triangle Park AI Transformation LLC (`luke@rtpait.com`, 4030 Wake Forest Road, Suite 349, Raleigh, NC 27609)
+- **Publisher & Commercial Inquiries:** Research Triangle Park AI Transformation LLC (Research Triangle Park, NC, US · https://rtpait.com/security/)
 
 ## Core Commercial Service Lines (`https://rtpait.com/services/`)
 1. **Service Line 1 — 2-Week AI Readiness & 7-Step Maturity Diagnostic (`$15,000–$25,000` Fixed Fee):**
@@ -19,13 +19,13 @@
    - URL: https://rtpait.com/services/managed-agentic-governance/
    - Deliverables: 90-Day Agent & Secret TTL Governance, Continuous Eval Ratchet Maintenance, Weekly 4-Pillar Kaizen Loops, and Step 7 Exception Queue Optimization.
 4. **Proprietary AI-Driven IP Portfolio & Future Paid 3-Layer Second-Brain API (`https://rtpait.com/ip-products/`):**
-   - Live Commercial Properties:
-     - https://junkhaulhq.com — National Municipal Bulk Trash, County Landfill Tipping Fee & Roll-Off Dumpster Estimator
-     - https://b2bfeeaudit.com — B2B Payroll, Multi-State SUI Tax & Merchant Interchange-Plus Fee TCO Auditor
-     - https://b2bcostaudit.com — Commercial Tech E&O / Cyber Liability Insurance & W-2/1099 Labor Burden Auditor
-     - https://saascostaudit.com — Per-Seat UCaaS (Webex, Teams, Zoom, Google Workspace) & HRIS PEPM Cost Auditor
-     - https://apicostaudit.com — Metered LLM Token, Voice/Video API & Cloud GPU TCO Auditor
+   - Anonymized Commercial Proof Properties (`Venture #01` – `Venture #05`):
+     - Venture #01 — National Municipal Bulk Trash, County Landfill Tipping Fee & Roll-Off Dumpster Estimator
+     - Venture #02 — B2B Payroll, Multi-State SUI Tax & Merchant Interchange-Plus Fee TCO Auditor
+     - Venture #03 — Commercial Tech E&O / Cyber Liability Insurance & W-2/1099 Labor Burden Auditor
+     - Venture #04 — Per-Seat UCaaS (Webex, Teams, Zoom, Google Workspace) & HRIS PEPM Cost Auditor
+     - Venture #05 — Metered LLM Token, Voice/Video API & Cloud GPU TCO Auditor
    - **Stated Future Revenue Line — Paid 3-Layer JSON-Node Second-Brain API Tier:** Metered and subscription API access providing enterprise teams and external AI agents with a dedicated, isolated **Tenant Partition** (`/tenants/{tenant_id}/`) instantiated via Golden-Template Cloning of RTP AIT's 3-Layer Agentic Org Governance, 8-Attribute Kaizen Matrix Personas, and Road-to-Revenue Execution schema (`zero_founder_contamination = true`), secured by Universal OpenID Connect (`Google`, `Apple`, `Facebook`, Enterprise IdPs) + SMS 2FA (`password_auth_prohibited = true`).
 
 ## FTC & Non-YMYL Attribution Disclosure
-Commercial software links on `rtpait.com` may earn a referral commission via PartnerStack, Impact (`8038782`), CJ (`8108003`), AWIN (`3133124`), or Rakuten (`4767884`) at zero extra cost to buyers. All readiness calculators and benchmarks are informational engineering estimates, not legal, tax, CPA, or investment advice.
+Commercial software links on `rtpait.com` may earn a referral commission via verified enterprise partner programs at zero extra cost to buyers. All readiness calculators and benchmarks are informational engineering estimates, not legal, tax, CPA, or investment advice.

@@ -1,13 +1,13 @@
 {
-  "schema_version": "7.1.0-rtpait-second-brain-nodes",
-  "generated_at_utc": "2026-10-27T13:52:55Z",
-  "generated_at_edt": "2026-10-27T09:52:55-0400",
+  "schema_version": "7.2.0-rtpait-second-brain-nodes",
+  "generated_at_utc": "2026-10-28T12:57:41Z",
+  "generated_at_edt": "2026-10-28T08:57:41-0400",
   "architecture": "3-Layer JSON-File Nodes + Distilled Work Log + Relational Query Layer (NO Graph Database)",
   "road_to_revenue_only": true,
   "paid_api_tenant_partitioning_spec": {
     "decision_id": "OD-RTPAIT-005",
-    "status": "STATED_FUTURE_REVENUE_LINE_DOCUMENTED_IN_V1_5_0",
-    "instantiation_mechanism": "GOLDEN_TEMPLATE_CLONE \u2014 Copies luke@rtpait.com's master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema \u2014 stripped of private founder data) into an isolated tenant partition (/tenants/{tenant_id}/).",
+    "status": "STATED_FUTURE_REVENUE_LINE_DOCUMENTED_IN_V1_5_7",
+    "instantiation_mechanism": "GOLDEN_TEMPLATE_CLONE \u2014 Copies the master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema \u2014 stripped of private founder data) into an isolated tenant partition (/tenants/{tenant_id}/).",
     "zero_founder_contamination": true,
     "tenant_auth_mandate": "Universal OpenID Connect (Google, Apple, Facebook, Enterprise IdPs) + SMS 2FA (password_auth_prohibited = true)"
   },
@@ -19,7 +19,7 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "consulting_ip",
         "title": "7-Step Agentic Org Maturity Ladder & Anti-FDE-Washing Master Playbook (v2.0.0)",
-        "file_path": "/workspace/B2B-AI-CONSULTING-PLAYBOOK.md",
+        "file_path": "B2B-AI-CONSULTING-PLAYBOOK.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1",
         "summary": "Synthesizes the 7-Step Agentic Org Maturity Ladder (Step 1 Tool Adoption -> Step 2 Domain Context Layer -> Step 3 Harness Engineering IP -> Step 4 Headless Execution -> Step 5 90-Day TTL Governance -> Step 6 Quality-Gated Agent Handoffs -> Step 7 Step-Function Exception Queues), the 5 Anti-'FDE Washing' commitments, and PE EBITDA / Exit-Multiple math.",
@@ -30,7 +30,7 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "consulting_ip",
         "title": "Module 01: Client Diagnostic Audit & 100-Point 7-Step Maturity Scorecard ($15k-$25k Wedge)",
-        "file_path": "/workspace/b2b-consulting-ip/01-DIAGNOSTIC-AUDIT-AND-MATURITY-SCORECARD.md",
+        "file_path": "01-DIAGNOSTIC-AUDIT-AND-MATURITY-SCORECARD.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1",
         "summary": "Powers /diagnostic/ and /strategy-readiness/: 100-point quantitative scoring rubric across Steps 1-7, Laptop-Lid Tool Inventory audit, 5-Question Copilot/Token sweep, and Cost-per-Finished-Task ROI calculator.",
@@ -41,7 +41,7 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "consulting_ip",
         "title": "Module 02: Step 2 & Step 3 Harness Engineering Architecture Blueprint ($45k-$120k Build)",
-        "file_path": "/workspace/b2b-consulting-ip/02-HARNESS-ENGINEERING-ARCHITECTURE-BLUEPRINT.md",
+        "file_path": "02-HARNESS-ENGINEERING-ARCHITECTURE-BLUEPRINT.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1",
         "summary": "Powers /workflow-automation/: Domain-Separated MCP Context Gateways, 34-48 variable pre-model deterministic enrichment, PII/PHI pre-model stripping, Golden Dataset JSONL (50-500 cases), 3-Tier Quality Gates, and 4-Tier Model Routing.",
@@ -52,7 +52,7 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "consulting_ip",
         "title": "Module 03: Step 4-7 Headless Execution & 90-Day TTL Governance Standard ($10k-$25k/mo Retainer)",
-        "file_path": "/workspace/b2b-consulting-ip/03-HEADLESS-EXECUTION-AND-GOVERNANCE-STANDARD.md",
+        "file_path": "03-HEADLESS-EXECUTION-AND-GOVERNANCE-STANDARD.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1",
         "summary": "Powers /workflow-automation/ and /security/: flock mutex daemons, idempotency keys, dead-letter queues, 90-day agent/secret TTL retirement registry, Contract-First Agent Handoffs, and Step 7 Exception-Only Human Queues.",
@@ -63,7 +63,7 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "consulting_ip",
         "title": "Module 04: Forward-Deployed Engagement & Commercial Deal Playbook (Background vs. Foreground IP Split)",
-        "file_path": "/workspace/b2b-consulting-ip/04-FORWARD-DEPLOYED-ENGAGEMENT-AND-COMMERCIAL-PLAYBOOK.md",
+        "file_path": "04-FORWARD-DEPLOYED-ENGAGEMENT-AND-COMMERCIAL-PLAYBOOK.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1",
         "summary": "Powers /services/ and /methodology/: 2-Week Diagnostic Wedge ($15k-$25k), 6-8 Week Velocity Pod Build ($45k-$120k), Managed Governance & Kaizen Retainer ($10k-$25k/mo), and contractual Background Harness IP license vs. 100% Client Foreground IP ownership.",
@@ -74,7 +74,7 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "consulting_ip",
         "title": "Module 05: Internal Fleet Proof Case Studies (Drinking Our Own Champagne)",
-        "file_path": "/workspace/b2b-consulting-ip/05-INTERNAL-FLEET-PROOF-CASE-STUDIES.md",
+        "file_path": "05-INTERNAL-FLEET-PROOF-CASE-STUDIES.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1",
         "summary": "Powers /ip-products/ and /case-studies/: 5 verifiable multi-agent engineering case studies across autonomous scheduling, WDRR mutexes, deterministic release gates, clean-room ideation, and 1-command rollbacks (expressed in platform-agnostic terms externally).",
@@ -85,10 +85,10 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "future_revenue_line_vision",
         "title": "OD-RTPAIT-005: Paid API Access to the 3-Layer JSON-Node Second Brain & Tenant-Based Access Partitioning (Golden-Template Cloning)",
-        "file_path": "/workspace/rtpait/CHARTER.md",
+        "file_path": "CHARTER.md",
         "domain": "rtpait.com",
         "stage": "STAGE_3_TO_4_ROADMAP",
-        "summary": "Stated Future Revenue Line ($199-$2,500+/mo API tiers): Exposes metered/subscription API access to the 3-Layer JSON-Node Second Brain. When an external customer signs up and pays, the system segments off a dedicated tenant partition (/tenants/{tenant_id}/) instantiated by cloning luke@rtpait.com's master 3-Layer structure (Layer 1 Governance/7-Step IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Personas, Layer 3 Road-to-Revenue Execution schema \u2014 stripped of private founder data) as a Golden Template. Enforces hard tenant isolation (zero_founder_contamination = true) so customer API writes/queries never drift into or mutate luke@rtpait.com's founder Second Brain.",
+        "summary": "Stated Future Revenue Line ($199-$2,500+/mo API tiers): Exposes metered/subscription API access to the 3-Layer JSON-Node Second Brain. When an external customer signs up and pays, the system segments off a dedicated tenant partition (/tenants/{tenant_id}/) instantiated by cloning the master 3-Layer structure (Layer 1 Governance/7-Step IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Personas, Layer 3 Road-to-Revenue Execution schema \u2014 stripped of private founder data) as a Golden Template. Enforces hard tenant isolation (zero_founder_contamination = true).",
         "road_to_revenue_affiliated": true
       },
       {
@@ -96,10 +96,10 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "security_and_identity_mandate",
         "title": "OD-RTPAIT-006 & OD-RTPAIT-007: Universal OIDC (Google, Apple, Facebook, Enterprise IdPs) + Absolute Password Ban + SMS 2FA Across All Surfaces",
-        "file_path": "/workspace/identity-security/CHARTER.md",
+        "file_path": "IDENTITY-SECURITY-CHARTER.md",
         "domain": "rtpait.com",
         "stage": "STAGE_1_LIVE_ADMIN_AND_STAGE_3_EXPANSION",
-        "summary": "Enforces 4 uniform rules across /admin/ (luke@rtpait.com with federated_auth_enabled=true), Paid Second-Brain API tenant customers, and all future customer-facing logins: (1) Universal OpenID Connect across Google, Apple, Facebook, Microsoft Entra, GitHub, Okta; (2) Absolute Ban on Manual Username-and-Password Authentication (password_auth_prohibited = true); (3) OIDC + SMS-Based Two-Factor Authentication (mfa_second_factor: 'SMS_2FA'); (4) Uniform coverage across all access surfaces.",
+        "summary": "Enforces 4 uniform rules across /admin/ (Sole-Admin OIDC Allowlist with federated_auth_enabled=true), Paid Second-Brain API tenant customers, and all future customer-facing logins: (1) Universal OpenID Connect across Google, Apple, Facebook, Microsoft Entra, GitHub, Okta; (2) Absolute Ban on Manual Username-and-Password Authentication (password_auth_prohibited = true); (3) OIDC + SMS-Based Two-Factor Authentication (mfa_second_factor: 'SMS_2FA'); (4) Uniform coverage across all access surfaces.",
         "road_to_revenue_affiliated": true
       },
       {
@@ -107,26 +107,26 @@
         "layer": "LAYER_1_GOVERNANCE_AND_CONSULTING_IP",
         "category": "fleet_governance",
         "title": "Five-Rule Scheduler Engine & Family-Affinity Concurrency Standard (v2.3.0)",
-        "file_path": "/workspace/scheduler/COVERAGE-LEDGER.json",
+        "file_path": "COVERAGE-LEDGER.json",
         "domain": "rtpait.com",
         "stage": "STAGE_2",
-        "summary": "Enforces (1) Continuous never-resting round-robin mode across junk-hall-po, rtp-ait-po, and b2b-audit-family-pm; (2) Timestamped coverage ledger with 2-cycle untouched auto-escalation to Wally Buck; (3) Dual-mode dispatch (SINGLE_PRODUCT_PO vs MULTI_PO_HUB_PM); (4) Taxonomy-registry family-affinity concurrency; and (5) 5-product default cap per linked PM (4/5 active slots used).",
+        "summary": "Enforces (1) Continuous never-resting round-robin mode across active product hubs; (2) Timestamped coverage ledger with 2-cycle untouched auto-escalation to Founder / Managing Director; (3) Dual-mode dispatch (SINGLE_PRODUCT_PO vs MULTI_PO_HUB_PM); (4) Taxonomy-registry family-affinity concurrency; and (5) 5-product default cap per linked PM (4/5 active slots used).",
         "road_to_revenue_affiliated": true
       }
     ],
     "workspace_ledger_summary": {
       "product_state_files": [
-        "/workspace/rtpait/PRODUCT-STATE.md",
-        "/workspace/junk-site/PRODUCT-STATE.md",
-        "/workspace/b2bfeeaudit/PRODUCT-STATE.md",
-        "/workspace/b2bcostaudit/PRODUCT-STATE.md",
-        "/workspace/saascostaudit/PRODUCT-STATE.md",
-        "/workspace/apicostaudit/PRODUCT-STATE.md"
+        "RTPAIT-HUB/PRODUCT-STATE.md",
+        "VENTURE-01/PRODUCT-STATE.md",
+        "VENTURE-02/PRODUCT-STATE.md",
+        "VENTURE-03/PRODUCT-STATE.md",
+        "VENTURE-04/PRODUCT-STATE.md",
+        "VENTURE-05/PRODUCT-STATE.md"
       ],
-      "web_team_kaizen_entries_count": 20,
+      "web_team_kaizen_entries_count": 5,
       "closed_founder_decisions_count": 8,
       "open_founder_decisions_count": 0,
-      "cron_routines_count": 15,
+      "cron_routines_count": 3,
       "token_ledger_present": true,
       "product_lock_state": "FREE"
     }
@@ -138,7 +138,7 @@
         "node_id": "L2-HUB-01",
         "role_type": "PO_HUB",
         "name": "RTP AIT PO",
-        "agent_id": "dcb1b787-dece-43ac-a64f-bfa2bca81429",
+        "agent_id": "ROLE-PO-RTPAIT",
         "governed_domains": [
           "rtpait.com"
         ],
@@ -153,15 +153,15 @@
           "A7": 4,
           "A8": 5
         },
-        "mandate": "Owns Surface A (3 B2B AI Consulting Service Lines & 7-Step Diagnostic), Surface B (Unified /admin/ + 3-Layer JSON-Node Second Brain), Surface C (Universal OIDC + SMS 2FA & luke@rtpait.com Sole Admin), and Surface D (Future Paid Tenant-Partitioned Second-Brain API)."
+        "mandate": "Owns Surface A (3 B2B AI Consulting Service Lines & 7-Step Diagnostic), Surface B (Unified /admin/ + 3-Layer JSON-Node Second Brain), Surface C (Universal OIDC + SMS 2FA & Sole-Admin OIDC Allowlist), and Surface D (Future Paid Tenant-Partitioned Second-Brain API)."
       },
       {
         "node_id": "L2-HUB-02",
         "role_type": "PO_HUB",
-        "name": "Junk Hall PO",
-        "agent_id": "b1459d35-268c-4838-a68f-ecdd5954d2cf",
+        "name": "Venture #01 PO",
+        "agent_id": "ROLE-PO-V01",
         "governed_domains": [
-          "junkhaulhq.com"
+          "Venture #01"
         ],
         "mode": "SINGLE_PRODUCT_PO",
         "kaizen_matrix": {
@@ -174,18 +174,18 @@
           "A7": 4,
           "A8": 5
         },
-        "mandate": "Owns 64-route national municipal bulk trash, landfill tipping fee & roll-off dumpster calculator directory."
+        "mandate": "Owns 64-route national municipal bulk trash, landfill tipping fee & roll-off dumpster calculator directory (Venture #01)."
       },
       {
         "node_id": "L2-HUB-03",
         "role_type": "MULTI_PO_HUB_PM",
         "name": "B2B Audit Family PM",
-        "agent_id": "9c1c413e-5df2-4d17-a576-11713450fceb",
+        "agent_id": "ROLE-PM-B2B",
         "governed_domains": [
-          "b2bfeeaudit.com",
-          "b2bcostaudit.com",
-          "saascostaudit.com",
-          "apicostaudit.com"
+          "Venture #02",
+          "Venture #03",
+          "Venture #04",
+          "Venture #05"
         ],
         "mode": "MULTI_PO_HUB_PM (4/5 active family-affinity slots)",
         "kaizen_matrix": {
@@ -198,15 +198,15 @@
           "A7": 5,
           "A8": 5
         },
-        "mandate": "Coordinates B2B Fee Audit PO (76f092a4), B2B Cost Audit PO (2d4a6a26), and SaaS/API Cost Audit PO (bc09e0d9) under B2B-FAMILY-TAXONOMY-REGISTRY.json v1.3.0."
+        "mandate": "Coordinates Venture #02 PO, Venture #03 PO, and Venture #04/#05 PO under B2B-FAMILY-TAXONOMY-REGISTRY.json v1.3.0."
       },
       {
         "node_id": "L2-PO-04",
         "role_type": "FAMILY_PO",
-        "name": "B2B Fee Audit PO",
-        "agent_id": "76f092a4-d874-4a66-ad28-c0146be1800a",
+        "name": "Venture #02 PO",
+        "agent_id": "ROLE-PO-V02",
         "governed_domains": [
-          "b2bfeeaudit.com"
+          "Venture #02"
         ],
         "mode": "LINKED_FAMILY_PO (FEES)",
         "kaizen_matrix": {
@@ -224,10 +224,10 @@
       {
         "node_id": "L2-PO-05",
         "role_type": "FAMILY_PO",
-        "name": "B2B Cost Audit PO",
-        "agent_id": "2d4a6a26-94d7-4bed-9dd9-f96988b41fc5",
+        "name": "Venture #03 PO",
+        "agent_id": "ROLE-PO-V03",
         "governed_domains": [
-          "b2bcostaudit.com"
+          "Venture #03"
         ],
         "mode": "LINKED_FAMILY_PO (COSTS)",
         "kaizen_matrix": {
@@ -245,11 +245,11 @@
       {
         "node_id": "L2-PO-06",
         "role_type": "FAMILY_PO",
-        "name": "SaaS & API Cost Audit PO",
-        "agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
+        "name": "Venture #04 & #05 PO",
+        "agent_id": "ROLE-PO-V04",
         "governed_domains": [
-          "saascostaudit.com",
-          "apicostaudit.com"
+          "Venture #04",
+          "Venture #05"
         ],
         "mode": "LINKED_FAMILY_PO (SAAS_PLATFORMS & API_COSTS)",
         "kaizen_matrix": {
@@ -262,13 +262,13 @@
           "A7": 4,
           "A8": 5
         },
-        "mandate": "Owns per-seat UCaaS/HRIS/CRM SaaS seat-tax calculators on saascostaudit.com (11/11 live) and metered LLM/Voice/GPU API cost calculators on apicostaudit.com."
+        "mandate": "Owns per-seat UCaaS/HRIS/CRM SaaS seat-tax calculators on Venture #04 (11/11 live) and metered LLM/Voice/GPU API cost calculators on Venture #05 (16/16 live)."
       },
       {
         "node_id": "L2-SPOKE-WEB",
         "role_type": "SPOKE_PM",
         "name": "Web Team Project Manager",
-        "agent_id": "167b2bea-99c8-4e89-99e3-182227974962",
+        "agent_id": "ROLE-PM-WEB",
         "governed_domains": [
           "all"
         ],
@@ -283,13 +283,13 @@
           "A7": 4,
           "A8": 5
         },
-        "mandate": "Owns Web Gates W-1..W-5 across Platform Optimization (3baf81a9), UX/UI (fb3fb147), Content Writer (e7a9d1c2), Data Analyst (762fcc5f), QA Tester (dc6489e7), AI Search Visibility (a4c8e910), and Stalk Bot (c91e4f02)."
+        "mandate": "Owns Web Gates W-1..W-5 across Platform Optimization, UX/UI, Content Writer, Data Analyst, QA Tester, AI Search Visibility, and Competitive Research."
       },
       {
         "node_id": "L2-SPOKE-LEGAL",
         "role_type": "SPOKE_PM",
         "name": "Legal & Compliance PM",
-        "agent_id": "b5853ae2-8ff6-47df-a19a-f3621b64a484",
+        "agent_id": "ROLE-PM-LEGAL",
         "governed_domains": [
           "all"
         ],
@@ -304,13 +304,13 @@
           "A7": 4,
           "A8": 5
         },
-        "mandate": "Owns Legal Gates LC-1..LC-6 across Contracts & B2B MSA (f29a613a), Privacy & OIDC Data Governance (e6a42c49), FTC & Affiliate Disclosure (fb9b764b), Safe-Harbor & Section 230 (d816849f), and Statutory/.gov & WCAG 2.1 AA (ed5c1ea0)."
+        "mandate": "Owns Legal Gates LC-1..LC-6 across Contracts & B2B MSA, Privacy & OIDC Data Governance, FTC & Affiliate Disclosure, Safe-Harbor & Section 230, and Statutory/.gov & WCAG 2.1 AA."
       },
       {
         "node_id": "L2-SPOKE-SEC",
         "role_type": "SPOKE_PM",
         "name": "Identity & Security PM",
-        "agent_id": "ef20b463-034b-4ac8-93b8-5b6d6a3141bb",
+        "agent_id": "ROLE-PM-SEC",
         "governed_domains": [
           "all"
         ],
@@ -325,13 +325,13 @@
           "A7": 4,
           "A8": 5
         },
-        "mandate": "Owns Security Gates IS-1..IS-5 across Federated Identity & OIDC Architect (0d2588af), Data Protection & Vault Engineer (af87b6d5), and AppSec & DAST Scanner Specialist (d41c3b22). Enforces Universal OIDC (Google/Apple/Facebook/Enterprise), password_auth_prohibited=true, SMS 2FA, and Paid Second-Brain API Tenant Partitioning."
+        "mandate": "Owns Security Gates IS-1..IS-5 across Federated Identity & OIDC Architect, Data Protection & Vault Engineer, and AppSec & DAST Scanner Specialist. Enforces Universal OIDC (Google/Apple/Facebook/Enterprise), password_auth_prohibited=true, SMS 2FA, and Paid Second-Brain API Tenant Partitioning."
       },
       {
         "node_id": "L2-COS-01",
         "role_type": "EXECUTIVE_ORCHESTRATOR",
         "name": "Chief of Staff",
-        "agent_id": "6bdd607c-7fa2-4559-ab73-4d368d72a455",
+        "agent_id": "ROLE-COS-01",
         "governed_domains": [
           "all"
         ],
@@ -346,67 +346,67 @@
           "A7": 5,
           "A8": 5
         },
-        "mandate": "Curates Layer 2 SECOND-BRAIN-WORK-LOG.json (ROAD_TO_REVENUE_ONLY=true), handles 2-cycle untouched scheduler auto-escalations to Wally Buck (luke@rtpait.com), and manages external registrar/DNS cutovers."
+        "mandate": "Curates Layer 2 SECOND-BRAIN-WORK-LOG.json (ROAD_TO_REVENUE_ONLY=true), handles 2-cycle untouched scheduler auto-escalations to the Founder / Managing Director, and manages external registrar/DNS cutovers."
       }
     ],
     "distilled_work_log": {
-      "source_path": "/workspace/rtpait/analytics/SECOND-BRAIN-WORK-LOG.json",
+      "source_path": "SECOND-BRAIN-WORK-LOG.json",
       "filtered_entries_count": 5,
       "entries": [
         {
           "entry_id": "SB-2026-10-24-001",
           "date": "2026-10-24",
           "timestamp_edt": "2026-10-24T17:37:00-04:00",
-          "domain": "junkhaulhq.com",
-          "product_id": "junkhaulhq.com",
+          "domain": "Venture #01",
+          "product_id": "Venture #01",
           "stage": "STAGE_2",
           "category": "product_milestone",
           "road_to_revenue_affiliated": true,
-          "agent_id": "b1459d35-268c-4838-a68f-ecdd5954d2cf",
+          "agent_id": "ROLE-PO-V01",
           "commit_sha": "v1.3.1",
-          "title": "JunkHaulHQ 64-Route National Footprint Lock & Principle 1 Telemetry Quarantine",
-          "summary": "Locked junkhaulhq.com at 64 validated HTML routes with 145 primary municipal .gov citations, Stage 1A/1B 3-bucket PostHog bot filtering, and strict Principle 1 quarantine of target RPM/revenue models inside a collapsed drawer.",
+          "title": "Venture #01 64-Route National Footprint Lock & Principle 1 Telemetry Quarantine",
+          "summary": "Locked Venture #01 at 64 validated HTML routes with 145 primary municipal .gov citations, Stage 1A/1B 3-bucket bot filtering, and strict Principle 1 quarantine of target RPM/revenue models inside a collapsed drawer.",
           "linked_nodes": [
-            "/workspace/junk-site/PRODUCT-STATE.md",
-            "/workspace/junk-site/RELEASE-CONTRIBUTION-LEDGER.json"
+            "VENTURE-01/PRODUCT-STATE.md",
+            "VENTURE-01/RELEASE-CONTRIBUTION-LEDGER.json"
           ]
         },
         {
           "entry_id": "SB-2026-10-26-001",
           "date": "2026-10-26",
           "timestamp_edt": "2026-10-26T09:30:00-04:00",
-          "domain": "b2bfeeaudit.com",
-          "product_id": "b2bfeeaudit.com",
+          "domain": "Venture #02",
+          "product_id": "Venture #02",
           "stage": "STAGE_2",
           "category": "sprint_review_accept",
           "road_to_revenue_affiliated": true,
-          "agent_id": "76f092a4-d874-4a66-ad28-c0146be1800a",
+          "agent_id": "ROLE-PO-V02",
           "commit_sha": "3cc1965",
-          "title": "B2BFeeAudit v1.5.0 Canonical Fee Partition (16 Fee Routes + 10 301 Redirect Shims)",
-          "summary": "Completed 301 canonical migration of /eo-insurance/* to b2bcostaudit.com and /ucaas/* to saascostaudit.com, leaving 16 canonical payment/payroll fee routes plus 10 redirect shims (26 endpoints) with 7/7 Day-0 gates passing.",
+          "title": "Venture #02 v1.5.0 Canonical Fee Partition (16 Fee Routes + 10 301 Redirect Shims)",
+          "summary": "Completed 301 canonical migration of insurance routes to Venture #03 and UCaaS routes to Venture #04, leaving 16 canonical payment/payroll fee routes plus 10 redirect shims (26 endpoints) with 7/7 Day-0 gates passing.",
           "linked_nodes": [
-            "/workspace/b2bfeeaudit/PRODUCT-STATE.md",
-            "/workspace/b2bfeeaudit/RELEASE-CONTRIBUTION-LEDGER.json"
+            "VENTURE-02/PRODUCT-STATE.md",
+            "VENTURE-02/RELEASE-CONTRIBUTION-LEDGER.json"
           ]
         },
         {
           "entry_id": "SB-2026-10-27-001",
           "date": "2026-10-27",
           "timestamp_edt": "2026-10-27T08:42:00-04:00",
-          "domain": "b2bcostaudit.com",
-          "product_id": "b2bcostaudit.com",
+          "domain": "Venture #03",
+          "product_id": "Venture #03",
           "stage": "STAGE_1",
           "category": "sister_domain_spinout",
           "road_to_revenue_affiliated": true,
-          "agent_id": "2d4a6a26-94d7-4bed-9dd9-f96988b41fc5",
+          "agent_id": "ROLE-PO-V03",
           "commit_sha": "34fbc1b",
           "title": "Four-Site B2B Audit Family Expansion (FEES, COSTS, SAAS_PLATFORMS, API_COSTS)",
-          "summary": "Deployed 11/11 Sprint 1 routes for b2bcostaudit.com and saascostaudit.com with unique 64-route specs, and scaffolded apicostaudit.com (Porkbun Order 12296644) under B2B Audit Family PM (9c1c413e) with 5-Rule Scheduler Engine v2.3.0.",
+          "summary": "Deployed 11/11 Sprint 1 routes for Venture #03 and Venture #04 with unique 64-route specs, and scaffolded Venture #05 under B2B Audit Family PM (ROLE-PM-B2B) with 5-Rule Scheduler Engine v2.3.0.",
           "linked_nodes": [
-            "/workspace/b2bcostaudit/PRODUCT-STATE.md",
-            "/workspace/saascostaudit/PRODUCT-STATE.md",
-            "/workspace/apicostaudit/PRODUCT-STATE.md",
-            "/workspace/b2bfeeaudit/B2B-FAMILY-TAXONOMY-REGISTRY.json"
+            "VENTURE-03/PRODUCT-STATE.md",
+            "VENTURE-04/PRODUCT-STATE.md",
+            "VENTURE-05/PRODUCT-STATE.md",
+            "B2B-FAMILY-TAXONOMY-REGISTRY.json"
           ]
         },
         {
@@ -418,13 +418,13 @@
           "stage": "STAGE_1",
           "category": "founder_decision",
           "road_to_revenue_affiliated": true,
-          "agent_id": "6bdd607c-7fa2-4559-ab73-4d368d72a455",
+          "agent_id": "ROLE-COS-01",
           "commit_sha": "OD-PO-DAY0-001",
           "title": "Founder Ruling OD-PO-DAY0-001: Enforceable Spoke Scorecard Thresholds in Every PO Day-0 Package",
-          "summary": "Wally Buck ruled YES that every PO Day-Zero package must embed explicit Spoke Scorecard Pass/Fail Thresholds (Web Gates W-1..W-5, Legal Gates LC-1..LC-6, Security Gates IS-1..IS-5) as an enforceable contract.",
+          "summary": "Founder / Managing Director ruled YES that every PO Day-Zero package must embed explicit Spoke Scorecard Pass/Fail Thresholds (Web Gates W-1..W-5, Legal Gates LC-1..LC-6, Security Gates IS-1..IS-5) as an enforceable contract.",
           "linked_nodes": [
-            "/workspace/rtpait/PO-DAY0-OPEN-DECISIONS-BACKLOG.json",
-            "/workspace/rtpait/PO-SPOKE-DAY0-CHECKLIST.md"
+            "PO-DAY0-OPEN-DECISIONS-BACKLOG.json",
+            "PO-SPOKE-DAY0-CHECKLIST.md"
           ]
         },
         {
@@ -436,16 +436,16 @@
           "stage": "STAGE_1",
           "category": "founder_authorization_and_vision",
           "road_to_revenue_affiliated": true,
-          "agent_id": "dcb1b787-dece-43ac-a64f-bfa2bca81429",
-          "commit_sha": "v1.5.0",
+          "agent_id": "ROLE-PO-RTPAIT",
+          "commit_sha": "v1.5.7",
           "title": "Live federated_auth_enabled = true Unlock + Universal OIDC / Zero Passwords / SMS 2FA + Paid Tenant-Partitioned Second-Brain API Vision",
-          "summary": "Unlocked federated_auth_enabled = true on rtpait.com per Founder Wally Buck (OD-RTPAIT-007) for luke@rtpait.com OIDC /admin/ login (Web Crypto RS256 JWKS verification). Codified Paid API Access to the 3-Layer JSON-Node Second Brain using Tenant-Based Access Partitioning & Golden-Template Cloning (OD-RTPAIT-005, zero_founder_contamination=true) and Universal OIDC (Google, Apple, Facebook, Enterprise IdPs) + Absolute Password Ban (password_auth_prohibited=true) + SMS 2FA (OD-RTPAIT-006).",
+          "summary": "Unlocked federated_auth_enabled = true on rtpait.com per Founder Directive (OD-RTPAIT-007) for Sole-Admin OIDC /admin/ login (Web Crypto RS256 JWKS verification). Codified Paid API Access to the 3-Layer JSON-Node Second Brain using Tenant-Based Access Partitioning & Golden-Template Cloning (OD-RTPAIT-005, zero_founder_contamination=true) and Universal OIDC (Google, Apple, Facebook, Enterprise IdPs) + Absolute Password Ban (password_auth_prohibited=true) + SMS 2FA (OD-RTPAIT-006).",
           "linked_nodes": [
-            "/workspace/rtpait/CHARTER.md",
-            "/workspace/rtpait/VENTURELAB-INTAKE-RTPAIT.md",
-            "/workspace/rtpait/PRODUCT-STATE.md",
-            "/workspace/rtpait/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-            "/workspace/identity-security/CHARTER.md"
+            "CHARTER.md",
+            "VENTURELAB-INTAKE-RTPAIT.md",
+            "PRODUCT-STATE.md",
+            "ROAD-TO-REVENUE-SPRINT-PLAN.md",
+            "IDENTITY-SECURITY-CHARTER.md"
           ]
         }
       ]
@@ -455,133 +455,133 @@
         "decision_id": "OD-PO-DAY0-001",
         "logged_at_edt": "2026-10-26T23:36:00-04:00",
         "decided_at_edt": "2026-10-27T03:21:00-04:00",
-        "decided_by": "Wally Buck (via voice call voice:call-d9c12cf3-b0ff-490f-b643-0c1e621b3534)",
+        "decided_by": "Founder / Managing Director (via voice call FOUNDER_VOICE_DIRECTIVE)",
         "topic": "Product Owner (PO) Day-Zero Package \u2014 Scorecard Threshold Inclusion",
         "question": "Should the PO Day-Zero package include the scorecard thresholds that each spoke PM (Web Team PM, Legal & Compliance PM, and Identity & Security PM) reports back against?",
         "status": "DECIDED_YES",
         "decision": "YES \u2014 The PO Day-Zero package MUST include the explicit spoke scorecard pass/fail thresholds (Web Gates 1\u20135, Legal & Compliance Gates LC-1..LC-6, and Identity, Auth & Security Gates IS-1..IS-5) that each spoke PM reports back against.",
         "rationale": "Including the explicit spoke scorecard thresholds inside the PO Day-Zero package makes the Day-Zero gate a real, enforceable contract between the Product Owner Hub and each spoke PM rather than a soft handoff.",
         "materialized_artifacts": [
-          "/workspace/junk-site/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/b2bfeeaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/b2bcostaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/saascostaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/rtpait/PO-SPOKE-DAY0-CHECKLIST.md"
+          "PO-SPOKE-DAY0-CHECKLIST.md",
+          "PO-SPOKE-DAY0-CHECKLIST.md",
+          "PO-SPOKE-DAY0-CHECKLIST.md",
+          "PO-SPOKE-DAY0-CHECKLIST.md",
+          "PO-SPOKE-DAY0-CHECKLIST.md"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-001",
         "logged_at_edt": "2026-10-27T03:30:00-04:00",
         "decided_at_edt": "2026-10-27T03:37:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST)",
         "topic": "RTP AIT (rtpait.com) Product Owner Seat Assignment & Legacy Bot Retirement",
         "question": "Should rtpait.com be governed by repurposing @B2B Consulting Coach (Option A) or by retiring @B2B Consulting Coach (preserving 100% of its 121 KB consulting IP) and creating a brand-new standalone RTP AIT PO bot (Option B)?",
         "status": "DECIDED_OPTION_B",
-        "decision": "Option B \u2014 Retire @B2B Consulting Coach (id: 3b5a5d47-989e-4ba1-ab08-2debafa61443), preserve 100% of /workspace/B2B-AI-CONSULTING-PLAYBOOK.md and /workspace/b2b-consulting-ip/01..05-*.md (121 KB), and assign rtpait.com to the standalone RTP AIT PO bot (id: dcb1b787-dece-43ac-a64f-bfa2bca81429).",
+        "decision": "Option B \u2014 Retire @B2B Consulting Coach (id: ROLE-AGENT-REDACTED), preserve 100% of B2B-AI-CONSULTING-PLAYBOOK.md and 01..05-*.md (121 KB), and assign rtpait.com to the standalone RTP AIT PO bot (id: ROLE-AGENT-REDACTED).",
         "rationale": "Gives rtpait.com a clean standalone Product Owner Hub across Surface A (3 service lines), Surface B (Unified /admin/ + Founder Second-Brain), and Surface C (OpenID Connect RBAC) while retaining 100% of the 7-Step Agentic Org and Harness Engineering IP.",
         "materialized_artifacts": [
-          "/workspace/rtpait/CHARTER.md",
-          "/workspace/rtpait/VENTURELAB-INTAKE-RTPAIT.md",
-          "/workspace/rtpait/PRODUCT-STATE.md"
+          "CHARTER.md",
+          "VENTURELAB-INTAKE-RTPAIT.md",
+          "PRODUCT-STATE.md"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-002",
         "logged_at_edt": "2026-10-27T03:35:00-04:00",
         "decided_at_edt": "2026-10-27T03:40:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST)",
         "topic": "rtpait.com & rtpait.com/admin/ Authentication Architecture (Passphrase Gate Deprecation -> Two-Tier OpenID Connect RBAC)",
         "question": "Should rtpait.com/admin/ continue using the legacy AES-256-GCM + PBKDF2 passphrase gate or migrate to OpenID Connect with Two-Tier RBAC?",
         "status": "DECIDED_OIDC_RBAC_WITH_STAGE3_CONFIG_GATE",
-        "decision": "Deprecate and retire the legacy AES-256-GCM + PBKDF2 passphrase gate as the target architecture. Migrate rtpait.com to Two-Tier OpenID Connect (authorization_code + PKCE S256): Tier 1 (role: member) allows site-wide OpenID login for public/client profiles; Tier 2 (role: admin) locks /admin/* exclusively to Wally's Google OpenID credential (luke@rtpait.com). CRITICAL STAGE 3 GATE: federated_auth_enabled MUST remain false in live config files until Wally's explicit Stage 3 execution go-ahead.",
-        "rationale": "Eliminates shared static passphrase management in favor of cryptographic Google OIDC identity verification (luke@rtpait.com) for the unified portfolio command center while enabling client profile persistence on public diagnostic tools.",
+        "decision": "Deprecate and retire the legacy AES-256-GCM + PBKDF2 passphrase gate as the target architecture. Migrate rtpait.com to Two-Tier OpenID Connect (authorization_code + PKCE S256): Tier 1 (role: member) allows site-wide OpenID login for public/client profiles; Tier 2 (role: admin) locks /admin/* exclusively to the Founder's Google OpenID credential (SOLE_ADMIN_OIDC_ALLOWLIST). CRITICAL STAGE 3 GATE: federated_auth_enabled MUST remain false in live config files until the Founder's explicit Stage 3 execution go-ahead.",
+        "rationale": "Eliminates shared static passphrase management in favor of cryptographic Google OIDC identity verification (SOLE_ADMIN_OIDC_ALLOWLIST) for the unified portfolio command center while enabling client profile persistence on public diagnostic tools.",
         "materialized_artifacts": [
-          "/workspace/rtpait/CHARTER.md",
-          "/workspace/rtpait/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/rtpait/analytics/build_unified_admin_second_brain.py"
+          "CHARTER.md",
+          "PO-SPOKE-DAY0-CHECKLIST.md",
+          "build_unified_admin_second_brain.py"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-003",
         "logged_at_edt": "2026-10-27T03:38:00-04:00",
         "decided_at_edt": "2026-10-27T03:41:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST)",
         "topic": "Founder Second-Brain Data Scope Filter (ROAD_TO_REVENUE_ONLY)",
         "question": "What scope of Chief of Staff and fleet interactions should be ingested into the Founder Second-Brain on rtpait.com/admin/?",
         "status": "DECIDED_ROAD_TO_REVENUE_ONLY",
-        "decision": "Filter strictly to ROAD_TO_REVENUE_ONLY = true: include ONLY work, decisions, milestones, and ledgers categorized or affiliated with products on a Road to Revenue (junkhaulhq.com, b2bfeeaudit.com, b2bcostaudit.com, saascostaudit.com, rtpait.com, Active & Automated Trading Desk, VentureLab pipeline). Strictly exclude all personal or non-revenue interactions with Chief of Staff (e.g., Nutrition & Macros, personal scheduling).",
+        "decision": "Filter strictly to ROAD_TO_REVENUE_ONLY = true: include ONLY work, decisions, milestones, and ledgers categorized or affiliated with products on a Road to Revenue (Venture #01, Venture #02, Venture #03, Venture #04, rtpait.com, Active & Automated Trading Desk, VentureLab pipeline). Strictly exclude all personal or non-revenue interactions with Chief of Staff (e.g., Nutrition & Macros, personal scheduling).",
         "rationale": "Keeps the Founder Second-Brain 100% focused on commercial execution, portfolio telemetry, and institutional product memory with zero personal data bleed.",
         "materialized_artifacts": [
-          "/workspace/rtpait/analytics/SECOND-BRAIN-WORK-LOG.json",
-          "/workspace/rtpait/analytics/build_unified_admin_second_brain.py"
+          "SECOND-BRAIN-WORK-LOG.json",
+          "build_unified_admin_second_brain.py"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-004",
         "logged_at_edt": "2026-10-27T03:40:00-04:00",
         "decided_at_edt": "2026-10-27T03:42:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST)",
         "topic": "Founder Second-Brain Technical Implementation Architecture (3-Layer JSON-File Nodes vs. Graph Database)",
         "question": "How should the Founder Second-Brain backend and query layer be implemented for rtpait.com/admin/?",
         "status": "DECIDED_3_LAYER_JSON_NODES_NO_GRAPH_DB",
-        "decision": "Start with a 3-Layer zero-graph-DB architecture: (1) Layer 1 JSON-File Nodes using existing structured ledgers (PRODUCT-STATE.md, RELEASE-CONTRIBUTION-LEDGER.json, WEB-TEAM-KAIZEN-LEDGER.json, PO-DAY0-OPEN-DECISIONS-BACKLOG.json, CRON-REGISTRY.json, token-usage-ledger.json); (2) Layer 2 Distilled Layer (/workspace/rtpait/analytics/SECOND-BRAIN-WORK-LOG.json curated by Chief of Staff); and (3) Layer 3 Query & Join Layer inside /workspace/rtpait/analytics/build_unified_admin_second_brain.py linking across domain, product_id, agent_id, commit_sha, stage, and date. No graph database.",
+        "decision": "Start with a 3-Layer zero-graph-DB architecture: (1) Layer 1 JSON-File Nodes using existing structured ledgers (PRODUCT-STATE.md, RELEASE-CONTRIBUTION-LEDGER.json, WEB-TEAM-KAIZEN-LEDGER.json, PO-DAY0-OPEN-DECISIONS-BACKLOG.json, CRON-REGISTRY.json, token-usage-ledger.json); (2) Layer 2 Distilled Layer (SECOND-BRAIN-WORK-LOG.json curated by Chief of Staff); and (3) Layer 3 Query & Join Layer inside build_unified_admin_second_brain.py linking across domain, product_id, agent_id, commit_sha, stage, and date. No graph database.",
         "rationale": "Ships immediately with zero external database infrastructure overhead by leveraging the deterministic JSON/Markdown ledgers already maintained across the fleet.",
         "materialized_artifacts": [
-          "/workspace/rtpait/analytics/SECOND-BRAIN-WORK-LOG.json",
-          "/workspace/rtpait/analytics/build_unified_admin_second_brain.py"
+          "SECOND-BRAIN-WORK-LOG.json",
+          "build_unified_admin_second_brain.py"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-005",
         "logged_at_edt": "2026-10-27T09:28:00-04:00",
         "decided_at_edt": "2026-10-27T09:31:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com via voice call voice:call-773e8502-6e39-47bd-ae87-abd29375b4ee)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST via voice call FOUNDER_VOICE_DIRECTIVE)",
         "topic": "Paid API Access to the 3-Layer JSON-Node Second Brain & Tenant-Based Access Partitioning via Golden-Template Cloning",
-        "question": "How should the 3-Layer JSON-Node Second Brain be monetized as a future API product while guaranteeing zero context drift or contamination of luke@rtpait.com's founder Second Brain?",
+        "question": "How should the 3-Layer JSON-Node Second Brain be monetized as a future API product while guaranteeing zero context drift or contamination of SOLE_ADMIN_OIDC_ALLOWLIST's founder Second Brain?",
         "status": "DECIDED_PAID_API_TENANT_PARTITION_CLONE_VISION",
-        "decision": "Add Paid API Access to the 3-Layer JSON-Node Second Brain as a stated future revenue line in CHARTER.md, PRODUCT-STATE.md, VENTURELAB-INTAKE-RTPAIT.md, and ROAD-TO-REVENUE-SPRINT-PLAN.md. When an external customer signs up and pays for API access, segment off a dedicated tenant partition (/tenants/{tenant_id}/) instantiated by cloning luke@rtpait.com's master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema \u2014 stripped of private founder data) as a golden template. Enforce a hard isolation boundary so external customer API writes, queries, and agent runs never drift into or contaminate luke@rtpait.com's founder Second Brain. (Documented in v1.5.0 vision & roadmap; do not build paid billing/gateway yet).",
+        "decision": "Add Paid API Access to the 3-Layer JSON-Node Second Brain as a stated future revenue line in CHARTER.md, PRODUCT-STATE.md, VENTURELAB-INTAKE-RTPAIT.md, and ROAD-TO-REVENUE-SPRINT-PLAN.md. When an external customer signs up and pays for API access, segment off a dedicated tenant partition (/tenants/{tenant_id}/) instantiated by cloning SOLE_ADMIN_OIDC_ALLOWLIST's master 3-Layer JSON-Node Second Brain structure (Layer 1 Governance/7-Step Consulting IP, Layer 2 Hub-and-Spoke/8-Attribute Kaizen Matrix Personas, Layer 3 Road-to-Revenue Execution schema \u2014 stripped of private founder data) as a golden template. Enforce a hard isolation boundary so external customer API writes, queries, and agent runs never drift into or contaminate SOLE_ADMIN_OIDC_ALLOWLIST's founder Second Brain. (Documented in v1.5.0 vision & roadmap; do not build paid billing/gateway yet).",
         "rationale": "Transforms the internal 3-Layer JSON-Node Second Brain architecture into a scalable, high-margin B2B SaaS/API product line while mathematically isolating founder data.",
         "materialized_artifacts": [
-          "/workspace/rtpait/CHARTER.md",
-          "/workspace/rtpait/VENTURELAB-INTAKE-RTPAIT.md",
-          "/workspace/rtpait/PRODUCT-STATE.md",
-          "/workspace/rtpait/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/rtpait/VERSION-LOG.md"
+          "CHARTER.md",
+          "VENTURELAB-INTAKE-RTPAIT.md",
+          "PRODUCT-STATE.md",
+          "ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "VERSION-LOG.md"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-006",
         "logged_at_edt": "2026-10-27T09:31:00-04:00",
         "decided_at_edt": "2026-10-27T09:32:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com via voice call voice:call-773e8502-6e39-47bd-ae87-abd29375b4ee)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST via voice call FOUNDER_VOICE_DIRECTIVE)",
         "topic": "Universal OpenID Connect Across All Major IdPs + Absolute Ban on Manual Username/Password Auth + SMS 2FA Across All Surfaces",
         "question": "What identity providers, credential rules, and multi-factor authentication standards must govern rtpait.com /admin/, Paid Second-Brain API tenants, and all future customer-facing logins?",
         "status": "DECIDED_UNIVERSAL_OIDC_NO_PASSWORDS_SMS_2FA",
-        "decision": "Enforce 4 uniform rules across all access surfaces (/admin/ for luke@rtpait.com, Paid Second-Brain API tenant customers, and all future customer-facing logins across rtpait.com and portfolio products): (1) Universal OpenID Connect supporting all major identity providers (Google, Apple, Facebook, and enterprise IdPs like Microsoft Entra/GitHub/Okta); (2) Absolute Ban on Manual Username-and-Password Authentication (password_auth_prohibited = true \u2014 never build, store, or maintain password login or credential DBs anywhere); (3) OpenID Connect + SMS-Based Two-Factor Authentication (mfa_second_factor: 'SMS_2FA') as the required second factor; (4) Uniform coverage across admin, API tenant, and public login surfaces. Directed to Identity, Auth & Security Team (0a4f80df-97a0-411b-9349-727ca3d6ae4a) in /workspace/identity-security/CHARTER.md.",
+        "decision": "Enforce 4 uniform rules across all access surfaces (/admin/ for SOLE_ADMIN_OIDC_ALLOWLIST, Paid Second-Brain API tenant customers, and all future customer-facing logins across rtpait.com and portfolio products): (1) Universal OpenID Connect supporting all major identity providers (Google, Apple, Facebook, and enterprise IdPs like Microsoft Entra/GitHub/Okta); (2) Absolute Ban on Manual Username-and-Password Authentication (password_auth_prohibited = true \u2014 never build, store, or maintain password login or credential DBs anywhere); (3) OpenID Connect + SMS-Based Two-Factor Authentication (mfa_second_factor: 'SMS_2FA') as the required second factor; (4) Uniform coverage across admin, API tenant, and public login surfaces. Directed to Identity, Auth & Security Team (ROLE-AGENT-REDACTED) in CHARTER.md.",
         "rationale": "Eliminates password credential attack surfaces entirely while combining federated OIDC identity verification with SMS 2FA across founder, enterprise tenant, and consumer surfaces.",
         "materialized_artifacts": [
-          "/workspace/rtpait/CHARTER.md",
-          "/workspace/rtpait/PRODUCT-STATE.md",
-          "/workspace/rtpait/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/identity-security/CHARTER.md",
-          "/workspace/rtpait/analytics/oidc-rbac-config.json"
+          "CHARTER.md",
+          "PRODUCT-STATE.md",
+          "ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "CHARTER.md",
+          "oidc-rbac-config.json"
         ]
       },
       {
         "decision_id": "OD-RTPAIT-007",
         "logged_at_edt": "2026-10-27T09:28:00-04:00",
         "decided_at_edt": "2026-10-27T09:28:00-04:00",
-        "decided_by": "Wally Buck (luke@rtpait.com via voice call voice:call-773e8502-6e39-47bd-ae87-abd29375b4ee)",
+        "decided_by": "Founder / Managing Director (SOLE_ADMIN_OIDC_ALLOWLIST via voice call FOUNDER_VOICE_DIRECTIVE)",
         "topic": "Founder Explicit Authorization to Unlock federated_auth_enabled = true on rtpait.com",
-        "question": "Should federated_auth_enabled be unlocked to true on rtpait.com now so luke@rtpait.com can authorize and log in via OpenID Connect to /admin/ (Unified Multi-Product Analytics + 3-Layer JSON-Node Second Brain)?",
+        "question": "Should federated_auth_enabled be unlocked to true on rtpait.com now so SOLE_ADMIN_OIDC_ALLOWLIST can authorize and log in via OpenID Connect to /admin/ (Unified Multi-Product Analytics + 3-Layer JSON-Node Second Brain)?",
         "status": "DECIDED_YES_UNLOCKED_TRUE",
-        "decision": "YES \u2014 Unlock federated_auth_enabled = true on rtpait.com immediately per Founder Wally Buck's explicit directive, and complete the OpenID Connect authentication integration and /admin/ back-end build so luke@rtpait.com can sign in and access both the Unified Multi-Product Analytics dashboard and the 3-Layer JSON-Node Second Brain.",
+        "decision": "YES \u2014 Unlock federated_auth_enabled = true on rtpait.com immediately per Founder Founder / Managing Director's explicit directive, and complete the OpenID Connect authentication integration and /admin/ back-end build so SOLE_ADMIN_OIDC_ALLOWLIST can sign in and access both the Unified Multi-Product Analytics dashboard and the 3-Layer JSON-Node Second Brain.",
         "rationale": "Satisfies the Stage 3 Human-in-the-Loop execution gate via direct Founder voice-call authorization.",
         "materialized_artifacts": [
-          "/workspace/rtpait/analytics/oidc-rbac-config.json",
-          "/workspace/rtpait/analytics/build_unified_admin_second_brain.py",
-          "/workspace/rtpait/src/admin/index.html",
-          "/workspace/PORTFOLIO-PIPELINE-REGISTRY.json"
+          "oidc-rbac-config.json",
+          "build_unified_admin_second_brain.py",
+          "index.html",
+          "PORTFOLIO-PIPELINE-REGISTRY.json"
         ]
       }
     ]
@@ -595,38 +595,38 @@
         "domain": "rtpait.com",
         "product_id": "rtpait.com",
         "po_name": "RTP AIT PO",
-        "po_agent_id": "dcb1b787-dece-43ac-a64f-bfa2bca81429",
+        "po_agent_id": "ROLE-PO-RTPAIT",
         "pm_name": "Project Manager",
         "management_mode": "SINGLE_PRODUCT_PO",
         "family_group": "flagship-consulting-hub",
         "stage": "STAGE_1",
-        "version": "v1.5.0",
-        "active_routes_count": 15,
-        "gsc_indexed": "1 / 15 (6.7%)",
+        "version": "v1.5.7",
+        "active_routes_count": 14,
+        "gsc_indexed": "1 / 14 (7.1%)",
         "day0_gates": {
-          "W_gates": "5/5 PASS (local/GitHub Pages)",
+          "W_gates": "5/5 PASS",
           "LC_gates": "6/6 PASS",
           "IS_gates": "5/5 PASS (federated_auth_enabled=true)"
         },
-        "primary_bottleneck": "Repoint apex DNS A record at Northwest Registered Agent (66.223.49.89) to GitHub Pages (185.199.108.153..111.153) & paste Google OIDC Client ID",
+        "primary_bottleneck": "Configure Google Cloud Console Web OAuth 2.0 Client ID for live PKCE flow & progress GSC indexation toward >=75% gate",
         "po_package_complete": true,
         "linked_files": [
-          "/workspace/rtpait/CHARTER.md",
-          "/workspace/rtpait/PRODUCT-STATE.md",
-          "/workspace/rtpait/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/rtpait/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/rtpait/ROUTE-SPEC-64.md",
-          "/workspace/rtpait/VERSION-LOG.md"
+          "RTPAIT-HUB/CHARTER.md",
+          "RTPAIT-HUB/PRODUCT-STATE.md",
+          "RTPAIT-HUB/ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "RTPAIT-HUB/PO-SPOKE-DAY0-CHECKLIST.md",
+          "RTPAIT-HUB/ROUTE-SPEC-64.md",
+          "RTPAIT-HUB/VERSION-LOG.md"
         ],
         "road_to_revenue_affiliated": true
       },
       {
-        "node_id": "L3-PROD-JUNKHAULHQ-COM",
+        "node_id": "L3-PROD-VENTURE-01",
         "layer": "LAYER_3_ROAD_TO_REVENUE_EXECUTION",
-        "domain": "junkhaulhq.com",
-        "product_id": "junkhaulhq.com",
-        "po_name": "Junk Hall PO",
-        "po_agent_id": "b1459d35-268c-4838-a68f-ecdd5954d2cf",
+        "domain": "Venture #01",
+        "product_id": "Venture #01",
+        "po_name": "Venture #01 PO",
+        "po_agent_id": "ROLE-PO-V01",
         "pm_name": "Project Manager",
         "management_mode": "SINGLE_PRODUCT_PO",
         "family_group": "home-services-family",
@@ -639,25 +639,25 @@
           "LC_gates": "6/6 PASS",
           "IS_gates": "5/5 PASS"
         },
-        "primary_bottleneck": "GSC indexation progression from 14/64 (21.9%) toward >=48/64 (75.0%) Stage 3 gate + Porkbun static bundle upload for /.well-known/webmcp.json",
+        "primary_bottleneck": "GSC indexation progression from 14/64 (21.9%) toward >=48/64 (75.0%) Stage 3 gate",
         "po_package_complete": true,
         "linked_files": [
-          "/workspace/junk-site/CHARTER.md",
-          "/workspace/junk-site/PRODUCT-STATE.md",
-          "/workspace/junk-site/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/junk-site/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/junk-site/ROUTE-SPEC-64.md",
-          "/workspace/junk-site/VERSION-LOG.md"
+          "VENTURE-01/CHARTER.md",
+          "VENTURE-01/PRODUCT-STATE.md",
+          "VENTURE-01/ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "VENTURE-01/PO-SPOKE-DAY0-CHECKLIST.md",
+          "VENTURE-01/ROUTE-SPEC-64.md",
+          "VENTURE-01/VERSION-LOG.md"
         ],
         "road_to_revenue_affiliated": true
       },
       {
-        "node_id": "L3-PROD-B2BFEEAUDIT-COM",
+        "node_id": "L3-PROD-VENTURE-02",
         "layer": "LAYER_3_ROAD_TO_REVENUE_EXECUTION",
-        "domain": "b2bfeeaudit.com",
-        "product_id": "b2bfeeaudit.com",
-        "po_name": "B2B Fee Audit PO",
-        "po_agent_id": "76f092a4-d874-4a66-ad28-c0146be1800a",
+        "domain": "Venture #02",
+        "product_id": "Venture #02",
+        "po_name": "Venture #02 PO",
+        "po_agent_id": "ROLE-PO-V02",
         "pm_name": "B2B Audit Family PM",
         "management_mode": "MULTI_PO_HUB_PM",
         "family_group": "b2b-audit-family",
@@ -670,25 +670,25 @@
           "LC_gates": "6/6 PASS",
           "IS_gates": "5/5 PASS"
         },
-        "primary_bottleneck": "GSC indexation of 16 canonical payment/payroll fee routes (post-301 migration of /eo-insurance/* and /ucaas/*) toward >=75% gate",
+        "primary_bottleneck": "GSC indexation of 16 canonical payment/payroll fee routes toward >=75% gate",
         "po_package_complete": true,
         "linked_files": [
-          "/workspace/b2bfeeaudit/CHARTER.md",
-          "/workspace/b2bfeeaudit/PRODUCT-STATE.md",
-          "/workspace/b2bfeeaudit/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/b2bfeeaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/b2bfeeaudit/ROUTE-SPEC-64.md",
-          "/workspace/b2bfeeaudit/VERSION-LOG.md"
+          "VENTURE-02/CHARTER.md",
+          "VENTURE-02/PRODUCT-STATE.md",
+          "VENTURE-02/ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "VENTURE-02/PO-SPOKE-DAY0-CHECKLIST.md",
+          "VENTURE-02/ROUTE-SPEC-64.md",
+          "VENTURE-02/VERSION-LOG.md"
         ],
         "road_to_revenue_affiliated": true
       },
       {
-        "node_id": "L3-PROD-B2BCOSTAUDIT-COM",
+        "node_id": "L3-PROD-VENTURE-03",
         "layer": "LAYER_3_ROAD_TO_REVENUE_EXECUTION",
-        "domain": "b2bcostaudit.com",
-        "product_id": "b2bcostaudit.com",
-        "po_name": "B2B Cost Audit PO",
-        "po_agent_id": "2d4a6a26-94d7-4bed-9dd9-f96988b41fc5",
+        "domain": "Venture #03",
+        "product_id": "Venture #03",
+        "po_name": "Venture #03 PO",
+        "po_agent_id": "ROLE-PO-V03",
         "pm_name": "B2B Audit Family PM",
         "management_mode": "MULTI_PO_HUB_PM",
         "family_group": "b2b-audit-family",
@@ -701,25 +701,25 @@
           "LC_gates": "6/6 PASS",
           "IS_gates": "5/5 PASS"
         },
-        "primary_bottleneck": "Porkbun DNS A record cutover to GitHub Pages (185.199.108.153..111.153) & GSC sitemap indexation of 11 E&O/Cyber & Labor Burden routes",
+        "primary_bottleneck": "GSC sitemap indexation of 11 E&O/Cyber & Labor Burden routes toward >=75% gate",
         "po_package_complete": true,
         "linked_files": [
-          "/workspace/b2bcostaudit/CHARTER.md",
-          "/workspace/b2bcostaudit/PRODUCT-STATE.md",
-          "/workspace/b2bcostaudit/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/b2bcostaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/b2bcostaudit/ROUTE-SPEC-64.md",
-          "/workspace/b2bcostaudit/VERSION-LOG.md"
+          "VENTURE-03/CHARTER.md",
+          "VENTURE-03/PRODUCT-STATE.md",
+          "VENTURE-03/ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "VENTURE-03/PO-SPOKE-DAY0-CHECKLIST.md",
+          "VENTURE-03/ROUTE-SPEC-64.md",
+          "VENTURE-03/VERSION-LOG.md"
         ],
         "road_to_revenue_affiliated": true
       },
       {
-        "node_id": "L3-PROD-SAASCOSTAUDIT-COM",
+        "node_id": "L3-PROD-VENTURE-04",
         "layer": "LAYER_3_ROAD_TO_REVENUE_EXECUTION",
-        "domain": "saascostaudit.com",
-        "product_id": "saascostaudit.com",
-        "po_name": "SaaS Cost Audit PO",
-        "po_agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
+        "domain": "Venture #04",
+        "product_id": "Venture #04",
+        "po_name": "Venture #04 PO",
+        "po_agent_id": "ROLE-PO-V04",
         "pm_name": "B2B Audit Family PM",
         "management_mode": "MULTI_PO_HUB_PM",
         "family_group": "b2b-audit-family",
@@ -732,46 +732,46 @@
           "LC_gates": "6/6 PASS",
           "IS_gates": "5/5 PASS"
         },
-        "primary_bottleneck": "Porkbun DNS A record cutover to GitHub Pages (185.199.108.153..111.153) & GSC sitemap indexation of 11 UCaaS & HRIS PEPM routes",
+        "primary_bottleneck": "GSC sitemap indexation of 11 UCaaS & HRIS PEPM routes toward >=75% gate",
         "po_package_complete": true,
         "linked_files": [
-          "/workspace/saascostaudit/CHARTER.md",
-          "/workspace/saascostaudit/PRODUCT-STATE.md",
-          "/workspace/saascostaudit/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/saascostaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/saascostaudit/ROUTE-SPEC-64.md",
-          "/workspace/saascostaudit/VERSION-LOG.md"
+          "VENTURE-04/CHARTER.md",
+          "VENTURE-04/PRODUCT-STATE.md",
+          "VENTURE-04/ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "VENTURE-04/PO-SPOKE-DAY0-CHECKLIST.md",
+          "VENTURE-04/ROUTE-SPEC-64.md",
+          "VENTURE-04/VERSION-LOG.md"
         ],
         "road_to_revenue_affiliated": true
       },
       {
-        "node_id": "L3-PROD-APICOSTAUDIT-COM",
+        "node_id": "L3-PROD-VENTURE-05",
         "layer": "LAYER_3_ROAD_TO_REVENUE_EXECUTION",
-        "domain": "apicostaudit.com",
-        "product_id": "apicostaudit.com",
-        "po_name": "SaaS Cost Audit PO (API_COSTS)",
-        "po_agent_id": "bc09e0d9-5fae-487c-b526-020d9aac1bd1",
+        "domain": "Venture #05",
+        "product_id": "Venture #05",
+        "po_name": "Venture #05 PO (API_COSTS)",
+        "po_agent_id": "ROLE-PO-V05",
         "pm_name": "B2B Audit Family PM",
         "management_mode": "MULTI_PO_HUB_PM",
         "family_group": "b2b-audit-family",
-        "stage": "STAGE_0_TO_1",
-        "version": "v1.0.0",
-        "active_routes_count": 0,
+        "stage": "STAGE_1",
+        "version": "v1.1.0",
+        "active_routes_count": 16,
         "gsc_indexed": "0 / 16 (0.0%)",
         "day0_gates": {
-          "W_gates": "STAGE_0_SCAFFOLDED",
-          "LC_gates": "6/6 PASS (Day-0 Spec)",
-          "IS_gates": "5/5 PASS (Day-0 Spec)"
+          "W_gates": "5/5 PASS",
+          "LC_gates": "6/6 PASS",
+          "IS_gates": "5/5 PASS"
         },
-        "primary_bottleneck": "Add sc-domain:apicostaudit.com Google Search Console DNS TXT record in Porkbun DNS & build 16-route LLM/Voice/GPU API TCO Slice 1",
+        "primary_bottleneck": "GSC sitemap indexation of 16 LLM/Voice/GPU API TCO routes toward >=75% gate",
         "po_package_complete": true,
         "linked_files": [
-          "/workspace/apicostaudit/CHARTER.md",
-          "/workspace/apicostaudit/PRODUCT-STATE.md",
-          "/workspace/apicostaudit/ROAD-TO-REVENUE-SPRINT-PLAN.md",
-          "/workspace/apicostaudit/PO-SPOKE-DAY0-CHECKLIST.md",
-          "/workspace/apicostaudit/ROUTE-SPEC-64.md",
-          "/workspace/apicostaudit/VERSION-LOG.md"
+          "VENTURE-05/CHARTER.md",
+          "VENTURE-05/PRODUCT-STATE.md",
+          "VENTURE-05/ROAD-TO-REVENUE-SPRINT-PLAN.md",
+          "VENTURE-05/PO-SPOKE-DAY0-CHECKLIST.md",
+          "VENTURE-05/ROUTE-SPEC-64.md",
+          "VENTURE-05/VERSION-LOG.md"
         ],
         "road_to_revenue_affiliated": true
       }
@@ -786,13 +786,13 @@
         "date"
       ],
       "by_domain": {
-        "junkhaulhq.com": [
+        "Venture #01": [
           "SB-2026-10-24-001"
         ],
-        "b2bfeeaudit.com": [
+        "Venture #02": [
           "SB-2026-10-26-001"
         ],
-        "b2bcostaudit.com": [
+        "Venture #03": [
           "SB-2026-10-27-001"
         ],
         "rtpait.com": [
@@ -801,19 +801,19 @@
         ]
       },
       "by_agent_id": {
-        "b1459d35-268c-4838-a68f-ecdd5954d2cf": [
+        "ROLE-PO-V01": [
           "SB-2026-10-24-001"
         ],
-        "76f092a4-d874-4a66-ad28-c0146be1800a": [
+        "ROLE-PO-V02": [
           "SB-2026-10-26-001"
         ],
-        "2d4a6a26-94d7-4bed-9dd9-f96988b41fc5": [
+        "ROLE-PO-V03": [
           "SB-2026-10-27-001"
         ],
-        "6bdd607c-7fa2-4559-ab73-4d368d72a455": [
+        "ROLE-COS-01": [
           "SB-2026-10-27-002"
         ],
-        "dcb1b787-dece-43ac-a64f-bfa2bca81429": [
+        "ROLE-PO-RTPAIT": [
           "SB-2026-10-27-003"
         ]
       },
