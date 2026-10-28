@@ -1,5 +1,5 @@
 {
-  "schema_version": "7.2.0-rtpait-unified-dashboard",
+  "schema_version": "7.3.0-rtpait-unified-dashboard",
   "generated_at_utc": "2026-10-28T12:57:41Z",
   "generated_at_edt": "2026-10-28T08:57:41-0400",
   "canonical_admin_surface": "https://rtpait.com/admin/",
@@ -28,11 +28,12 @@
       "Venture #05"
     ],
     "stage_0_to_1_domains": [],
-    "total_built_routes_across_portfolio": 132,
+    "total_built_routes_across_portfolio": 143,
     "total_gsc_indexed_routes": 16,
     "total_verified_human_visits_bucket_a": 0,
     "total_ai_crawler_queries_bucket_b": 0,
-    "total_confirmed_revenue_usd": 0.0
+    "total_confirmed_revenue_usd": 0.0,
+    "total_affiliate_funnel_routes": 128
   },
   "affiliate_networks_status": [
     {
@@ -168,8 +169,8 @@
       "family_group": "flagship-consulting-hub",
       "workspace": "RTPAIT-HUB",
       "road_to_revenue_stage": "STAGE_1",
-      "version": "v1.5.7",
-      "active_routes_count": 14,
+      "version": "v1.6.0",
+      "active_routes_count": 15,
       "day0_gates": {
         "W_gates": "5/5 PASS",
         "LC_gates": "6/6 PASS",
@@ -184,7 +185,7 @@
         "live_outbound_affiliate_clicks": 0,
         "live_price_table_row_clicks": 0,
         "live_gsc_indexed_routes": 1,
-        "live_gsc_total_routes": 14,
+        "live_gsc_total_routes": 15,
         "live_gsc_coverage_pct": 7.1,
         "gsc_75pct_gate_target": 11,
         "live_gsc_search_ctr_pct": 0.0,
@@ -199,7 +200,9 @@
         "PO-SPOKE-DAY0-CHECKLIST.md": true,
         "ROUTE-SPEC-64.md": true,
         "VERSION-LOG.md": true
-      }
+      },
+      "property_category": "BRAND_HUB",
+      "property_category_label": "Corporate Brand Hub"
     },
     "Venture #01": {
       "domain": "Venture #01",
@@ -234,7 +237,13 @@
         "live_gsc_search_ctr_pct": 0.0,
         "live_confirmed_revenue_usd": 0.0,
         "live_rpv_usd": 0.0,
-        "drip_gate_passed": false
+        "drip_gate_passed": false,
+        "traffic_growth_deltas": {
+          "dod_pct": 0.0,
+          "wow_pct": 0.0,
+          "mom_pct": 0.0,
+          "qoq_pct": 0.0
+        }
       },
       "po_package_files_present": {
         "CHARTER.md": true,
@@ -243,7 +252,9 @@
         "PO-SPOKE-DAY0-CHECKLIST.md": true,
         "ROUTE-SPEC-64.md": true,
         "VERSION-LOG.md": true
-      }
+      },
+      "property_category": "AFFILIATE_FUNNELS",
+      "property_category_label": "Affiliate Funnel"
     },
     "Venture #02": {
       "domain": "Venture #02",
@@ -256,7 +267,7 @@
       "family_group": "b2b-audit-family",
       "workspace": "VENTURE-02",
       "road_to_revenue_stage": "STAGE_2",
-      "version": "v1.5.0",
+      "version": "v1.7.0",
       "active_routes_count": 16,
       "day0_gates": {
         "W_gates": "5/5 PASS",
@@ -278,7 +289,13 @@
         "live_gsc_search_ctr_pct": 0.0,
         "live_confirmed_revenue_usd": 0.0,
         "live_rpv_usd": 0.0,
-        "drip_gate_passed": false
+        "drip_gate_passed": false,
+        "traffic_growth_deltas": {
+          "dod_pct": 0.0,
+          "wow_pct": 0.0,
+          "mom_pct": 0.0,
+          "qoq_pct": 0.0
+        }
       },
       "po_package_files_present": {
         "CHARTER.md": true,
@@ -287,7 +304,9 @@
         "PO-SPOKE-DAY0-CHECKLIST.md": true,
         "ROUTE-SPEC-64.md": true,
         "VERSION-LOG.md": true
-      }
+      },
+      "property_category": "AFFILIATE_FUNNELS",
+      "property_category_label": "Affiliate Funnel"
     },
     "Venture #03": {
       "domain": "Venture #03",
@@ -300,8 +319,8 @@
       "family_group": "b2b-audit-family",
       "workspace": "VENTURE-03",
       "road_to_revenue_stage": "STAGE_1",
-      "version": "v1.1.0",
-      "active_routes_count": 11,
+      "version": "v1.4.0",
+      "active_routes_count": 16,
       "day0_gates": {
         "W_gates": "5/5 PASS",
         "LC_gates": "6/6 PASS",
@@ -316,13 +335,19 @@
         "live_outbound_affiliate_clicks": 0,
         "live_price_table_row_clicks": 0,
         "live_gsc_indexed_routes": 0,
-        "live_gsc_total_routes": 11,
+        "live_gsc_total_routes": 16,
         "live_gsc_coverage_pct": 0.0,
-        "gsc_75pct_gate_target": 9,
+        "gsc_75pct_gate_target": 12,
         "live_gsc_search_ctr_pct": 0.0,
         "live_confirmed_revenue_usd": 0.0,
         "live_rpv_usd": 0.0,
-        "drip_gate_passed": false
+        "drip_gate_passed": false,
+        "traffic_growth_deltas": {
+          "dod_pct": 0.0,
+          "wow_pct": 0.0,
+          "mom_pct": 0.0,
+          "qoq_pct": 0.0
+        }
       },
       "po_package_files_present": {
         "CHARTER.md": true,
@@ -331,7 +356,9 @@
         "PO-SPOKE-DAY0-CHECKLIST.md": true,
         "ROUTE-SPEC-64.md": true,
         "VERSION-LOG.md": true
-      }
+      },
+      "property_category": "AFFILIATE_FUNNELS",
+      "property_category_label": "Affiliate Funnel"
     },
     "Venture #04": {
       "domain": "Venture #04",
@@ -344,8 +371,8 @@
       "family_group": "b2b-audit-family",
       "workspace": "VENTURE-04",
       "road_to_revenue_stage": "STAGE_1",
-      "version": "v1.1.0",
-      "active_routes_count": 11,
+      "version": "v1.2.0",
+      "active_routes_count": 16,
       "day0_gates": {
         "W_gates": "5/5 PASS",
         "LC_gates": "6/6 PASS",
@@ -360,13 +387,19 @@
         "live_outbound_affiliate_clicks": 0,
         "live_price_table_row_clicks": 0,
         "live_gsc_indexed_routes": 0,
-        "live_gsc_total_routes": 11,
+        "live_gsc_total_routes": 16,
         "live_gsc_coverage_pct": 0.0,
-        "gsc_75pct_gate_target": 9,
+        "gsc_75pct_gate_target": 12,
         "live_gsc_search_ctr_pct": 0.0,
         "live_confirmed_revenue_usd": 0.0,
         "live_rpv_usd": 0.0,
-        "drip_gate_passed": false
+        "drip_gate_passed": false,
+        "traffic_growth_deltas": {
+          "dod_pct": 0.0,
+          "wow_pct": 0.0,
+          "mom_pct": 0.0,
+          "qoq_pct": 0.0
+        }
       },
       "po_package_files_present": {
         "CHARTER.md": true,
@@ -375,7 +408,9 @@
         "PO-SPOKE-DAY0-CHECKLIST.md": true,
         "ROUTE-SPEC-64.md": true,
         "VERSION-LOG.md": true
-      }
+      },
+      "property_category": "AFFILIATE_FUNNELS",
+      "property_category_label": "Affiliate Funnel"
     },
     "Venture #05": {
       "domain": "Venture #05",
@@ -410,7 +445,13 @@
         "live_gsc_search_ctr_pct": 0.0,
         "live_confirmed_revenue_usd": 0.0,
         "live_rpv_usd": 0.0,
-        "drip_gate_passed": false
+        "drip_gate_passed": false,
+        "traffic_growth_deltas": {
+          "dod_pct": 0.0,
+          "wow_pct": 0.0,
+          "mom_pct": 0.0,
+          "qoq_pct": 0.0
+        }
       },
       "po_package_files_present": {
         "CHARTER.md": true,
@@ -419,7 +460,9 @@
         "PO-SPOKE-DAY0-CHECKLIST.md": true,
         "ROUTE-SPEC-64.md": true,
         "VERSION-LOG.md": true
-      }
+      },
+      "property_category": "AFFILIATE_FUNNELS",
+      "property_category_label": "Affiliate Funnel"
     }
   },
   "quarantined_target_hypotheses": {
@@ -428,5 +471,45 @@
     "service_line_2_velocity_pod_build": "$45,000 - $120,000 6-8 Week Forward-Deployed Harness & Headless Execution Build",
     "service_line_3_managed_retainer": "$10,000 - $25,000/mo Managed Governance, Eval Ratchet & Kaizen Retainer",
     "future_revenue_line_paid_second_brain_api": "$199 - $2,500+/mo Paid 3-Layer JSON-Node Second-Brain API Tier (Tenant-Partitioned Golden-Template Clones with zero_founder_contamination=true)"
-  }
+  },
+  "extensible_property_categories": [
+    {
+      "category_code": "BRAND_HUB",
+      "category_label": "Corporate Brand Hub & IP Showcase",
+      "active_count": 1,
+      "properties": [
+        "rtpait.com"
+      ]
+    },
+    {
+      "category_code": "AFFILIATE_FUNNELS",
+      "category_label": "Affiliate Funnel",
+      "active_count": 5,
+      "properties": [
+        "Venture #01",
+        "Venture #02",
+        "Venture #03",
+        "Venture #04",
+        "Venture #05"
+      ]
+    },
+    {
+      "category_code": "PAID_API_SAAS",
+      "category_label": "Paid API & SaaS Subscription",
+      "active_count": 0,
+      "properties": []
+    },
+    {
+      "category_code": "DATA_BENCHMARK_LICENSING",
+      "category_label": "Data & Benchmark Licensing",
+      "active_count": 0,
+      "properties": []
+    },
+    {
+      "category_code": "MANAGED_AGENTIC_APPS",
+      "category_label": "Managed Agentic Applications",
+      "active_count": 0,
+      "properties": []
+    }
+  ]
 }

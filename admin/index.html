@@ -648,7 +648,7 @@
         var gates = p.day0_gates || {};
         var filesOk = p.po_package_files_present && Object.values(p.po_package_files_present).every(Boolean);
         return '<tr>' +
-          '<td><strong style="color:#38bdf8">' + p.domain + '</strong><br><small style="color:#94a3b8">' + p.workspace + '</small></td>' +
+          '<td><strong style="color:#38bdf8">' + p.domain + '</strong><br><small style="color:#94a3b8">' + (p.property_category_label || p.workspace) + ' (<code>' + (p.property_category || "AFFILIATE_FUNNELS") + '</code>)</small></td>' +
           '<td><strong>' + p.po_name + '</strong><br><small style="color:#94a3b8">PM: ' + p.pm_name + ' (' + p.management_mode + ')</small></td>' +
           '<td><span class="pill">' + p.road_to_revenue_stage + '</span><br><small><strong>' + p.version + '</strong></small></td>' +
           '<td><strong>' + p.active_routes_count + '</strong> routes</td>' +
@@ -891,10 +891,9 @@
       var authUrl = "https://accounts.google.com/o/oauth2/v2/auth" +
         "?client_id=" + encodeURIComponent(clientId) +
         "&redirect_uri=" + encodeURIComponent(redirectUri) +
-        "&response_type=code" +
+        "&response_type=id_token" +
         "&scope=" + encodeURIComponent("openid email profile") +
-        "&code_challenge=" + encodeURIComponent(challenge) +
-        "&code_challenge_method=S256" +
+        "&prompt=select_account" +
         "&state=" + encodeURIComponent(state) +
         "&nonce=" + encodeURIComponent(nonce) +
         "&hd=rtpait.com" +
@@ -956,6 +955,15 @@
     }
 
     window.addEventListener("DOMContentLoaded", function() {
+      if (window.location.hash && window.location.hash.indexOf("id_token=") !== -1) {
+        var hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+        var hashIdToken = hashParams.get("id_token");
+        if (hashIdToken) {
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+          window.handleGoogleCredentialResponse({ credential: hashIdToken });
+          return;
+        }
+      }
       var params = new URLSearchParams(window.location.search);
       var urlClientId = params.get("client_id");
       if (urlClientId) {

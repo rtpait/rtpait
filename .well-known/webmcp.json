@@ -1,8 +1,12 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.6.0",
   "domain": "rtpait.com",
   "organization": "Research Triangle Park AI Transformation LLC",
   "canonical_url": "https://rtpait.com",
+  "product_category": "BRAND_HUB",
+  "category_context_tag": "[CATEGORY_CONTEXT: BRAND_HUB \u2014 OVERRIDES ALL DEFAULT SPOKE BEHAVIORS]",
+  "visitor_anonymity_policy": "STRICT_ZERO_VISITOR_DE_ANONYMIZATION_NO_COOKIES_NO_THIRD_PARTY_BEACONS",
+  "affiliate_policy": "ZERO_AFFILIATE_LINKS_ZERO_SPONSORED_CTAS_ENFORCED",
   "STAGE_2_AUTO_TRIGGER_ENABLED": false,
   "tools": [
     {
@@ -80,7 +84,7 @@
     },
     {
       "name": "list_rtpait_ip_portfolio_and_second_brain_api",
-      "description": "Lists RTP AIT LLC's anonymized live web properties (Venture #01 through Venture #05) and the future Paid 3-Layer JSON-Node Second-Brain API Tier with Tenant-Based Access Partitioning.",
+      "description": "Lists RTP AIT LLC's 121 KB Consulting IP repository (Modules 01-05), anonymized live web properties (Venture #01 through Venture #05), and the future Paid 3-Layer JSON-Node Second-Brain API Tier with Tenant-Based Access Partitioning.",
       "route": "https://rtpait.com/ip-products/",
       "input_schema": {
         "type": "object",

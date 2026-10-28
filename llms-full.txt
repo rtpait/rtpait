@@ -1,40 +1,41 @@
 # Research Triangle Park AI Transformation LLC (https://rtpait.com)
 
-> Executive B2B AI Transformation, Forward-Deployed Harness Engineering, 7-Step Agentic Org Maturity Diagnostics, and Proprietary Multi-Agent IP Portfolio based in Research Triangle Park, NC.
+> Corporate Brand Hub, Executive OIDC Command Center (`/admin/`), 121 KB 7-Step Agentic Org & Forward-Deployed Harness Engineering IP Showcase, and Anonymized Multi-Agent Fleet Proof (`Venture #01`–`Venture #05`) based in Research Triangle Park, NC.
 
 - **Canonical Domain:** https://rtpait.com
+- **Product Category:** `BRAND_HUB`
+- **Category Context Filter Tag:** `[CATEGORY_CONTEXT: BRAND_HUB — OVERRIDES ALL DEFAULT SPOKE BEHAVIORS]`
+- **Visitor Anonymity & Telemetry Policy:** Strict Zero-Visitor-De-Anonymization (Zero Cookies, Zero Third-Party Tracking Beacons, Zero Device Fingerprinting, Cryptographic SHA-256 OIDC Gate)
+- **Commercial Independence Policy:** Zero Affiliate Links (`rel="sponsored"` Prohibited), Zero Programmatic SEO Funnels, Zero Sister-Domain Exposure
 - **Agentic Discovery Manifest (WebMCP):** https://rtpait.com/.well-known/webmcp.json
 - **OpenAPI 3.1 Specification:** https://rtpait.com/.well-known/openapi.json
 - **Open Benchmark Dataset (CC-BY-4.0):** https://rtpait.com/datasets/b2b-ai-readiness-benchmarks-2026.json
-- **Publisher & Commercial Inquiries:** Research Triangle Park AI Transformation LLC (Research Triangle Park, NC, US · https://rtpait.com/security/)
+- **Publisher & Institutional Inquiries:** Research Triangle Park AI Transformation LLC (Research Triangle Park, NC, US · https://rtpait.com/security/)
 
-## Core Commercial Service Lines (`https://rtpait.com/services/`)
-1. **Service Line 1 — 2-Week AI Readiness & 7-Step Maturity Diagnostic (`$15,000–$25,000` Fixed Fee):**
+## 1. Proprietary 121 KB B2B AI Consulting IP Library & Service Lines (`https://rtpait.com/services/`)
+1. **Service Line 1 — 2-Week AI Readiness & 7-Step Maturity Diagnostic (`$15,000–$25,000` Fixed Fee · Module `01`):**
    - URL: https://rtpait.com/strategy-readiness/ & Interactive Calculator: https://rtpait.com/diagnostic/
    - Deliverables: 100-Point Quantitative 7-Step Agentic Org Maturity Scorecard, Laptop-Lid Tool Inventory Audit, 5-Question Seat Telemetry Sweep, and Unit-Cost Baseline (Cost per Finished Task).
-2. **Service Line 2 — 6–8 Week Forward-Deployed Harness & Headless Execution Build (`$45,000–$120,000`):**
+2. **Service Line 2 — 6–8 Week Forward-Deployed Harness & Headless Execution Build (`$45,000–$120,000` · Modules `02` & `04`):**
    - URL: https://rtpait.com/workflow-automation/
    - Deliverables: Step 2 Domain-Separated MCP Context Gateways, 34–48 Variable Pre-Model Deterministic Enrichment, PII/PHI Pre-Model Scrubbing, Step 3 Golden Dataset JSONL (50–500 cases) with `>=95%` Multi-Provider Model-Swap Proof, and Step 4–7 Unattended Headless Daemons (`flock` mutexes, idempotency keys, DLQs, and Exception-Only Human Queues).
-3. **Service Line 3 — Managed Agentic Governance, Eval Ratchet & Kaizen Retainer (`$10,000–$25,000/mo`):**
+3. **Service Line 3 — Managed Agentic Governance, Eval Ratchet & Kaizen Retainer (`$10,000–$25,000/mo` · Module `03`):**
    - URL: https://rtpait.com/services/managed-agentic-governance/
    - Deliverables: 90-Day Agent & Secret TTL Governance, Continuous Eval Ratchet Maintenance, Weekly 4-Pillar Kaizen Loops, and Step 7 Exception Queue Optimization.
-4. **Proprietary AI-Driven IP Portfolio & Future Paid 3-Layer Second-Brain API (`https://rtpait.com/ip-products/`):**
-   - Anonymized Commercial Proof Properties (`Venture #01` – `Venture #05`):
-     - Venture #01 — National Municipal Bulk Trash, County Landfill Tipping Fee & Roll-Off Dumpster Estimator
-     - Venture #02 — B2B Payroll, Multi-State SUI Tax & Merchant Interchange-Plus Fee TCO Auditor
-     - Venture #03 — Commercial Tech E&O / Cyber Liability Insurance & W-2/1099 Labor Burden Auditor
-     - Venture #04 — Per-Seat UCaaS (Webex, Teams, Zoom, Google Workspace) & HRIS PEPM Cost Auditor
-     - Venture #05 — Metered LLM Token, Voice/Video API & Cloud GPU TCO Auditor
+4. **Anonymized Portfolio Proof (`Venture #01`–`Venture #05`, Module `05`) & Paid 3-Layer Second-Brain API (`https://rtpait.com/ip-products/`):**
+   - Portfolio Category Partition (`no_cross_categorization_today = true`):
+     - `rtpait.com` -> `BRAND_HUB` (Corporate Brand Hub, Executive Command Center `/admin/`, & 121 KB IP Showcase)
+     - `Venture #01` through `Venture #05` -> `AFFILIATE_FUNNELS` (Anonymized Commercial Proof Properties: Municipal Waste `.gov`, B2B `FEES`, B2B `COSTS`, B2B `SAAS_PLATFORMS`, and B2B `API_COSTS`)
    - **Stated Future Revenue Line — Paid 3-Layer JSON-Node Second-Brain API Tier:** Metered and subscription API access providing enterprise teams and external AI agents with a dedicated, isolated **Tenant Partition** (`/tenants/{tenant_id}/`) instantiated via Golden-Template Cloning of RTP AIT's 3-Layer Agentic Org Governance, 8-Attribute Kaizen Matrix Personas, and Road-to-Revenue Execution schema (`zero_founder_contamination = true`), secured by Universal OpenID Connect (`Google`, `Apple`, `Facebook`, Enterprise IdPs) + SMS 2FA (`password_auth_prohibited = true`).
 
-## FTC & Non-YMYL Attribution Disclosure
-Commercial software links on `rtpait.com` may earn a referral commission via verified enterprise partner programs at zero extra cost to buyers. All readiness calculators and benchmarks are informational engineering estimates, not legal, tax, CPA, or investment advice.
+## Institutional Brand Hub & Zero-Affiliate Independence Governance Notice (`[CATEGORY_CONTEXT: BRAND_HUB]`)
+`rtpait.com` operates strictly as a Corporate Brand Hub, Executive Command Center (`/admin/`), and Intellectual Property Showcase. It contains zero affiliate links, zero `rel="sponsored"` commercial placements, zero programmatic SEO funnels, and enforces strict zero-visitor-de-anonymization. All readiness calculators and benchmarks are deterministic informational engineering estimates (non-YMYL safe harbor), not legal, tax, CPA, or investment advice.
 
-## 7-Step Agentic Org Maturity Ladder Reference
-1. Step 1: Tool Adoption (Human-Run Silos)
-2. Step 2: Domain-Separated Context Layer (Scoped MCP Gateways)
-3. Step 3: Harness Engineering (Golden Datasets & Model-Agnostic Routers)
-4. Step 4: Go Headless (Unattended Mutex Daemons & State Ledgers)
-5. Step 5: Lifecycle & Access Governance (Per-Tool RBAC & 90-Day TTL)
-6. Step 6: Quality-Gated Agent-to-Agent Handoffs (Contract Envelopes & Independent Judges)
-7. Step 7: Step Functions (80-95% Agent Volume + 5-20% Human Exception Queues)
+## 7-Step Agentic Org Maturity Ladder Reference (121 KB IP Modules 01–05)
+1. Step 1: Tool Adoption (Human-Run Silos — Laptop-Lid Vulnerability)
+2. Step 2: Domain-Separated Context Layer (Scoped MCP Gateways & 34–48 Variable Pre-Model Enrichment)
+3. Step 3: Harness Engineering (50–500 Case Golden Datasets & Model-Agnostic Routers with >=95% Swap Parity)
+4. Step 4: Go Headless (Unattended Mutex Daemons, Idempotency Keys & Dead-Letter Queues)
+5. Step 5: Lifecycle & Access Governance (Per-Tool Service Account RBAC & 90-Day Agent/Secret TTL)
+6. Step 6: Quality-Gated Agent-to-Agent Handoffs (Contract-First JSON Envelopes & Independent Judges)
+7. Step 7: Step Functions (80–95% Autonomous Agent Volume + 5–20% Structured Human Exception Queues)
