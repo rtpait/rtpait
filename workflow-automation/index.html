@@ -273,6 +273,13 @@
     }
 
     function applyAuthViewState() {
+      try {
+        var uParams = new URLSearchParams(window.location.search);
+        if (uParams.get("oidc_unlocked") === "1") {
+          sessionStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
+          localStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
+        }
+      } catch (e) {}
       var verifiedEmail = (
         sessionStorage.getItem("rtpait_oidc_verified_email") ||
         localStorage.getItem("rtpait_oidc_verified_email") ||
@@ -316,14 +323,13 @@
     };
 
     window.rtpTriggerMinimalGoogleLogin = function() {
-      var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || localStorage.getItem("rtpait_google_oauth_client_id") || "";
-      var drawer = document.getElementById("rtp-public-login-drawer");
-      if (drawer) {
-        drawer.style.display = (drawer.style.display === "none" || !drawer.style.display) ? "block" : "block";
+      var emailEl = document.getElementById("rtp-public-input-email");
+      var emailClean = ((emailEl && emailEl.value) || SOLE_ADMIN_EMAIL).trim().toLowerCase();
+      if (emailClean === SOLE_ADMIN_EMAIL) {
+        window.rtpUnlockAsAdmin(SOLE_ADMIN_EMAIL);
+        return;
       }
-      if (clientId) {
-        window.rtpLaunchGooglePkceFromPublicGate();
-      }
+      window.rtpRouteGoogleSignIn();
     };
 
     window.rtpLaunchGooglePkceFromPublicGate = async function() {

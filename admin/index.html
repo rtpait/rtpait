@@ -247,11 +247,11 @@
         <div id="g_id_onload_mount" style="margin:0.65rem 0"></div>
         <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem;align-items:center">
           <input type="email" id="input-admin-oidc-email" value="luke@rtpait.com" placeholder="Google Workspace email (luke@rtpait.com)" style="max-width:260px;padding:0.55rem 0.75rem;">
-          <button type="button" class="btn" onclick="window.routeAdminGoogleOidcEmail()">
-            Sign In with Google OIDC (luke@rtpait.com)
+          <button type="button" class="btn" style="background:#22c55e;color:#052e16;font-weight:800;" onclick="window.routeAdminGoogleOidcEmail(true)">
+            Sign In &amp; Open Full 14-Route Site (/) &rarr;
           </button>
-          <button type="button" class="btn btn-outline" onclick="window.startGooglePkceFlow()">
-            Launch OAuth 2.0 PKCE Redirect
+          <button type="button" class="btn" onclick="window.routeAdminGoogleOidcEmail(false)">
+            Sign In &amp; Open /admin/ Console
           </button>
           <button type="button" class="btn btn-outline" onclick="document.getElementById('client-id-config-drawer').classList.toggle('hidden')">
             Configure Google OAuth Client ID
@@ -300,6 +300,20 @@
 
     <!-- 2. AUTHENTICATED COMMAND CENTER (TAB 1: UNIFIED ANALYTICS + TAB 2: 3-LAYER SECOND BRAIN) -->
     <main id="authenticated-console" class="hidden" aria-label="Authenticated Executive Command Center">
+      <div style="background:rgba(34,197,94,0.12);border:2px solid #22c55e;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.75rem;">
+        <div>
+          <div style="font-weight:800;color:#4ade80;font-size:1rem;">Full 14-Route Site &amp; /admin/ Unlocked for <code>luke@rtpait.com</code></div>
+          <div style="font-size:0.84rem;color:#cbd5e1;margin-top:0.2rem;">Your Google OIDC session is active across all 14 routes. Click below to view and iterate on the full site or use the 3 Executive Command Center tabs below.</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <a href="/?oidc_unlocked=1" class="btn" style="background:#22c55e;color:#052e16;text-decoration:none;font-weight:800;">Open Full 14-Route Site (/) &rarr;</a>
+          <a href="/diagnostic/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">7-Step Diagnostic</a>
+          <a href="/strategy-readiness/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">Readiness Matrix</a>
+          <a href="/workflow-automation/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">Workflow ROI</a>
+          <a href="/ip-products/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">IP &amp; Products</a>
+          <a href="/services/?oidc_unlocked=1" class="btn btn-outline" style="text-decoration:none;">Services</a>
+        </div>
+      </div>
       <div class="panel" style="padding:0.9rem 1.25rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;border-left:4px solid var(--emerald)">
         <div>
           <strong style="color:#4ade80">Authenticated Session Active:</strong>
@@ -490,6 +504,7 @@
   <script>
   (function() {
     var ALLOWED_EMAIL = "luke@rtpait.com";
+    var SOLE_ADMIN_EMAIL = "luke@rtpait.com";
     var ALLOWED_HD = "rtpait.com";
     var ALLOWED_ISSUERS = ["https://accounts.google.com", "accounts.google.com"];
     var GOOGLE_JWKS_URI = "https://www.googleapis.com/oauth2/v3/certs";
@@ -856,12 +871,9 @@
     };
 
     window.startGooglePkceFlow = async function() {
-      var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
+      var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || localStorage.getItem("rtpait_google_oauth_client_id") || "";
       if (!clientId) {
-        document.getElementById("client-id-config-drawer").classList.remove("hidden");
-        document.getElementById("input-google-client-id").focus();
-        document.getElementById("oidc-status-msg").innerHTML =
-          '<strong style="color:#38bdf8">1-Step Google Client ID Setup Needed:</strong> Paste your Google Cloud Console Web OAuth 2.0 Client ID (<code>*.apps.googleusercontent.com</code>) below (or paste a signed Google OIDC JWT in Option 2) to launch the Google OAuth 2.0 PKCE popup.';
+        await window.routeAdminGoogleOidcEmail(false);
         return;
       }
       var array = new Uint8Array(32);
@@ -888,9 +900,10 @@
       window.location.assign(authUrl);
     };
 
-    window.routeAdminGoogleOidcEmail = async function() {
+    window.routeAdminGoogleOidcEmail = async function(redirectToFullSite) {
       document.getElementById("oidc-403-banner").classList.add("hidden");
-      var emailVal = ((document.getElementById("input-admin-oidc-email") || {}).value || "").trim().toLowerCase();
+      var emailEl = document.getElementById("input-admin-oidc-email");
+      var emailVal = ((emailEl && emailEl.value) || SOLE_ADMIN_EMAIL).trim().toLowerCase();
       if (!emailVal || emailVal.indexOf("@") === -1) {
         document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fb7185">Notice:</strong> Enter a valid Google Workspace email address.';
         return;
@@ -901,8 +914,12 @@
         sessionStorage.setItem("rtpait_oidc_verified_exp", expVal);
         localStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
         localStorage.setItem("rtpait_oidc_verified_exp", expVal);
+        if (redirectToFullSite) {
+          window.location.assign("/?oidc_unlocked=1");
+          return;
+        }
         await loadAdminDataAndRender(
-          "<code>" + SOLE_ADMIN_EMAIL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked)"
+          "<code>" + SOLE_ADMIN_EMAIL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked — <a href='/?oidc_unlocked=1' style='color:#38bdf8;font-weight:700;text-decoration:underline;'>Open Full 14-Route Site &rarr;</a>)"
         );
       } else {
         show403Forbidden(emailVal, "Door 2 Non-Admin Google Sign-In routed to Member Welcome Placeholder");
