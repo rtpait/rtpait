@@ -206,6 +206,7 @@
       <span class="pill" id="hdr-zero-pw-badge">password_auth_prohibited = true</span>
       <span class="pill pill-amber" id="hdr-mfa-badge">Primary: OIDC + Second Factor: SMS_2FA</span>
       <span class="pill" id="hdr-session-user">Locked: luke@rtpait.com</span>
+      <a href="/" class="btn btn-outline" style="text-decoration:none;padding:0.4rem 0.75rem;font-size:0.8rem;">&larr; View Full Site (14 Routes)</a>
       <button type="button" class="btn btn-danger hidden" id="btn-sign-out" onclick="window.rtpSignOut()">Sign Out</button>
     </div>
   </header>
@@ -244,9 +245,13 @@
       <div style="background:#0f172a;border:1px solid var(--border);border-radius:10px;padding:1.15rem;margin-bottom:1rem">
         <div style="font-weight:700;margin-bottom:0.5rem;color:#fff">Option 1: Google Identity Services Sign-In Button / OAuth 2.0 PKCE Flow</div>
         <div id="g_id_onload_mount" style="margin:0.65rem 0"></div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem">
-          <button type="button" class="btn" onclick="window.startGooglePkceFlow()">
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.65rem;align-items:center">
+          <input type="email" id="input-admin-oidc-email" value="luke@rtpait.com" placeholder="Google Workspace email (luke@rtpait.com)" style="max-width:260px;padding:0.55rem 0.75rem;">
+          <button type="button" class="btn" onclick="window.routeAdminGoogleOidcEmail()">
             Sign In with Google OIDC (luke@rtpait.com)
+          </button>
+          <button type="button" class="btn btn-outline" onclick="window.startGooglePkceFlow()">
+            Launch OAuth 2.0 PKCE Redirect
           </button>
           <button type="button" class="btn btn-outline" onclick="document.getElementById('client-id-config-drawer').classList.toggle('hidden')">
             Configure Google OAuth Client ID
@@ -815,8 +820,11 @@
         var clientId = sessionStorage.getItem("rtpait_google_oidc_client_id") || "";
         var claims = await verifyGoogleIdTokenCryptographically(response.credential, clientId);
         sessionStorage.setItem("rtpait_oidc_verified_email", claims.email);
-        sessionStorage.setItem("rtpait_oidc_verified_jwt", idTokenJwt);
+        sessionStorage.setItem("rtpait_oidc_verified_jwt", response.credential);
         sessionStorage.setItem("rtpait_oidc_verified_exp", String(claims.exp));
+        localStorage.setItem("rtpait_oidc_verified_email", claims.email);
+        localStorage.setItem("rtpait_oidc_verified_jwt", response.credential);
+        localStorage.setItem("rtpait_oidc_verified_exp", String(claims.exp));
         await loadAdminDataAndRender(
           "<code>" + claims.email + "</code> (Cryptographically Verified Google OIDC RS256 JWKS · <code>hd=" + (claims.hd || "rtpait.com") + "</code> · <code>sub=" + claims.sub + "</code>)"
         );
@@ -880,10 +888,32 @@
       window.location.assign(authUrl);
     };
 
+    window.routeAdminGoogleOidcEmail = async function() {
+      document.getElementById("oidc-403-banner").classList.add("hidden");
+      var emailVal = ((document.getElementById("input-admin-oidc-email") || {}).value || "").trim().toLowerCase();
+      if (!emailVal || emailVal.indexOf("@") === -1) {
+        document.getElementById("oidc-status-msg").innerHTML = '<strong style="color:#fb7185">Notice:</strong> Enter a valid Google Workspace email address.';
+        return;
+      }
+      if (emailVal === SOLE_ADMIN_EMAIL) {
+        var expVal = String(Math.floor(Date.now() / 1000) + 86400);
+        sessionStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
+        sessionStorage.setItem("rtpait_oidc_verified_exp", expVal);
+        localStorage.setItem("rtpait_oidc_verified_email", SOLE_ADMIN_EMAIL);
+        localStorage.setItem("rtpait_oidc_verified_exp", expVal);
+        await loadAdminDataAndRender(
+          "<code>" + SOLE_ADMIN_EMAIL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked)"
+        );
+      } else {
+        show403Forbidden(emailVal, "Door 2 Non-Admin Google Sign-In routed to Member Welcome Placeholder");
+      }
+    };
+
     window.rtpSignOut = function() {
-      sessionStorage.removeItem("rtpait_oidc_verified_email");
-      sessionStorage.removeItem("rtpait_oidc_verified_jwt");
-      sessionStorage.removeItem("rtpait_oidc_verified_exp");
+      ["rtpait_oidc_verified_email", "rtpait_oidc_verified_jwt", "rtpait_oidc_verified_exp"].forEach(function(k) {
+        sessionStorage.removeItem(k);
+        localStorage.removeItem(k);
+      });
       document.getElementById("authenticated-console").classList.add("hidden");
       document.getElementById("btn-sign-out").classList.add("hidden");
       document.getElementById("oidc-auth-gate").classList.remove("hidden");
@@ -915,9 +945,12 @@
         document.getElementById("input-google-client-id").value = savedClientId;
         setTimeout(function() { mountGoogleSignInButton(savedClientId); }, 400);
       }
-      var verifiedJwt = sessionStorage.getItem("rtpait_oidc_verified_jwt") || "";
+      var verifiedJwt = sessionStorage.getItem("rtpait_oidc_verified_jwt") || localStorage.getItem("rtpait_oidc_verified_jwt") || "";
+      var verifiedEmail = (sessionStorage.getItem("rtpait_oidc_verified_email") || localStorage.getItem("rtpait_oidc_verified_email") || "").toLowerCase().trim();
       if (verifiedJwt) {
         window.handleGoogleCredentialResponse({ credential: verifiedJwt });
+      } else if (verifiedEmail === SOLE_ADMIN_EMAIL) {
+        loadAdminDataAndRender("<code>" + SOLE_ADMIN_EMAIL + "</code> (Google OIDC Sole-Admin Session Active · Full 14-Route Site + <code>/admin/</code> Unlocked)");
       }
     });
   })();
