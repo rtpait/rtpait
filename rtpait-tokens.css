@@ -1,0 +1,9 @@
+/* rtpait brand design tokens v1.0. Source of truth: UX Design Review Standard v1.0
+   Must not reuse the B2B accent (#0a58ca/#084298), the system-only stack, or the B2B radius scale (5/8/12px). */
+:root{
+  --bg:#f8fafc; --surface:#ffffff;
+  --ink:#0f172a; --navy:#0f172a; --muted:#334155; --border:#cbd5e1;
+  --accent:#0284c7; --accent-dark:#0369a1; --emerald:#15803d;
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+  --r-sm:6px; --r-md:14px; --r-lg:16px; --r-pill:999px;
+}
